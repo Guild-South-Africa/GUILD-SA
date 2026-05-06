@@ -1,0 +1,699 @@
+pages 28
+
+--- PAGE 1 ---
+B R A N D
+A R C H I T E C T U R E
+P r o d u c t i o n - L e v e l  B r a n d  D o c u m e n t
+B u i l d  &  S h i p  R e a l - W o r l d  S o l u t i o n s
+A  n a t i o n a l  e c o s y s t e m  w h e r e  s t u d e n t s  b u i l d  a n d  s h i p  r e a l  d i g i t a l  p r o d u c t s  u n d e r  r e a l - w o r l d  c o n s t r a i n t s  —
+c o n n e c t e d  t o  i n d u s t r y  f r o m  d a y  o n e .
+g u i l d s a . c o . z a  ·  @ g u i l d . s a
+
+--- PAGE 2 ---
+G U I L D S  S A  —  B r a n d  A r c h i t e c t u r e P a g e  2
+0 1
+0 2
+0 3
+0 4
+0 5
+0 6
+0 7
+0 8
+0 9
+1 0
+1 1
+1 2
+1 3
+T A B L E  O F  C O N T E N T S
+B r a n d  O v e r v i e w  &  P o s i t i o n i n g
+B r a n d  A r c h i t e c t u r e
+B r a n d  P e r s o n a l i t y  &  V o i c e
+L o g o  S y s t e m
+S y m b o l  S y s t e m
+C o l o r  S y s t e m
+T y p o g r a p h y
+V i s u a l  L a n g u a g e  &  A p p l i c a t i o n s
+C o p y  S y s t e m
+M o t i o n  P r i n c i p l e s
+G u i l d  H a c k a t h o n  P l a y b o o k  —  E d u v o s  P i l o t
+W e b s i t e  A r c h i t e c t u r e
+P i t c h  D e c k  S t r u c t u r e
+
+--- PAGE 3 ---
+G U I L D S  S A  —  B r a n d  A r c h i t e c t u r e P a g e  3
+0 1
+B r a n d  O v e r v i e w  &  P o s i t i o n i n g
+ 
+•  A  n a t i o n a l  b u i l d - a n d - s h i p  p l a t f o r m
+•  C a m p u s - b a s e d  i n n o v a t i o n  n e t w o r k
+•  I n d u s t r y - c o n n e c t e d  t a l e n t  p i p e l i n e
+•  M V P - f i r s t  c u l t u r e
+•  N o t  a  c o d i n g  c l u b
+•  N o t  a  t u t o r i a l  c h a n n e l
+•  N o t  t h e o r y - f o c u s e d
+•  N o t  j u s t  a n o t h e r  h a c k a t h o n
+G U I L D S  S A  i s  a  s t r u c t u r e d  e c o s y s t e m  w h e r e  s t u d e n t s  b u i l d  a n d  s h i p  r e a l  d i g i t a l  p r o d u c t s  u n d e r  r e a l - w o r l d
+c o n s t r a i n t s .
+W H A T  W E  A R E W H A T  W E  A R E  N O T
+C o r e  S t a t e m e n t
+
+--- PAGE 4 ---
+G U I L D S  S A  —  B r a n d  A r c h i t e c t u r e P a g e  4
+B U I L D S H I P P R O V E L A U N C  H→ → →
+V a l u e  P i l l a r s
+I N D U S T R Y  E X P O S U R E
+ 
+R E A L - W O R L D  R E L E V A N C E
+ 
+E X E C U T I O N  O V E R  T H E O R Y
+ 
+T I M E - C O N S T R A I N E D  I N N O V A T I O N
+ P r e s s u r e  c r e a t e s  c l a r i t y .  D e a d l i n e s  c r e a t e  p r o d u c t s .
+E v e r y c h a l l e n g e i s t i e d t o a c t u a l S o u t h A f r i c a n  p r o b l e m s .
+W e m e a s u r e s u c c e s s b y w h a t y o u s h i p ,  n o t  w h a t  y o u  k n o w .
+M e n t o r s , j u d g e s , a n d p a r t n e r s a r e  p r a c t i t i o n e r s  —  n o t  a c a d e m i c s .
+
+--- PAGE 5 ---
+G U I L D S  S A  —  B r a n d  A r c h i t e c t u r e P a g e  5
+0 2
+B r a n d  A r c h i t e c t u r e
+ A s i x - l a y e r e c o s y s t e m t h a t s c a l e s f r o m i n d i v i d u a l s t u d e n t s t o n a t i o n a l  i n d u s t r y  p a r t n e r s h i p s .
+G u i l d e r s  a r e  t h e  m e m b e r s  —  a  n a m e d  i d e n t i t y  t h a t  b u i l d s  b e l o n g i n g .  G u i l d  C i r c l e  i s  t h e  i n n e r  n e t w o r k :
+m e n t o r s h i p ,  d i s c u s s i o n s ,  i n d u s t r y  t a l k s  a l i g n e d  t o  t h e  c i r c u l a r  l o g o  s y m b o l .
+P a r t n e r s  p r o v i d e  c h a l l e n g e s ,  s p o n s o r s h i p ,  a n d  t a l e n t  a c c e s s .  M e n t o r s  —  p r a c t i t i o n e r s  a n d  c o - f o u n d e r s  —
+g u i d e  t e a m s  a s  j u d g e s ,  s p e a k e r s ,  a n d  a d v i s o r s .
+S p r i n t :  6 - 8 h r  M V P - f o c u s e d  b u i l d  e v e n t s .  H a c k a t h o n :  f l a g s h i p  m u l t i - d a y  e v e n t s  w i t h  s t r u c t u r e d  j u d g i n g  a n d
+p r i z e s .  D e m o  D a y :  s h o w c a s e  f o r  t o p  t e a m s .
+T h e  u m b r e l l a  a u t h o r i t y  l a y e r .  T r u s t ,  c r e d i b i l i t y ,  a n d  n a t i o n a l  p o s i t i o n i n g  l i v e  h e r e .  T h i s  i s  t h e  f a c e  s h o w n  t o
+u n i v e r s i t i e s ,  s p o n s o r s ,  a n d  p a r t n e r s .
+T h e  s t u d e n t - f a c i n g  p r o g r a m  i n s i d e  e a c h  i n s t i t u t i o n .  W h e r e  s t u d e n t s  j o i n ,  c o l l a b o r a t e ,  a n d  b u i l d .  E q u i v a l e n t  t o  a
+G D G  c h a p t e r .  S c a l a b l e  p e r  c a m p u s .
+L a b s :  w h e r e  M V P s  t h a t  s h o w  r e a l  p r o m i s e  c o n t i n u e  d e v e l o p m e n t  b e y o n d  t h e  h a c k a t h o n .  P r o j e c t s :  t h e  p o r t f o l i o
+a n d  c a s e  s t u d y  r e p o s i t o r y  f o r  a l l  s t u d e n t  w o r k .
+G U I L D S  S A
+C A M P U S  G U I L D
+G U I L D E R S  /  G U I L D  C I R C L E
+G U I L D  L A B S  /  G U I L D  P R O J E C T S
+G U I L D  P A R T N E R S  /  G U I L D  M E N T O R S
+G U I L D  S P R I N T  /  H A C K A T H O N  /  D E M O  D A Y E v e n t  L a y e r
+M a s t e r  B r a n d
+O u t p u t  L a y e r
+I n d u s t r y  L a y e r
+P l a t f o r m  L a y e r
+C o m m u n i t y  L a y e r
+S y s t e m  T r e e
+
+--- PAGE 6 ---
+G U I L D S  S A  —  B r a n d  A r c h i t e c t u r e P a g e  6
+GUILDS SA
+■
+■ ■ ■  ■ ■ ■ ■
+■ ■ ■ ■  ■ ■ ■ ■
+■
+■ ■ ■  ■ ■ ■ ■
+■
+■ ■ ■  ■ ■ ■ ■
+■
+■ ■ ■  
+■ ■ ■  
+Guild Partners
+Guild Mentors
+Guilders
+Guild Circle
+Guild Labs
+Guild Projects
+Campus Guild
+Guild Sprint
+Guild Hackathon
+Guild Demo Day
+
+--- PAGE 7 ---
+G U I L D S  S A  —  B r a n d  A r c h i t e c t u r e P a g e  7
+0 3
+B r a n d  P e r s o n a l i t y  &  V o i c e
+G U I L D S  S A  c o m m u n i c a t e s  l i k e  a  h i g h - p e r f o r m i n g  t e a m ,  n o t  a n  i n s t i t u t i o n .
+W e  t a k e  u p  s p a c e .
+N o  h e d g i n g ,  n o
+a p o l o g i e s .
+E v e r y  t o u c h p o i n t
+r e f l e c t s  a
+d e l i b e r a t e ,
+s t r u c t u r e d
+a p p r o a c h .
+N o  v i s u a l  n o i s e .
+N o t h i n g  w i t h o u t
+p u r p o s e .
+W e  e m b r a c e
+u r g e n c y  —  u r g e n c y
+i s  a  f e a t u r e ,  n o t  a
+b u g .
+T h e  o n l y  m e t r i c
+t h a t  m a t t e r s  i s  w h a t
+s h i p s .
+B O L D S Y S T E M A T I C M I N I M A L H I G H - P R E S S U
+R E
+O U T C O M E - D R I
+V E N
+T o n e  o f  V o i c e
+S A Y  T H I S
+" E n t e r  t h e  S p r i n t . "
+" S h i p  i t .  P r o v e  i t .  R e p e a t . "
+" B u i l d  f o r  S A .  B u i l t  b y  S A . "
+" N o  M V P  =  N o  J u d g e m e n t . "
+N O T  T H I S
+" W e  s u p p o r t  l o c a l  i n n o v a t i o n . "
+" R e g i s t e r  f o r  o u r  h a c k a t h o n  e v e n t . "
+" W e  w e l c o m e  a l l  i d e a s  a t  a n y  s t a g e . "
+" W e  e n c o u r a g e  s t u d e n t s  t o  t r y  t h e i r  b e s t . "
+
+--- PAGE 8 ---
+G U I L D S  S A  —  B r a n d  A r c h i t e c t u r e P a g e  8
+0 4
+L o g o  S y s t e m
+ T h e G U I L D S S A l o g o i s a p r e c i s i o n i n s t r u m e n t .  E v e r y  e l e m e n t  i s  i n t e n t i o n a l .
+ 
+E i g h t  h u m a n  f i g u r e s  a r r a n g e d  i n  a  c l o s e d  l o o p  —  r e p r e s e n t i n g  b u i l d e r s  c o n n e c t e d  i n  a  s e l f - s u s t a i n i n g  s y s t e m .
+U s e d  i n d e p e n d e n t l y  a s  a  b a d g e ,  s t a m p ,  o r  m o t i o n  e l e m e n t .
+W o r d m a r k  l e f t ,  s y m b o l  r i g h t .  T h e  s y s t e m  r e a d s  t o g e t h e r  b u t  e a c h  e l e m e n t  f u n c t i o n s  i n d e p e n d e n t l y  a c r o s s  a l l  s c a l e
+a p p l i c a t i o n s .
+B o l d  g e o m e t r i c  l e t t e r f o r m s  w i t h  c o n t r o l l e d  c u t s  —  t h e  " U "  i n t e r r u p t i o n  i n  G U I L D  s i g n a l s  d i s r u p t i o n  w i t h i n  s t r u c t u r e .
+T h e  d o t  b e t w e e n  G U I L D  a n d  S A  m a r k s  t e r r i t o r y  a n d  p r e c i s i o n .
+ D O
+L O C K - U P
+W O R D M A R K
+C I R C L E  S Y M B O L
+U s e  o n  b l a c k  o r  w h i t e  b a c k g r o u n d s  o n l y
+M a i n t a i n  m i n i m u m  c l e a r  s p a c e  =  h e i g h t  o f  t h e  " G "
+U s e  o r a n g e  s y m b o l  o n  b l a c k ;  b l a c k  s y m b o l  o n  w h i t e
+✗  D O N ' T
+R e d u c e  b e l o w  2 4 p x  /  8 m m  w i d t h
+R e c o l o u r  t h e  w o r d m a r k  i n  o r a n g e
+P l a c e  o n  b u s y  p h o t o g r a p h i c  b a c k g r o u n d s
+U s a g e  R u l e s
+✓
+
+--- PAGE 9 ---
+G U I L D S  S A  —  B r a n d  A r c h i t e c t u r e P a g e  9
+S c a l e  p r o p o r t i o n a l l y
+U s e  p r o v i d e d  f i l e  f o r m a t s  ( S V G ,  P N G ) R e c r e a t e  o r  r e d r a w  a n y  l e t t e r f o r m
+D i s t o r t ,  s t r e t c h ,  o r  r o t a t e  t h e  l o c k u p
+
+--- PAGE 10 ---
+G U I L D S  S A  —  B r a n d  A r c h i t e c t u r e P a g e  1 0
+0 5
+S y m b o l  S y s t e m
+ 
+ 
+S c a t t e r e d  a t  l o w  o p a c i t y  o n  d a r k  b a c k g r o u n d s  —  c r e a t e s  t e x t u r e  w i t h o u t  n o i s e .
+ 
+A p p l i e d  t o  a l l  G u i l d  S p r i n t  a n d  H a c k a t h o n  c o l l a t e r a l .  C r e a t e s  i n s t a n t  r e c o g n i t i o n .
+ 
+I n d i v i d u a l  f i g u r e s  e x t r a c t e d  a n d  u s e d  a s  s e c t i o n  m a r k e r s ,  b u l l e t  p o i n t s ,  o r  U I  i c o n s .
+ 
+S t a m p  o n  m e r c h ,  I D  c a r d s ,  e v e n t  p a s s e s .  T h e  m a r k  o f  s o m e o n e  i n s i d e  t h e  s y s t e m .
+T h e c i r c u l a r h u m a n i c o n i s t h e m o s t p o w e r f u l a s s e t i n t h e  G U I L D S  S A  v i s u a l  l a n g u a g e .
+ 
+A n i m a t e d :  f i g u r e s  a s s e m b l e  i n t o  t h e  c i r c l e ,  s y m b o l i s i n g  a  t e a m  f o r m i n g .  U s e d  i n  i n t r o s  a n d  l o a d i n g  s t a t e s .
+" A  s y s t e m  o f  b u i l d e r s  c o n n e c t e d  i n  a  l o o p  —  t h e  c i r c l e  n e v e r  e n d s ,  t h e  b u i l d
+n e v e r  s t o p s . "
+I C O N  G R I D
+E V E N T S T A M P
+M O T I O N  E L E M E N T
+B A D G E  /  G U I L D E R M A R K
+B A C K G R O U N D  P A T T E R N
+
+--- PAGE 11 ---
+G U I L D S  S A  —  B r a n d  A r c h i t e c t u r e P a g e  1 1
+
+--- PAGE 12 ---
+G U I L D S  S A  —  B r a n d  A r c h i t e c t u r e P a g e  1 2
+0 6
+C o l o r  S y s t e m
+ 
+C l a r i t y .  S p a c e .  B r e a t h i n g  r o o m .  T h e  r e s e t  c o l o u r .
+A u t h o r i t y .  S y s t e m .  S t r u c t u r e .  T h e  d e f a u l t  c a n v a s .
+E n e r g y .  A c t i o n .  P e o p l e .  T h e  s i g n a l  c o l o u r  —  u s e d  i n t e n t i o n a l l y .
+T h r e e p r i m a r y c o l o u r s . N o c o m p r o m i s e . N o d e c o r a t i v e  p a l e t t e s .
+W H I T E
+B L A C K
+O R A N G E
+# 0 A 0 A 0 A
+# F 0 7 C 0 0
+# F F F F F F
+U s a g e  R a t i o s
+C O N T E X T
+E v e n t  p o s t e r s  ( d a r k )
+E v e n t  p o s t e r s  ( l i g h t )
+D i g i t a l  /  w e b
+M e r c h
+B L A C K
+7 0 %
+1 0 %
+6 0 %
+5 0 %
+O R A N G E
+2 0 %
+1 5 %
+1 5 %
+3 0 %
+W H I T E
+1 0 %
+7 5 %
+2 5 %
+2 0 %
+
+--- PAGE 13 ---
+G U I L D S  S A  —  B r a n d  A r c h i t e c t u r e P a g e  1 3
+0 7
+T y p o g r a p h y
+ B o l d . G e o m e t r i c . C o n t r o l l e d . T y p o g r a p h y  c a r r i e s  t h e  s a m e  e n e r g y  a s  t h e  w o r d m a r k .
+ N e v e r  u s e  m o r e  t h a n  t w o  t y p e  w e i g h t s  o n  a  s i n g l e  l a y o u t .
+ H e a d l i n e s  a r e  U P P E R C A S E  o r  T i t l e  C a s e  —  n e v e r  s e n t e n c e  c a s e  f o r  d i s p l a y  t e x t .
+ B o d y  c o p y  i s  a l w a y s  l e f t - a l i g n e d .  N e v e r  j u s t i f y .
+ T r a c k i n g  f o r  d i s p l a y  t y p e :  - 2 0  t o  - 4 0  ( t i g h t ) .  B o d y :  0  ( n e u t r a l ) .
+ A v o i d  d e c o r a t i v e  f o n t s .  T h e  w o r d m a r k  i s  t h e  o n l y  " c r e a t i v e "  t y p e  e l e m e n t .
+B o d y
+R O L E
+M i c r o  /  L a b e l
+C o d e  /  M o n o
+S u b - h e a d l i n e
+D i s p l a y  /  H e r o
+S e c t i o n  H e a d l i n e
+S T Y L E
+M o n o s p a c e
+B o l d ,  m i x e d  c a s e
+B o l d ,  o r a n g e  a c c e n t
+B o l d ,  u p p e r c a s e ,  s p a c e d
+R e g u l a r ,  g e n e r o u s  l e a d i n g
+B o l d ,  u p p e r c a s e ,  t i g h t  t r a c k i n g
+S I Z E
+8 – 1 0 p t
+9 – 1 1 p t
+4 8 – 7 2 p t
+2 8 – 3 6 p t
+1 6 – 2 2 p t
+1 0 – 1 2 p t
+U S A G E
+T a g s ,  b a d g e s ,  c a p t i o n s
+D e s c r i p t i o n s ,  i n f o r m a t i o n
+P a g e  h e a d e r s ,  s l i d e  t i t l e s
+P o s t e r  h e a d l i n e s ,  e v e n t  t i t l e s
+C a t e g o r y  l a b e l s ,  c a r d  h e a d e r s
+U R L s ,  f i l e  n a m e s ,  t r e e  d i a g r a m s
+T y p o g r a p h y  R u l e s
+→
+→
+→
+→
+→
+
+--- PAGE 14 ---
+G U I L D S  S A  —  B r a n d  A r c h i t e c t u r e P a g e  1 4
+0 8
+V i s u a l  L a n g u a g e  &  A p p l i c a t i o n s
+H i g h  c o n t r a s t .  M i n i m a l  c l u t t e r .  P r o d u c t - f o c u s e d .  R e a l  o b j e c t s  i n  r e a l  c o n t e x t s .
+M e r c h  i s  a  b r a n d  d e p l o y m e n t  t o o l ,  n o t  j u s t  a p p a r e l .  E v e r y  i t e m  i s  a  w a l k i n g  b i l l b o a r d .  S t i c k e r s ,  t e e s ,  a n d
+a c c e s s o r i e s  c a r r y  t h e  s a m e  v i s u a l  r i g o u r  a s  l a r g e - f o r m a t  p o s t e r s .
+M e r c h
+P o s t e r s  &  L a r g e  F o r m a t
+
+--- PAGE 15 ---
+G U I L D S  S A  —  B r a n d  A r c h i t e c t u r e P a g e  1 5
+O n - s t a g e  a s s e t s  f o l l o w  t h e  l i g h t - b a c k g r o u n d  s y s t e m .  T h e  l o g o  a n d  s y m b o l  l o c k - u p  a t  f u l l  p r o j e c t i o n  s c a l e .
+P r e s e n t e r s  a r e  n e v e r  o b s c u r e d  b y  b r a n d  e l e m e n t s  —  p e o p l e  a r e  t h e  p r o d u c t .
+T w o  p o s t e r  s y s t e m s :  d a r k  ( b l a c k  b a s e ,  o r a n g e  h e a d l i n e s )  a n d  l i g h t  ( w h i t e  b a s e ,  b l a c k / o r a n g e  t y p e ) .  B o t h  o b e y  t h e
+s a m e  g r i d ,  h i e r a r c h y ,  a n d  i c o n o g r a p h y  s y s t e m .  Q R  c o d e s  a r e  a l w a y s  p r e s e n t  o n  p r i n t  m a t e r i a l s  l i n k i n g  t o
+g u i l d s a . c o . z a .
+S t a g e  &  P r e s e n t a t i o n
+V i s u a l  L a n g u a g e  P r i n c i p l e s
+
+--- PAGE 16 ---
+G U I L D S  S A  —  B r a n d  A r c h i t e c t u r e P a g e  1 6
+H I G H  C O N T R A S T
+B l a c k - o n - w h i t e  o r  w h i t e - o n - b l a c k .  N o  m i d - t o n e s  i n  h e r o  c o m p o s i t i o n s .
+R E A L  C O N T E X T S
+M e r c h  o n  p e o p l e .  P o s t e r s  o n  c a r s  a n d  w a l l s .  N e v e r  f l o a t i n g  o n  w h i t e .
+P R O D U C T  F O C U S
+S h o w  t h e  w o r k .  S c r e e n s h o t s ,  d e m o s ,  a n d  l i v e  b u i l d s  o u t r a n k  s t o c k  p h o t o g r a p h y .
+M I N I M A L  C L U T T E R
+M a x i m u m  t h r e e  v i s u a l  e l e m e n t s  p e r  z o n e .  W h i t e  s p a c e  i s  a c t i v e ,  n o t  e m p t y .
+O R A N G E  A S  S I G N A L
+O r a n g e  a p p e a r s  o n c e  p e r  c o m p o s i t i o n  t o  d i r e c t  t h e  e y e .  N e v e r  d e c o r a t i v e .
+
+--- PAGE 17 ---
+G U I L D S  S A  —  B r a n d  A r c h i t e c t u r e P a g e  1 7
+0 9
+C o p y  S y s t e m
+ E v e r y  w o r d  e a r n e d  s i t s  p l a c e .  N o f i l l e r  . N o  c o r p o r a t e  h e d g i n g .
+C A M P A I G N  L I N E
+ 
+H E R O  H E A D L I N E S
+ 
+C A L L S  T O  A C T I O N
+" J o i n  t h e  G u i l d . "
+" E n t e r  t h e  S p r i n t . "
+" S h i p  Y o u r  I d e a . "
+" R e g i s t e r  Y o u r  T e a m . "
+" B e  P a r t  o f  S o m e t h i n g  G r e a t e r . "
+S U B - C O P Y  /  D E S C R I P T I O N S
+ 
+" B u i l d  & S h i p . "
+" R e a l  S o l u t i o n s  O n l y . "
+" N o  M V P .  N o  J u d g e m e n t . "
+" A  H a c k a t h o n .  M a n y  M i n d s .  O n e  M i s s i o n . "
+" B u i l t  i n  S A .  S h i p p e d  f o r  S A . "
+" " B U I L D T H E F U T U R E .  T O G E T H E R . " "
+" " A  C O L L E C T I V E  F O R  C R E A T I V E S ,  B Y  C R E A T I V E S . " "
+" W e d o n ' t  t e a c h y o u  t o  b u i l d .  W e  m a k e  y o u  b u i l d . "
+" S o l v e  r e a l  p r o b l e m s .  B u i l d  r e a l  s o l u t i o n s .  T o g e t h e r . "
+" I n d u s t r y  e x p o s u r e  s t a r t s  a t  y o u r  f i r s t  d e m o . "
+" E d u v o s  M e n l y n  —  t h e  f i r s t  n o d e  i n  a  n a t i o n a l  n e t w o r k . "
+
+--- PAGE 18 ---
+G U I L D S  S A  —  B r a n d  A r c h i t e c t u r e P a g e  1 8
+1 0
+M o t i o n  P r i n c i p l e s
+ M o t i o n  i s  p u r p o s e f u l — i t  c o m m u n i c a t e s  t h e  G U I L D S  S A  i d e a ,  n o t  j u s t  a n i m a t i o n .
+ 
+O r a n g e  s w e e p s  a c r o s s  t h e  s c r e e n  t o  i n t r o d u c e  a  n e w  s e c t i o n .  M i m i c s  t h e  e n e r g y  o f  a  s t a r t i n g  g u n .
+ 
+T h e  h u m a n  s y m b o l  p a t t e r n  d r i f t s  s l o w l y  a t  0 . 3 x  s p e e d  b e h i n d  c o n t e n t  —  a  l i v i n g  w a l l p a p e r  t h a t  r e i n f o r c e s
+c o m m u n i t y  w i t h o u t  c o m p e t i n g  f o r  a t t e n t i o n .
+ 
+T h e  w o r d m a r k  a s s e m b l e s  l e f t  t o  r i g h t ,  l e t t e r  c u t s  r e v e a l  l a s t .  T h e  s y m b o l  d r o p s  i n  0 . 3 s  a f t e r  t h e  w o r d m a r k
+c o m p l e t e s .  D u r a t i o n :  0 . 8 s  t o t a l .
+ 
+S l i d e  a n d  p a g e  t r a n s i t i o n s  a r e  2 0 0 m s  o r  l e s s .  U r g e n c y  i s  a  b r a n d  v a l u e  —  s l o w  a n i m a t i o n s  c o n f l i c t  w i t h  t h e
+h i g h - p r e s s u r e  p o s i t i o n i n g .
+ 
+T h e  e i g h t  h u m a n  f i g u r e s  d r a w  i n  o n e  b y  o n e  —  c l o c k w i s e  —  a n d  l o c k  i n t o  t h e  r i n g .  R e p r e s e n t s  a  t e a m  f o r m i n g .
+U s e d  i n  e v e n t  i n t r o s  a n d  o n b o a r d i n g  s c r e e n s .  D u r a t i o n :  1 . 2 s .
+L O G O  B U I L D
+C O L O U R  W I P E
+P A T T E R N  D R I F T
+C I R C L E  A S S E M B L Y
+F A S T  T R A N S I T I O N S
+
+--- PAGE 19 ---
+G U I L D S  S A  —  B r a n d  A r c h i t e c t u r e P a g e  1 9
+P H A S E  1  —  P R E - E V E N T  ( 2 – 3  W E E K S  B E F O R E )
+1 1
+G u i l d  H a c k a t h o n  P l a y b o o k  —  E d u v o s
+M e n l y n  P i l o t
+T h e  c o m p l e t e  p l a y - b y - p l a y  f o r  e x e c u t i n g  t h e  f i r s t  G u i l d  S p r i n t .  E v e r y  m i n u t e  i s  a c c o u n t e d  f o r .
+ 
+B u i l d  r e g i s t r a t i o n  l a n d i n g  p a g e  o n  g u i l d s a . c o . z a
+ C o n f i r m  E d u v o s  M e n l y n  r o o m  c a p a c i t y
+T e s t  W i F i  t h r o u g h p u t  ( m i n i m u m  5 0 M b p s )
+ C o n f i r m  p o w e r  a c c e s s :  1  o u t l e t  p e r  2
+p a r t i c i p a n t s   A r r a n g e  t a b l e s  i n  t e a m  c l u s t e r s
+V E N U E
+D I G I T A L  S E T U P
+
+--- PAGE 20 ---
+T I M E
+0 7 : 3 0
+0 8 : 0 0
+0 8 : 3 0
+0 9 : 0 0
+1 0 : 0 0
+1 2 : 0 0
+1 2 : 3 0
+G U I L D S  S A  —  B r a n d  A r c h i t e c t u r e
+P H A S E
+S E T U P
+A R R I V A L  &  C H E C K - I N
+O P E N I N G  C E R E M O N Y
+P L A N N I N G  P H A S E
+B U I L D  P H A S E  —  B L O C K  1
+C H E C K P O I N T  1
+L U N C H  B R E A K
+D E T A I L S
+V e n u e  d r e s s ,  t a b l e  l a y o u t ,  e q u i p m e n t  c h e c k ,  n a m e  b a d g e s  p r i n t e d
+Q R  s c a n  c h e c k - i n .  T e a m  c o n f i r m a t i o n .  L a n y a r d s  +  s t i c k e r  p a c k s  d i s t r i b u t e d .
+W e l c o m e .  G U I L D S  S A  s t o r y .  R u l e s  e x p l a i n e d .  " N o  M V P  =  N o  J u d g e m e n t "  d e c l a r e d .
+T e a m s :  d e f i n e  p r o b l e m  s t a t e m e n t ,  d e f i n e  M V P  s c o p e ,  l i s t  r e q u i r e d  s t a c k .  M e n t o r s  c i r c u l a t e .
+H e a d s  d o w n .  M e n t o r s  o n  s t a n d b y .  N o  i n t e r r u p t i o n s .
+E a c h  t e a m  s h a r e s  a  6 0 - s e c o n d  p r o g r e s s  u p d a t e .  M e n t o r s  i d e n t i f y  t e a m s  n e e d i n g  h e l p .
+3 0  m i n u t e s .  C a t e r e d  o r  o w n  a r r a n g e m e n t s .  B r i e f  a n d  r e g i m e n t e d .
+P a g e  2 0
+C r e a t e  G o o g l e  F o r m  o r  T y p e f o r m  f o r  t e a m  r e g i s t r a t i o n
+G e n e r a t e  e v e n t  Q R  c o d e  l i n k i n g  t o  r e g i s t r a t i o n
+S e t  u p  W h a t s A p p  o r  D i s c o r d  g r o u p  f o r  p a r t i c i p a n t s
+ 
+B r i e f  4  j u d g e s :  1  t e c h n i c a l ,  1  b u s i n e s s ,  1  m e n t o r / s p o n s o r
+S h a r e  j u d g i n g  s c o r e c a r d  i n  a d v a n c e
+C o n f i r m  d e m o  f o r m a t :  3 - 5  m i n  p i t c h  +  2  m i n  Q & A ;
+P r i n t  A 3  p o s t e r s  f o r  c a m p u s  n o t i c e  b o a r d s  ( d a r k  a n d  l i g h t  v e r s i o n s )
+D i s t r i b u t e  c a r - w i n d s h i e l d  f l y e r s  ( a s  p e r  b r a n d )
+W h a t s A p p  b r o a d c a s t  t o  c a m p u s  g r o u p s
+I n s t a g r a m  /  T i k T o k  c o u n t d o w n  c o n t e n t  ( 5  d a y s  o u t )
+A p p r o a c h  c a m p u s  r e p s  a t  E d u v o s  f o r  o f f i c i a l  e n d o r s e m e n t
+ T e a m s  o f  3 – 5  p a r t i c i p a n t s  ( m i x e d  s k i l l s  e n c o u r a g e d :  d e v  +  d e s i g n  +  b u s i n e s s )
+ O p t i o n a l  i d e a  s u b m i s s i o n  a t  r e g i s t r a t i o n  ( n o  c o m m i t m e n t ,  j u s t  s i g n a l )
+ C a p  p a r t i c i p a n t s  a t  6 0  ( 1 2  t e a m s  m a x )  —  s c a r c i t y  d r i v e s  q u a l i t y  a n d  u r g e n c y
+ C o l l e c t :  n a m e ,  s t u d e n t  n u m b e r ,  i n s t i t u t i o n ,  r o l e ,  G i t H u b / p o r t f o l i o  l i n k
+ S e n d  c o n f i r m a t i o n  e m a i l  w i t h  e v e n t  r u l e s ,  w h a t  t o  b r i n g ,  a n d  W i F i  d e t a i l s
+M A R K E T I N G
+J U D G I N G  P R E P
+P H A S E  2  —  R E G I S T R A T I O N
+P H A S E  3  —  E V E N T  D A Y  S T R U C T U R E
+
+--- PAGE 21 ---
+1 3 : 0 0
+1 5 : 0 0
+1 5 : 3 0
+1 6 : 3 0
+1 7 : 0 0
+1 9 : 0 0
+1 9 : 3 0
+2 0 : 0 0
+G U I L D S  S A  —  B r a n d  A r c h i t e c t u r e
+B U I L D  P H A S E  —  B L O C K  2
+C H E C K P O I N T  2
+B U I L D  P H A S E  —  B L O C K  3
+S U B M I S S I O N  D E A D L I N E
+D E M O  S E S S I O N
+J U D G I N G  D E L I B E R A T I O N
+R E S U L T S  &  A W A R D S
+C L O S E
+F i n a l  p u s h .  F o c u s  o n  s h i p p a b l e  M V P .  G i t H u b  c o m m i t s  r e q u i r e d .
+6 0 - s e c o n d  u p d a t e .  M e n t o r s  a s s e s s  v i a b i l i t y .  R e d i r e c t  i f  n e e d e d .
+F i n i s h ,  t e s t ,  p r e p a r e  d e m o .  N o  n e w  f e a t u r e s  —  p o l i s h  o n l y .
+G i t H u b  /  D e p l o y e d  l i n k  s u b m i t t e d .  N o  l a t e  s u b m i s s i o n s  a c c e p t e d .
+E a c h  t e a m :  3 – 5  m i n  p i t c h  +  2  m i n  j u d g e  Q & A .  A u d i e n c e  v o t e s  v i a  Q R .
+J u d g e s  s c o r e  p r i v a t e l y .  A u d i e n c e  s c o r e  w e i g h t e d  a t  2 0 % .
+T o p  3  a n n o u n c e d .  G u i l d  L a b s  p a t h w a y  f o r  t o p  t e a m  e x p l a i n e d .
+N e t w o r k i n g .  P h o t o s .  Q R  t o  p o s t - e v e n t  s u r v e y  a n d  f o l l o w - u p  g r o u p .
+P a g e  2 1
+J U D G I N G  S Y S T E M
+P H A S E  4  —  P O S T - E V E N T  ( C R I T I C A L )
+P U B L I S H
+C A P T U R E
+C R I T E R I A
+F O L L O W - U P
+M V P  E x e c u t i o n
+I m p a c t  P o t e n t i a l
+P r o b l e m - S o l u t i o n  F i t
+I n n o v a t i o n  /  A I  U s a g e
+2 5 %
+3 0 %
+2 5 %
+2 0 %
+W E I G H T W H A T  J U D G E S  L O O K  F O R
+C o u l d  t h i s  s c a l e ?  D o e s  S A  n e e d  t h i s ?
+D o e s  i t  w o r k ?  C a n  y o u  d e m o  i t  l i v e ,  r i g h t  n o w ?
+I s  t h i s  a  r e a l  p r o b l e m ?  D o e s  t h e  M V P  a c t u a l l y  s o l v e  i t ?
+I s  t h e r e  a  c r e a t i v e  o r  t e c h n i c a l  e d g e ?  I s  A I  u s e d  m e a n i n g f u l l y ?
+E m a i l  a l l  p a r t i c i p a n t s :  r e s u l t s  +  n e x t  s t e p s
+I n v i t e  t o p  t e a m s  i n t o  G u i l d  L a b s  p i p e l i n e
+S h a r e  w i t h  s p o n s o r s / p a r t n e r s  f o r  t h e i r  c o m m s
+P u b l i s h  p r o j e c t  s h o w c a s e  o n  g u i l d s a . c o . z a  w i t h i n  7 2  h o u r s
+P o s t  r e c a p  r e e l  o n  I n s t a g r a m  /  T i k T o k
+A n n o u n c e  w i n n e r s  o n  a l l  c h a n n e l s  w i t h  t a g g i n g
+D o c u m e n t  a l l  p r o j e c t s :  s c r e e n s h o t s ,  G i t H u b  l i n k s ,  t e a m  p h o t o s
+P h o t o g r a p h  a n d  f i l m  t h e  d e m o  s e s s i o n  ( w i t h  c o n s e n t )
+C o l l e c t  q u o t e s  f r o m  p a r t i c i p a n t s  w i t h i n  2 4  h o u r s
+
+--- PAGE 22 ---
+G U I L D S  S A  —  B r a n d  A r c h i t e c t u r e P a g e  2 2
+T o p  t e a m  
+T o p  t e a m  
+T o p  t e a m  
+A l l  t e a m s  
+S e n d  p o s t - e v e n t  s u r v e y  f o r  i m p r o v e m e n t  d a t a
+G u i l d  L a b s :  s t r u c t u r e d  s u p p o r t  f o r  M V P  d e v e l o p m e n t   M e n t o r s h i p  p a t h w a y
+w i t h  i n d u s t r y  c o n t a c t
+F e a t u r e d  a t  n e x t  G u i l d  D e m o  D a y
+a d d e d  t o  G u i l d e r s  n e t w o r k
+C O N T I N U A T I O N
+→
+→
+→
+→
+
+--- PAGE 23 ---
+G U I L D S  S A  —  B r a n d  A r c h i t e c t u r e P a g e  2 3
+V i s i o n
+W h a t  M a k e s  U s
+D i f f e r e n t
+F o u n d e r s
+P h i l o s o p h y
+P e r  C a m p u s
+H o w  t o  J o i n
+C o m m u n i t y  S t a t s
+H e r o
+H o w  I t  W o r k s
+C u r r e n t  C a m p u s
+F e a t u r e d  P r o j e c t s
+C T A  B l o c k
+1 2
+W e b s i t e  A r c h i t e c t u r e  —  g u i l d s a . c o . z a
+T h e  w e b s i t e  i s  a  p l a t f o r m  n a r r a t i v e  s y s t e m ,  n o t  a  l a n d i n g  p a g e .  E v e r y  p a g e  h a s  a  j o b .
+H o m e A b o u t
+C a m p u s
+G u i l d
+P i p e l i n e  v i s u a l :  D i s c o v e r  
+E v e n t s
+N a m e s ,  r o l e s ,  c r e d i b i l i t y  s i g n a l s
+" J o i n  t h e  G u i l d . "  +  " P a r t n e r  w i t h  U s . "
+ R e g i s t e r  
+S t e p - b y - s t e p  w i t h  W h a t s A p p  l i n k  +  f o r m
+G u i l d e r s  c o u n t ,  M V P s  s h i p p e d ,  e v e n t s  r u n
+P r o j e c t s
+ B u i l d  
+O v e r v i e w ,  s t a t s ,  u p c o m i n g  e v e n t s ,  p a s t  b u i l d s
+S A - f o c u s e d  e c o s y s t e m  n a r r a t i v e .  W h y  w e  e x i s t .
+" N o  M V P  =  N o  J u d g e m e n t "  —  e x p l a i n e d  d e e p l y
+E d u v o s  M e n l y n  —  l i v e  s t a t s ,  u p c o m i n g  s p r i n t  d a t e
+B u i l d  &  S h i p  R e a l - W o r l d  S o l u t i o n s .  C T A :  J o i n  /  A p p l y
+ D e m o  
+C o m m u n i t y
+C a r d s  s h o w i n g  3  M V P s  f r o m  r e c e n t  e v e n t s  —  c r e d i b i l i t y  b u i l d e r
+V s  h a c k a t h o n s ,  c o d i n g  c l u b s ,  G D G s  —  s i d e - b y - s i d e  c o m p a r i s o n
+ C o n t i n u e
+P a r t n e r s A p p l y  /  J o i n
+H O M E
+A B O U T
+C A M P U S  G U I L D
+→ → → →
+
+--- PAGE 24 ---
+G U I L D S  S A  —  B r a n d  A r c h i t e c t u r e P a g e  2 4
+E V E N T S
+P R O J E C T S
+P r o j e c t  C a r d s
+P A R T N E R S
+C O M M U N I T Y
+A P P L Y  /  J O I N
+U s e r  J o u r n e y
+W h y  P a r t n e r
+B e n e f i t s
+C o n t a c t
+S e l e c t  P a t h
+F o r m
+C o n f i r m a t i o n
+F i l t e r
+F e a t u r e d
+G u i l d  S p r i n t
+G u i l d  H a c k a t h o n
+G u i l d  D e m o  D a y
+W h a t  i s  a  G u i l d e r
+G u i l d  C i r c l e
+S t o r i e s
+P r o b l e m   S o l u t i o n  
+S i m p l e  p a r t n e r  i n q u i r y  f o r m
+ D e m o  
+J u d g i n g  c r i t e r i a ,  p r i z e s ,  s p o n s o r  l i s t
+I n s t a n t  e m a i l  +  W h a t s A p p  g r o u p  i n v i t e
+I d e n t i t y ,  b e l o n g i n g ,  m e m b e r s h i p  p e r k s
+ T e a m  
+S h o r t ,  m o b i l e - f i r s t ,  m a n d a t o r y  f i e l d s  o n l y
+B y  c a m p u s ,  b y  e v e n t ,  b y  t e c h ,  b y  i n d u s t r y
+G u i l d  L a b s  p r o j e c t s  h i g h l i g h t e d  s e p a r a t e l y
+J o i n  a s  S t u d e n t  /  R e g i s t e r  a  T e a m  /  P a r t n e r
+S h o w c a s e  f o r m a t ,  a t t e n d a n c e  i n f o ,  p a s t  d e m o s
+C a s e  s t u d i e s :  s t u d e n t  t o  p r o d u c t ,  s t u d e n t  t o  j o b
+I n n e r  n e t w o r k  —  m e n t o r s h i p ,  t a l k s ,  c o n n e c t i o n s
+F o r m a t ,  r u l e s ,  t i m e l i n e ,  h o w  t o  r e g i s t e r  y o u r  t e a m
+ T e c h  S t a c k
+T a l e n t  p i p e l i n e ,  b r a n d  e x p o s u r e ,  c h a l l e n g e  s p o n s o r s h i p
+D i r e c t  a c c e s s  t o  p r e - v e t t e d ,  e x e c u t i o n - p r o v e n  s t u d e n t  b u i l d e r s
+→ → → →
+
+--- PAGE 25 ---
+D I S C O V E R
+G U I L D S  S A  —  B r a n d  A r c h i t e c t u r e
+L E A R N R E G I S T E R B U I L D D E M O C O N T I N U E E X P O S U R E
+P a g e  2 5
+→ → → → → →
+
+--- PAGE 26 ---
+G U I L D S  S A  —  B r a n d  A r c h i t e c t u r e P a g e  2 6
+T E A M
+C o - f o u n d e r s :  n a m e s ,  r o l e s ,  b a c k g r o u n d s ,  w h y  t h i s ,  w h y  n o w .
+V I S I O N
+ 
+C O V E R
+ 
+I N S I G H T
+ 
+M A R K E T
+U n i v e r s i t i e s +  p r i v a t e  i n s t i t u t i o n s  i n  S A :  2 6  p u b l i c  u n i v e r s i t i e s  +  1 5 0 +  p r i v a t e  c o l l e g e s . 
+P R O B L E M
+ 
+T R A C T I O N
+ 
+S O L U T I O N
+ 
+T H E  P R O D U C T
+ 
+H O W  I T  W O R K S
+ →  →  
+D I F F E R E N T I A T I O N
+ 
+B U S I N E S S  M O D E L
+ 
+1 3
+P i t c h  D e c k  S t r u c t u r e  —  S p o n s o r  &
+P a r t n e r  D e c k
+T h i r t e e n  s l i d e s .  B u i l t  f o r  d e c i s i o n - m a k e r s .  E v e r y  s l i d e  h a s  o n e  j o b .
+B u i l d S h i p P r o v e  
+N o d e  b y  n o d e :  E d u v o s  M e n l y n   P r e t o r i a   J o h a n n e s b u r g   N a t i o n a l  
+G U I L D  S A  —  B u i l d  &  S h i p  R e a l - W o r l d  S o l u t i o n s .  L o g o .  W e b s i t e .  T a g l i n e .
+G u i l d S p r i n t : 1 - d a y b u i l d .  M V P  r e q u i r e d .  R e a l  j u d g i n g .  R e a l  e x p o s u r e .  N o  f l u f f .
+[ P o s t - p i l o t ] X G u i l d e r s .  X  M V P s  s h i p p e d .  X  c a m p u s e s .  R e a l  n u m b e r s ,  r e a l  r e s u l t s .
+ L a u n c h .  P i p e l i n e  d i a g r a m .  E a c h  s t a g e  e x p l a i n e d  i n  o n e  l i n e .
+G U I L D  S A : c a m p u s - b a s e d ,  M V P - d r i v e n ,  i n d u s t r y - c o n n e c t e d .  A  s y s t e m ,  n o t  a n  e v e n t .
+P a r t n e r  a c c e s s  t o  t a l e n t .  E v e n t  s p o n s o r s h i p s .  F u t u r e :  e q u i t y  p a r t i c i p a t i o n  i n  G u i l d  L a b s .
+ C o n t i n e n t a l .
+T a l e n t  i s  p r o v e n  t h r o u g h  e x e c u t i o n ,  n o t  t h e o r y .  T h e  o n l y  r e a l  p o r t f o l i o  i s  s h i p p e d  p r o d u c t .
+S t u d e n t s  l e a r n ,  t h e y  d o n ' t  b u i l d .  C o m p a n i e s  c a n ' t  f i n d  p r o v e n  t a l e n t .  T h e  g a p  i s  e x e c u t i o n .
+v s H a c k a t h o n s : w e r e q u i r e  o u t p u t .  v s  G D G s :  w e ' r e  S A - f o c u s e d .  v s  b o o t c a m p s :  w e  d o n ' t  t e a c h .
+0 1
+0 2
+0 3
+0 4
+0 5
+0 6
+0 7
+0 8
+0 9
+1 0
+1 1
+1 2
+→
+→ → → →
+
+--- PAGE 27 ---
+G U I L D S  S A  —  B r a n d  A r c h i t e c t u r e P a g e  2 7
+1 3
+A S K
+W h a t  w e  n e e d :  s p o n s o r  a m o u n t ,  p a r t n e r s h i p  t y p e ,  c a m p u s  e x p a n s i o n  s u p p o r t .
+
+--- PAGE 28 ---
+G U I L D S  S A  —  B r a n d  A r c h i t e c t u r e
+g u i l d s a . c o . z a  ·  @ g u i l d . s a  ·  E d u v o s  M e n l y n ,  P r e t o r i a
+P a g e  2 8
+B u i l d  &  S h i p .
+R eal  S o l u t i o n s  O n l y .

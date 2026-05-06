@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Join | GUILD SA</title>
+  <meta name="description" content="Join GUILD SA as a student, team, mentor, or partner.">
+  <link rel="icon" type="image/png" href="https://res.cloudinary.com/dgwtaivvf/image/upload/v1777213445/Glass_Symbol_polfar.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300..700&family=Inter:wght@400;500;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+  <nav class="site-nav" aria-label="Primary navigation">
+    <div class="nav-inner">
+      <a href="/index.html" class="brand-lockup" aria-label="GUILD SA home"><img class="brand-logo" src="https://res.cloudinary.com/dgwtaivvf/image/upload/v1777998013/Master_Logo_buvhmu.png" alt="" aria-hidden="true"></a>
+    </div>
+  </nav>
+
+  <main>
+    <section class="page-hero compact join-hero">
+      <div class="shell">
+        <p class="eyebrow reveal">06 / Apply / Join</p>
+        <h1 class="reveal" data-motion="left">Enter the Sprint.</h1>
+        <p class="hero-copy reveal">Join as a student, register a team, mentor builders, sponsor a challenge, or help expand GUILD SA to the next campus node.</p>
+      </div>
+    </section>
+
+    <section class="site-section join-section">
+      <div class="shell">
+        <div class="section-header">
+          <div class="section-number reveal">01</div>
+          <div>
+            <p class="kicker reveal">Start here</p>
+            <h2 class="reveal">Answer a few sharp questions. We route the rest.</h2>
+            <p class="section-intro reveal">Pick the path that fits you. Each form keeps one decision in front of you at a time, then prepares the message for the right GUILD SA team.</p>
+          </div>
+        </div>
+        <div class="join-flow reveal" data-motion="up" data-join-flow>
+          <div class="join-tabs" role="tablist" aria-label="Join form type">
+            <button class="join-tab is-active" type="button" role="tab" aria-selected="true" aria-controls="student-form" id="student-tab" data-join-tab="student">Student event signup</button>
+            <button class="join-tab" type="button" role="tab" aria-selected="false" aria-controls="partner-form" id="partner-tab" data-join-tab="partner">Sponsor / partnership</button>
+          </div>
+
+          <form class="typeform-form is-active" id="student-form" role="tabpanel" aria-labelledby="student-tab" data-join-form="student" data-recipient="hello@guildsa.co.za" data-subject="Student event signup">
+            <div class="form-progress" aria-hidden="true"><span></span></div>
+            <div class="typeform-step is-active" data-step>
+              <span class="index">01 / Student</span>
+              <label for="student-name">First, what should we call you?</label>
+              <input id="student-name" name="Name" type="text" autocomplete="name" placeholder="Your full name" required>
+            </div>
+            <div class="typeform-step" data-step>
+              <span class="index">02 / Contact</span>
+              <label for="student-email">Where can we send event details?</label>
+              <input id="student-email" name="Email" type="email" autocomplete="email" placeholder="you@example.com" required>
+            </div>
+            <div class="typeform-step" data-step>
+              <span class="index">03 / Campus</span>
+              <label for="student-campus">Which institution are you from?</label>
+              <input id="student-campus" name="Institution" type="text" placeholder="University, college, bootcamp, or school" required>
+            </div>
+            <div class="typeform-step" data-step>
+              <span class="index">04 / Role</span>
+              <fieldset>
+                <legend>How are you entering the sprint?</legend>
+                <div class="choice-grid">
+                  <label><input type="radio" name="Entry path" value="Solo builder" required><span>Solo builder</span></label>
+                  <label><input type="radio" name="Entry path" value="With a team"><span>With a team</span></label>
+                  <label><input type="radio" name="Entry path" value="Looking for a team"><span>Looking for a team</span></label>
+                </div>
+              </fieldset>
+            </div>
+            <div class="typeform-step" data-step>
+              <span class="index">05 / Signal</span>
+              <label for="student-link">Show us one link if you have one.</label>
+              <input id="student-link" name="Portfolio or GitHub" type="url" placeholder="GitHub, portfolio, LinkedIn, or project link">
+            </div>
+            <div class="typeform-step" data-step>
+              <span class="index">06 / Idea</span>
+              <label for="student-idea">What do you want to build or learn at the event?</label>
+              <textarea id="student-idea" name="Build interest" rows="4" placeholder="A rough idea is enough. Constraints make it real." required></textarea>
+            </div>
+            <div class="typeform-actions">
+              <button class="button secondary" type="button" data-form-back>Back</button>
+              <button class="button" type="button" data-form-next>Next</button>
+              <button class="button" type="submit" data-form-submit>Send signup</button>
+            </div>
+            <p class="form-note" data-form-status aria-live="polite"></p>
+          </form>
+
+          <form class="typeform-form" id="partner-form" role="tabpanel" aria-labelledby="partner-tab" data-join-form="partner" data-recipient="partners@guildsa.co.za" data-subject="Sponsor and partnership enquiry" hidden>
+            <div class="form-progress" aria-hidden="true"><span></span></div>
+            <div class="typeform-step is-active" data-step>
+              <span class="index">01 / Partner</span>
+              <label for="partner-name">Who is leading this conversation?</label>
+              <input id="partner-name" name="Contact name" type="text" autocomplete="name" placeholder="Your name" required>
+            </div>
+            <div class="typeform-step" data-step>
+              <span class="index">02 / Company</span>
+              <label for="partner-company">Which organisation are you representing?</label>
+              <input id="partner-company" name="Organisation" type="text" placeholder="Company, fund, campus, or community" required>
+            </div>
+            <div class="typeform-step" data-step>
+              <span class="index">03 / Email</span>
+              <label for="partner-email">Where should we reply?</label>
+              <input id="partner-email" name="Email" type="email" autocomplete="email" placeholder="name@company.com" required>
+            </div>
+            <div class="typeform-step" data-step>
+              <span class="index">04 / Partnership</span>
+              <fieldset>
+                <legend>What kind of partnership are you exploring?</legend>
+                <div class="choice-grid">
+                  <label><input type="radio" name="Partnership type" value="Event sponsor" required><span>Event sponsor</span></label>
+                  <label><input type="radio" name="Partnership type" value="Challenge brief"><span>Challenge brief</span></label>
+                  <label><input type="radio" name="Partnership type" value="Mentorship"><span>Mentorship</span></label>
+                  <label><input type="radio" name="Partnership type" value="Campus expansion"><span>Campus expansion</span></label>
+                </div>
+              </fieldset>
+            </div>
+            <div class="typeform-step" data-step>
+              <span class="index">05 / Scope</span>
+              <label for="partner-scope">What outcome would make this useful for you?</label>
+              <textarea id="partner-scope" name="Partnership outcome" rows="4" placeholder="Talent access, brand visibility, product testing, campus activation..." required></textarea>
+            </div>
+            <div class="typeform-step" data-step>
+              <span class="index">06 / Timing</span>
+              <label for="partner-timeline">When would you like to move?</label>
+              <select id="partner-timeline" name="Timeline" required>
+                <option value="">Select timing</option>
+                <option>Immediately</option>
+                <option>This quarter</option>
+                <option>Next quarter</option>
+                <option>Still exploring</option>
+              </select>
+            </div>
+            <div class="typeform-actions">
+              <button class="button secondary" type="button" data-form-back>Back</button>
+              <button class="button" type="button" data-form-next>Next</button>
+              <button class="button" type="submit" data-form-submit>Send enquiry</button>
+            </div>
+            <p class="form-note" data-form-status aria-live="polite"></p>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <section class="site-section dark">
+      <div class="shell">
+        <div class="section-header">
+          <div class="section-number reveal">05</div>
+          <div>
+            <p class="kicker reveal">What happens next</p>
+            <h2 class="reveal">No vague community funnel.</h2>
+            <p class="section-intro reveal">You receive the rules, team expectations, what to bring, Wi-Fi details, event timing, and the link to the participant group. The goal is readiness, not hype.</p>
+          </div>
+        </div>
+        <div class="grid three">
+          <article class="card reveal"><span class="index">Confirm</span><h3>Event rules sent</h3><p>Participants receive the sprint rules, judging criteria, and what to prepare.</p></article>
+          <article class="card reveal"><span class="index">Connect</span><h3>Join the group</h3><p>Teams enter the WhatsApp or Discord group before event day.</p></article>
+          <article class="card reveal"><span class="index">Arrive</span><h3>Build starts fast</h3><p>Check-in, lanyards, team confirmation, and opening ceremony move quickly.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="site-section">
+      <div class="shell quote-block reveal" data-motion="scale"><p>Build for SA. Built by SA.</p></div>
+    </section>
+  </main>
+
+  <footer class="footer" data-guild-footer></footer>
+  <script type="module" src="/scene.js"></script>
+  <script type="module" src="/app.js"></script>
+</body>
+</html>
