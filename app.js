@@ -10,20 +10,20 @@ const guildFooterHTML = `
           <h2>Meet the people building the system.</h2>
         </div>
         <div class="footer-social">
-          <img src="https://res.cloudinary.com/dgwtaivvf/image/upload/v1777213445/Glass_Symbol_polfar.png" alt="" aria-hidden="true">
+          <img src="https://res.cloudinary.com/dgwtaivvf/image/upload/v1777998013/Master_Logo_buvhmu.png" alt="" aria-hidden="true">
           <div><strong>@guild.sa</strong><span>Follow the build</span></div>
         </div>
       </div>
       <div class="founder-carousel">
         <div class="founder-track">
-          <figure class="founder-card"><img src="https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?auto=format&fit=crop&w=700&q=82" alt="Murunzi Tharaga portrait"><figcaption><strong>Murunzi Tharaga</strong><span>Co-Founder & Creative Director</span></figcaption></figure>
-          <figure class="founder-card"><img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=700&q=82" alt="Thomas Murashidzi portrait"><figcaption><strong>Thomas Murashidzi</strong><span>Co-Founder & Technical Lead</span></figcaption></figure>
-          <figure class="founder-card"><img src="https://images.unsplash.com/photo-1508214751196-bcfd4ca60f91?auto=format&fit=crop&w=700&q=82" alt="Eben Mwema portrait"><figcaption><strong>Eben Mwema</strong><span>Co-Founder & Product Lead</span></figcaption></figure>
-          <figure class="founder-card"><img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=700&q=82" alt="Ratjatji Malatji portrait"><figcaption><strong>Ratjatji Malatji</strong><span>Co-Founder & Community Lead</span></figcaption></figure>
-          <figure class="founder-card"><img src="https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?auto=format&fit=crop&w=700&q=82" alt="Murunzi Tharaga portrait"><figcaption><strong>Murunzi Tharaga</strong><span>Co-Founder & Creative Director</span></figcaption></figure>
-          <figure class="founder-card"><img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=700&q=82" alt="Thomas Murashidzi portrait"><figcaption><strong>Thomas Murashidzi</strong><span>Co-Founder & Technical Lead</span></figcaption></figure>
-          <figure class="founder-card"><img src="https://images.unsplash.com/photo-1508214751196-bcfd4ca60f91?auto=format&fit=crop&w=700&q=82" alt="Eben Mwema portrait"><figcaption><strong>Eben Mwema</strong><span>Co-Founder & Product Lead</span></figcaption></figure>
-          <figure class="founder-card"><img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=700&q=82" alt="Ratjatji Malatji portrait"><figcaption><strong>Ratjatji Malatji</strong><span>Co-Founder & Community Lead</span></figcaption></figure>
+          <figure class="founder-card"><img src="https://res.cloudinary.com/dgwtaivvf/image/upload/v1777211575/Founders_Table_rkvq1q.png" alt="GUILD SA founders table"><figcaption><strong>Murunzi Tharaga</strong><span>Co-Founder & Creative Director</span></figcaption></figure>
+          <figure class="founder-card"><img src="https://res.cloudinary.com/dgwtaivvf/image/upload/v1777998003/Hackathon_team_zrlwkj.jpg" alt="GUILD SA hackathon team"><figcaption><strong>Thomas Murashidzi</strong><span>Co-Founder & Technical Lead</span></figcaption></figure>
+          <figure class="founder-card"><img src="https://res.cloudinary.com/dgwtaivvf/image/upload/v1777998032/Guild_Hackathon_promotional_poster_on_window_su0yhg.png" alt="GUILD SA promotional poster"><figcaption><strong>Eben Mwema</strong><span>Co-Founder & Product Lead</span></figcaption></figure>
+          <figure class="founder-card"><img src="https://res.cloudinary.com/dgwtaivvf/image/upload/v1777998022/Brand_Flags_izzch1.png" alt="GUILD SA brand flags"><figcaption><strong>Ratjatji Malatji</strong><span>Co-Founder & Community Lead</span></figcaption></figure>
+          <figure class="founder-card"><img src="https://res.cloudinary.com/dgwtaivvf/image/upload/v1777211575/Founders_Table_rkvq1q.png" alt="GUILD SA founders table"><figcaption><strong>Murunzi Tharaga</strong><span>Co-Founder & Creative Director</span></figcaption></figure>
+          <figure class="founder-card"><img src="https://res.cloudinary.com/dgwtaivvf/image/upload/v1777998003/Hackathon_team_zrlwkj.jpg" alt="GUILD SA hackathon team"><figcaption><strong>Thomas Murashidzi</strong><span>Co-Founder & Technical Lead</span></figcaption></figure>
+          <figure class="founder-card"><img src="https://res.cloudinary.com/dgwtaivvf/image/upload/v1777998032/Guild_Hackathon_promotional_poster_on_window_su0yhg.png" alt="GUILD SA promotional poster"><figcaption><strong>Eben Mwema</strong><span>Co-Founder & Product Lead</span></figcaption></figure>
+          <figure class="founder-card"><img src="https://res.cloudinary.com/dgwtaivvf/image/upload/v1777998022/Brand_Flags_izzch1.png" alt="GUILD SA brand flags"><figcaption><strong>Ratjatji Malatji</strong><span>Co-Founder & Community Lead</span></figcaption></figure>
         </div>
       </div>
     </section>
@@ -885,13 +885,13 @@ function initCardHoverPreviews() {
   if (!previewTarget || document.querySelector('.hover-preview-plane')) return
 
   const previewImages = [
-    'https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=crop&w=900&q=82',
-    'https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&w=900&q=82',
-    'https://images.unsplash.com/photo-1521737604893-d14cc237f11d?auto=format&fit=crop&w=900&q=82',
-    'https://images.unsplash.com/photo-1497366754035-f200968a6e72?auto=format&fit=crop&w=900&q=82',
-    'https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&w=900&q=82',
-    'https://images.unsplash.com/photo-1556761175-b413da4baf72?auto=format&fit=crop&w=900&q=82',
-    'https://images.unsplash.com/photo-1540317580384-e5d43616b9aa?auto=format&fit=crop&w=900&q=82',
+    'https://res.cloudinary.com/dgwtaivvf/image/upload/v1777998003/Hackathon_team_zrlwkj.jpg',
+    'https://res.cloudinary.com/dgwtaivvf/image/upload/v1777211575/Founders_Table_rkvq1q.png',
+    'https://res.cloudinary.com/dgwtaivvf/image/upload/v1777998011/Billboard2_evpkx2.png',
+    'https://res.cloudinary.com/dgwtaivvf/image/upload/v1777998022/Brand_Flags_izzch1.png',
+    'https://res.cloudinary.com/dgwtaivvf/image/upload/v1777998032/Guild_Hackathon_promotional_poster_on_window_su0yhg.png',
+    'https://res.cloudinary.com/dgwtaivvf/image/upload/v1777998038/hack_poster_e6kyfr.png',
+    'https://res.cloudinary.com/dgwtaivvf/image/upload/v1777998053/Poster_on_car_paozhi.png',
   ]
 
   const preview = document.createElement('div')
