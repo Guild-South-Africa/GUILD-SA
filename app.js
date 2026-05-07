@@ -6,7 +6,7 @@ const guildFooterHTML = `
     <section class="founders-panel" aria-label="GUILD SA founders">
       <div class="footer-heading">
         <div>
-          <p class="kicker">Founder circle</p>
+          <p class="kicker">Co-founder circle</p>
           <h2>Meet the people building the system.</h2>
         </div>
         <div class="footer-social">
@@ -16,14 +16,14 @@ const guildFooterHTML = `
       </div>
       <div class="founder-carousel">
         <div class="founder-track">
-          <figure class="founder-card"><img src="https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?auto=format&fit=crop&w=700&q=82" alt="Core operator portrait"><figcaption><strong>Founder</strong><span>Brand Vision</span></figcaption></figure>
-          <figure class="founder-card"><img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=700&q=82" alt="Core operator portrait"><figcaption><strong>Operations</strong><span>Sprint Delivery</span></figcaption></figure>
-          <figure class="founder-card"><img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=700&q=82" alt="Core operator portrait"><figcaption><strong>Community</strong><span>Campus Network</span></figcaption></figure>
-          <figure class="founder-card"><img src="https://images.unsplash.com/photo-1508214751196-bcfd4ca60f91?auto=format&fit=crop&w=700&q=82" alt="Core operator portrait"><figcaption><strong>Creative</strong><span>Experience Direction</span></figcaption></figure>
-          <figure class="founder-card"><img src="https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?auto=format&fit=crop&w=700&q=82" alt="Core operator portrait"><figcaption><strong>Founder</strong><span>Brand Vision</span></figcaption></figure>
-          <figure class="founder-card"><img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=700&q=82" alt="Core operator portrait"><figcaption><strong>Operations</strong><span>Sprint Delivery</span></figcaption></figure>
-          <figure class="founder-card"><img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=700&q=82" alt="Core operator portrait"><figcaption><strong>Community</strong><span>Campus Network</span></figcaption></figure>
-          <figure class="founder-card"><img src="https://images.unsplash.com/photo-1508214751196-bcfd4ca60f91?auto=format&fit=crop&w=700&q=82" alt="Core operator portrait"><figcaption><strong>Creative</strong><span>Experience Direction</span></figcaption></figure>
+          <figure class="founder-card"><img src="https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?auto=format&fit=crop&w=700&q=82" alt="Murunzi Tharaga portrait"><figcaption><strong>Murunzi Tharaga</strong><span>Co-Founder & Creative Director</span></figcaption></figure>
+          <figure class="founder-card"><img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=700&q=82" alt="Thomas Murashidzi portrait"><figcaption><strong>Thomas Murashidzi</strong><span>Co-Founder & Technical Lead</span></figcaption></figure>
+          <figure class="founder-card"><img src="https://images.unsplash.com/photo-1508214751196-bcfd4ca60f91?auto=format&fit=crop&w=700&q=82" alt="Eben Mwema portrait"><figcaption><strong>Eben Mwema</strong><span>Co-Founder & Product Lead</span></figcaption></figure>
+          <figure class="founder-card"><img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=700&q=82" alt="Ratjatji Malatji portrait"><figcaption><strong>Ratjatji Malatji</strong><span>Co-Founder & Community Lead</span></figcaption></figure>
+          <figure class="founder-card"><img src="https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?auto=format&fit=crop&w=700&q=82" alt="Murunzi Tharaga portrait"><figcaption><strong>Murunzi Tharaga</strong><span>Co-Founder & Creative Director</span></figcaption></figure>
+          <figure class="founder-card"><img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=700&q=82" alt="Thomas Murashidzi portrait"><figcaption><strong>Thomas Murashidzi</strong><span>Co-Founder & Technical Lead</span></figcaption></figure>
+          <figure class="founder-card"><img src="https://images.unsplash.com/photo-1508214751196-bcfd4ca60f91?auto=format&fit=crop&w=700&q=82" alt="Eben Mwema portrait"><figcaption><strong>Eben Mwema</strong><span>Co-Founder & Product Lead</span></figcaption></figure>
+          <figure class="founder-card"><img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=700&q=82" alt="Ratjatji Malatji portrait"><figcaption><strong>Ratjatji Malatji</strong><span>Co-Founder & Community Lead</span></figcaption></figure>
         </div>
       </div>
     </section>
@@ -255,6 +255,10 @@ function initGuildMenu() {
   menu.innerHTML = `
     <button class="guild-menu-overlay" type="button" data-menu-close aria-label="Close navigation"></button>
     <aside class="guild-menu-panel" aria-label="Expanded navigation">
+      <button class="guild-menu-close" type="button" data-menu-close aria-label="Close navigation">
+        <span></span>
+        <span></span>
+      </button>
       <div class="guild-menu-bg" aria-hidden="true">
         <div class="guild-menu-bg-panel is-orange"></div>
         <div class="guild-menu-bg-panel is-soft"></div>
@@ -348,7 +352,7 @@ function initGuildMenu() {
   }
 
   async function closeMenu() {
-    if (isAnimating || menu.dataset.nav === 'closed') return
+    if (menu.dataset.nav === 'closed') return
     isAnimating = true
     cancelMenuAnimations()
     menu.dataset.nav = 'closed'
@@ -519,6 +523,17 @@ function initJoinForms() {
 
   tabs.forEach((tab) => {
     tab.addEventListener('click', () => setActiveForm(tab.dataset.joinTab))
+  })
+
+  document.querySelectorAll('[data-join-open]').forEach((trigger) => {
+    trigger.addEventListener('click', () => {
+      const type = trigger.dataset.joinOpen || 'student'
+      setActiveForm(type)
+      document.getElementById('application-flow')?.scrollIntoView({
+        behavior: 'smooth',
+        block: 'start',
+      })
+    })
   })
 
   forms.forEach((form) => {
@@ -980,6 +995,12 @@ updateScrollMotion()
 const symbolCard = document.querySelector('.hero-symbol-card')
 
 if (symbolCard && window.matchMedia('(pointer: fine)').matches) {
+  const homeCursorSymbol = document.createElement('div')
+  homeCursorSymbol.className = 'cursor-symbol home-symbol-cursor'
+  homeCursorSymbol.setAttribute('aria-hidden', 'true')
+  homeCursorSymbol.innerHTML = '<img src="https://res.cloudinary.com/dgwtaivvf/image/upload/v1777213445/Glass_Symbol_polfar.png" alt="">'
+  document.body.appendChild(homeCursorSymbol)
+
   const state = {
     targetX: window.innerWidth * 0.72,
     targetY: window.innerHeight * 0.48,
@@ -989,44 +1010,45 @@ if (symbolCard && window.matchMedia('(pointer: fine)').matches) {
     previousY: window.innerHeight * 0.48,
     size: 0,
     active: false,
+    pointerSeen: false,
   }
 
   const setTargetFromPointer = (event) => {
+    if (event.pointerType === 'touch') return
     state.targetX = event.clientX
     state.targetY = event.clientY
+    state.pointerSeen = true
   }
 
   const updateSymbolSize = () => {
     const viewport = window.innerHeight || 1
     const hero = document.querySelector('.page-hero')
-    const heroBottom = hero ? hero.offsetTop + hero.offsetHeight : viewport
-    const activationPoint = Math.max(heroBottom - viewport * 0.62, 80)
-    const progress = Math.min(Math.max((window.scrollY - activationPoint) / (viewport * 0.82), 0), 1)
+    const heroRect = hero ? hero.getBoundingClientRect() : { bottom: viewport }
+    const progress = Math.min(Math.max((viewport * 0.74 - heroRect.bottom) / (viewport * 0.82), 0), 1)
     const maxSize = Math.min(Math.max(window.innerWidth * 0.28, 260), 520)
     const minSize = window.innerWidth < 760 ? 86 : 118
     state.size = Math.round(maxSize - (maxSize - minSize) * progress)
-    state.active = window.scrollY > activationPoint
+    state.active = progress > 0.02
     document.body.classList.toggle('symbol-following', state.active)
-    symbolCard.style.setProperty('--symbol-size', `${state.size}px`)
+    homeCursorSymbol.classList.toggle('is-active', state.active)
+    homeCursorSymbol.style.setProperty('--symbol-size', `${state.size}px`)
   }
 
   const animateSymbol = () => {
     state.previousX = state.x
     state.previousY = state.y
-    const followStrength = state.active ? 0.22 : 0.14
+    const followStrength = state.active ? 0.18 : 0.12
     state.x += (state.targetX - state.x) * followStrength
     state.y += (state.targetY - state.y) * followStrength
     const velocityX = state.x - state.previousX
     const velocityY = state.y - state.previousY
-    const tilt = Math.max(Math.min(velocityX * 0.1, 9), -9)
-    const lift = Math.max(Math.min(velocityY * -0.045, 5), -5)
+    const tilt = Math.max(Math.min(velocityX * 0.12, 10), -10)
     const travel = Math.min(Math.hypot(velocityX, velocityY), 28)
     const scale = state.active ? 1 + travel * 0.0018 : 1
-    symbolCard.style.setProperty('--symbol-x', `${state.x.toFixed(2)}px`)
-    symbolCard.style.setProperty('--symbol-y', `${state.y.toFixed(2)}px`)
-    symbolCard.style.setProperty('--symbol-tilt', `${tilt.toFixed(2)}deg`)
-    symbolCard.style.setProperty('--symbol-lift', `${lift.toFixed(2)}deg`)
-    symbolCard.style.setProperty('--symbol-follow-scale', scale.toFixed(3))
+    homeCursorSymbol.style.setProperty('--symbol-x', `${state.x.toFixed(2)}px`)
+    homeCursorSymbol.style.setProperty('--symbol-y', `${state.y.toFixed(2)}px`)
+    homeCursorSymbol.style.setProperty('--symbol-tilt', `${tilt.toFixed(2)}deg`)
+    homeCursorSymbol.style.setProperty('--symbol-follow-scale', scale.toFixed(3))
     requestAnimationFrame(animateSymbol)
   }
 

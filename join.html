@@ -23,7 +23,15 @@
       <div class="shell">
         <p class="eyebrow reveal">06 / Apply / Join</p>
         <h1 class="reveal" data-motion="left">Enter the Sprint.</h1>
-        <p class="hero-copy reveal">Join as a student, register a team, mentor builders, sponsor a challenge, or help expand GUILD SA to the next campus node.</p>
+        <p class="hero-copy reveal">GUILD SA is designed for people who want to build, contribute, and move ideas into visible execution.</p>
+        <div class="join-hero-paths reveal" data-motion="up" aria-label="Ways to join GUILD SA">
+          <span>Student builder</span>
+          <span>Team</span>
+          <span>Mentor</span>
+          <span>Sponsor</span>
+          <span>Campus operator</span>
+          <span>Ecosystem partner</span>
+        </div>
       </div>
     </section>
 
@@ -33,14 +41,54 @@
           <div class="section-number reveal">01</div>
           <div>
             <p class="kicker reveal">Start here</p>
-            <h2 class="reveal">Answer a few sharp questions. We route the rest.</h2>
-            <p class="section-intro reveal">Pick the path that fits you. Each form keeps one decision in front of you at a time, then prepares the message for the right GUILD SA team.</p>
+            <h2 class="reveal">Choose your entry point.</h2>
+            <p class="section-intro reveal">The onboarding system routes builders, mentors, and partners into the right layer of the ecosystem. Each path asks focused questions, captures the right signal, and prepares the next stage of engagement.</p>
           </div>
         </div>
+
+        <div class="join-entry-grid reveal" data-motion="up">
+          <article class="join-entry-card">
+            <span class="index">01 / Student Builder</span>
+            <h3>Join a sprint environment.</h3>
+            <p>Register as an individual participant and enter a structured build ecosystem focused on collaboration, execution, and shipped outcomes.</p>
+            <button class="button secondary" type="button" data-join-open="student">Apply as Student</button>
+          </article>
+          <article class="join-entry-card">
+            <span class="index">02 / Team Registration</span>
+            <h3>Build with your crew.</h3>
+            <p>Register an existing team, define roles, submit project direction, and prepare for the sprint environment together.</p>
+            <button class="button secondary" type="button" data-join-open="student">Register Team</button>
+          </article>
+          <article class="join-entry-card">
+            <span class="index">03 / Mentor Pathway</span>
+            <h3>Guide the next generation of builders.</h3>
+            <p>Support teams through technical guidance, product thinking, feedback, evaluation, and industry insight.</p>
+            <button class="button secondary" type="button" data-join-open="student">Become a Mentor</button>
+          </article>
+          <article class="join-entry-card">
+            <span class="index">04 / Partner / Sponsor</span>
+            <h3>Connect directly to execution-ready talent.</h3>
+            <p>Sponsor challenge tracks, mentor teams, introduce tools, or support ecosystem growth.</p>
+            <button class="button secondary" type="button" data-join-open="partner">Partner With GUILD SA</button>
+          </article>
+          <article class="join-entry-card is-wide">
+            <span class="index">05 / Campus Guild</span>
+            <h3>Launch the next node.</h3>
+            <p>Help establish a Campus Guild inside your institution and connect local builders into the national ecosystem.</p>
+            <button class="button secondary" type="button" data-join-open="partner">Start a Campus Guild</button>
+          </article>
+        </div>
+
+        <div class="join-application-intro" id="application-flow">
+          <p class="kicker reveal">Application flow</p>
+          <h2 class="reveal">One step at a time.</h2>
+          <p class="section-intro reveal">The onboarding experience is intentionally focused and low-friction. Every form reduces confusion, captures relevant signal, simplifies entry, and prepares participants for execution.</p>
+        </div>
+
         <div class="join-flow reveal" data-motion="up" data-join-flow>
           <div class="join-tabs" role="tablist" aria-label="Join form type">
-            <button class="join-tab is-active" type="button" role="tab" aria-selected="true" aria-controls="student-form" id="student-tab" data-join-tab="student">Student event signup</button>
-            <button class="join-tab" type="button" role="tab" aria-selected="false" aria-controls="partner-form" id="partner-tab" data-join-tab="partner">Sponsor / partnership</button>
+            <button class="join-tab is-active" type="button" role="tab" aria-selected="true" aria-controls="student-form" id="student-tab" data-join-tab="student">Builder application</button>
+            <button class="join-tab" type="button" role="tab" aria-selected="false" aria-controls="partner-form" id="partner-tab" data-join-tab="partner">Partner / ecosystem access</button>
           </div>
 
           <form class="typeform-form is-active" id="student-form" role="tabpanel" aria-labelledby="student-tab" data-join-form="student" data-recipient="hello@guildsa.co.za" data-subject="Student event signup">
@@ -145,26 +193,33 @@
       </div>
     </section>
 
-    <section class="site-section dark">
+    <section class="site-section dark join-readiness-section">
       <div class="shell">
         <div class="section-header">
           <div class="section-number reveal">05</div>
           <div>
             <p class="kicker reveal">What happens next</p>
-            <h2 class="reveal">No vague community funnel.</h2>
-            <p class="section-intro reveal">You receive the rules, team expectations, what to bring, Wi-Fi details, event timing, and the link to the participant group. The goal is readiness, not hype.</p>
+            <h2 class="reveal join-readiness-statement">Readiness before hype.</h2>
+            <p class="section-intro reveal">Once accepted into the ecosystem, participants receive the information needed to enter the sprint environment fully prepared. The goal is not vague community engagement. The goal is operational readiness.</p>
           </div>
         </div>
-        <div class="grid three">
-          <article class="card reveal"><span class="index">Confirm</span><h3>Event rules sent</h3><p>Participants receive the sprint rules, judging criteria, and what to prepare.</p></article>
-          <article class="card reveal"><span class="index">Connect</span><h3>Join the group</h3><p>Teams enter the WhatsApp or Discord group before event day.</p></article>
-          <article class="card reveal"><span class="index">Arrive</span><h3>Build starts fast</h3><p>Check-in, lanyards, team confirmation, and opening ceremony move quickly.</p></article>
+        <div class="grid three join-next-grid">
+          <article class="card reveal"><span class="index">Confirm</span><h3>Receive the framework.</h3><p>Participants receive sprint rules, judging logic, expectations, technical requirements, and preparation guidance.</p></article>
+          <article class="card reveal"><span class="index">Connect</span><h3>Enter the network.</h3><p>Teams join official WhatsApp groups, Discord channels, sprint communication systems, and collaboration spaces before event day.</p></article>
+          <article class="card reveal"><span class="index">Arrive</span><h3>The build starts immediately.</h3><p>Check-in systems, badges, team verification, and opening structures move quickly so teams can focus on execution.</p></article>
         </div>
       </div>
     </section>
 
-    <section class="site-section">
-      <div class="shell quote-block reveal" data-motion="scale"><p>Build for SA. Built by SA.</p></div>
+    <section class="site-section join-final-section">
+      <div class="shell">
+        <div class="join-final reveal" data-motion="scale">
+          <p class="kicker">Final call</p>
+          <h2>Build for South Africa. Build with intent.</h2>
+          <p>GUILD SA creates environments where builders collaborate seriously, execute visibly, solve meaningful problems, and move beyond passive learning.</p>
+          <a class="button" href="#application-flow">Enter ready to build</a>
+        </div>
+      </div>
     </section>
   </main>
 

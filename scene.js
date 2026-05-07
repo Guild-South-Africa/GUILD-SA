@@ -59,9 +59,9 @@ function createDotTexture() {
   canvas.height = 64
   const context = canvas.getContext('2d')
   const gradient = context.createRadialGradient(32, 32, 0, 32, 32, 28)
-  gradient.addColorStop(0, 'rgba(10, 10, 10, 0.95)')
-  gradient.addColorStop(0.44, 'rgba(10, 10, 10, 0.75)')
-  gradient.addColorStop(1, 'rgba(10, 10, 10, 0)')
+  gradient.addColorStop(0, 'rgba(240, 124, 0, 0.95)')
+  gradient.addColorStop(0.44, 'rgba(240, 124, 0, 0.7)')
+  gradient.addColorStop(1, 'rgba(240, 124, 0, 0)')
   context.fillStyle = gradient
   context.beginPath()
   context.arc(32, 32, 28, 0, Math.PI * 2)
@@ -97,12 +97,12 @@ const waveGeometry = new THREE.BufferGeometry()
 waveGeometry.setAttribute('position', new THREE.BufferAttribute(wavePositions, 3))
 
 const waveMaterial = new THREE.PointsMaterial({
-  color: 0x0a0a0a,
+  color: 0xf07c00,
   map: createDotTexture(),
   size: 6,
   sizeAttenuation: true,
   transparent: true,
-  opacity: 0.58,
+  opacity: 0.68,
   depthWrite: false,
 })
 
