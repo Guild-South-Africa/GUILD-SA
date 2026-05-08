@@ -10,20 +10,20 @@ const guildFooterHTML = `
           <h2>Meet the people building the system.</h2>
         </div>
         <div class="footer-social">
-          <img src="https://res.cloudinary.com/dgwtaivvf/image/upload/v1777998013/Master_Logo_buvhmu.png" alt="" aria-hidden="true">
+          <img src="https://res.cloudinary.com/dgwtaivvf/image/upload/v1777998000/Glass_Symbol_xgsngz.png" alt="" aria-hidden="true">
           <div><strong>@guild.sa</strong><span>Follow the build</span></div>
         </div>
       </div>
       <div class="founder-carousel">
         <div class="founder-track">
-          <figure class="founder-card"><img src="https://res.cloudinary.com/dgwtaivvf/image/upload/v1777211575/Founders_Table_rkvq1q.png" alt="GUILD SA founders table"><figcaption><strong>Murunzi Tharaga</strong><span>Co-Founder & Creative Director</span></figcaption></figure>
-          <figure class="founder-card"><img src="https://res.cloudinary.com/dgwtaivvf/image/upload/v1777998003/Hackathon_team_zrlwkj.jpg" alt="GUILD SA hackathon team"><figcaption><strong>Thomas Murashidzi</strong><span>Co-Founder & Technical Lead</span></figcaption></figure>
-          <figure class="founder-card"><img src="https://res.cloudinary.com/dgwtaivvf/image/upload/v1777998032/Guild_Hackathon_promotional_poster_on_window_su0yhg.png" alt="GUILD SA promotional poster"><figcaption><strong>Eben Mwema</strong><span>Co-Founder & Product Lead</span></figcaption></figure>
-          <figure class="founder-card"><img src="https://res.cloudinary.com/dgwtaivvf/image/upload/v1777998022/Brand_Flags_izzch1.png" alt="GUILD SA brand flags"><figcaption><strong>Ratjatji Malatji</strong><span>Co-Founder & Community Lead</span></figcaption></figure>
-          <figure class="founder-card"><img src="https://res.cloudinary.com/dgwtaivvf/image/upload/v1777211575/Founders_Table_rkvq1q.png" alt="GUILD SA founders table"><figcaption><strong>Murunzi Tharaga</strong><span>Co-Founder & Creative Director</span></figcaption></figure>
-          <figure class="founder-card"><img src="https://res.cloudinary.com/dgwtaivvf/image/upload/v1777998003/Hackathon_team_zrlwkj.jpg" alt="GUILD SA hackathon team"><figcaption><strong>Thomas Murashidzi</strong><span>Co-Founder & Technical Lead</span></figcaption></figure>
-          <figure class="founder-card"><img src="https://res.cloudinary.com/dgwtaivvf/image/upload/v1777998032/Guild_Hackathon_promotional_poster_on_window_su0yhg.png" alt="GUILD SA promotional poster"><figcaption><strong>Eben Mwema</strong><span>Co-Founder & Product Lead</span></figcaption></figure>
-          <figure class="founder-card"><img src="https://res.cloudinary.com/dgwtaivvf/image/upload/v1777998022/Brand_Flags_izzch1.png" alt="GUILD SA brand flags"><figcaption><strong>Ratjatji Malatji</strong><span>Co-Founder & Community Lead</span></figcaption></figure>
+          <figure class="founder-card"><img src="https://res.cloudinary.com/dgwtaivvf/image/upload/v1778245359/sombra_kuc0d4.jpg" alt="Murunzi Tharaga"><figcaption><strong>Murunzi Tharaga</strong><span>Co-Founder & Creative Director</span></figcaption></figure>
+          <figure class="founder-card"><img src="https://res.cloudinary.com/dgwtaivvf/image/upload/v1778245359/eben_nnhqep.jpg" alt="Eben Mwema"><figcaption><strong>Eben Mwema</strong><span>Co-Founder & Product Lead</span></figcaption></figure>
+          <figure class="founder-card"><img src="https://res.cloudinary.com/dgwtaivvf/image/upload/v1778245360/thomas_amqlcl.jpg" alt="Thomas Murashidzi"><figcaption><strong>Thomas Murashidzi</strong><span>Co-Founder & Technical Lead</span></figcaption></figure>
+          <figure class="founder-card"><img src="https://res.cloudinary.com/dgwtaivvf/image/upload/v1778245359/ati_bvoows.jpg" alt="Ratjatji Malatji"><figcaption><strong>Ratjatji Malatji</strong><span>Co-Founder & Community Lead</span></figcaption></figure>
+          <figure class="founder-card"><img src="https://res.cloudinary.com/dgwtaivvf/image/upload/v1778245359/sombra_kuc0d4.jpg" alt="Murunzi Tharaga"><figcaption><strong>Murunzi Tharaga</strong><span>Co-Founder & Creative Director</span></figcaption></figure>
+          <figure class="founder-card"><img src="https://res.cloudinary.com/dgwtaivvf/image/upload/v1778245359/eben_nnhqep.jpg" alt="Eben Mwema"><figcaption><strong>Eben Mwema</strong><span>Co-Founder & Product Lead</span></figcaption></figure>
+          <figure class="founder-card"><img src="https://res.cloudinary.com/dgwtaivvf/image/upload/v1778245360/thomas_amqlcl.jpg" alt="Thomas Murashidzi"><figcaption><strong>Thomas Murashidzi</strong><span>Co-Founder & Technical Lead</span></figcaption></figure>
+          <figure class="founder-card"><img src="https://res.cloudinary.com/dgwtaivvf/image/upload/v1778245359/ati_bvoows.jpg" alt="Ratjatji Malatji"><figcaption><strong>Ratjatji Malatji</strong><span>Co-Founder & Community Lead</span></figcaption></figure>
         </div>
       </div>
     </section>
