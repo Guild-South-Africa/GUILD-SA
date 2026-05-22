@@ -19,208 +19,193 @@
   </nav>
 
   <main>
-    <section class="page-hero compact join-hero">
-      <div class="shell">
-        <p class="eyebrow reveal">06 / Apply / Join</p>
-        <h1 class="reveal" data-motion="left">Enter the Sprint.</h1>
-        <p class="hero-copy reveal">GUILD SA is designed for people who want to build, contribute, and move ideas into visible execution.</p>
-        <div class="join-hero-paths reveal" data-motion="up" aria-label="Ways to join GUILD SA">
-          <span>Student builder</span>
-          <span>Team</span>
-          <span>Mentor</span>
-          <span>Sponsor</span>
-          <span>Campus operator</span>
-          <span>Ecosystem partner</span>
+    <!-- Default Join Gateway Content -->
+    <div id="join-gateway" class="join-gateway-view">
+      <section class="page-hero compact join-hero">
+        <div class="shell">
+          <p class="eyebrow reveal">06 / Apply / Join</p>
+          <h1 class="reveal" data-motion="left">Enter the Sprint.</h1>
+          <p class="hero-copy reveal">GUILD SA is designed for people who want to build, contribute, and move ideas into visible execution.</p>
         </div>
-      </div>
-    </section>
+      </section>
 
-    <section class="site-section join-section">
-      <div class="shell">
-        <div class="section-header">
-          <div class="section-number reveal">01</div>
-          <div>
-            <p class="kicker reveal">Start here</p>
-            <h2 class="reveal">Choose your entry point.</h2>
-            <p class="section-intro reveal">The onboarding system routes builders, mentors, and partners into the right layer of the ecosystem. Each path asks focused questions, captures the right signal, and prepares the next stage of engagement.</p>
-          </div>
-        </div>
-
-        <div class="join-entry-grid reveal" data-motion="up">
-          <article class="join-entry-card">
-            <span class="index">01 / Student Builder</span>
-            <h3>Join a sprint environment.</h3>
-            <p>Register as an individual participant and enter a structured build ecosystem focused on collaboration, execution, and shipped outcomes.</p>
-            <button class="button secondary" type="button" data-join-open="student">Apply as Student</button>
-          </article>
-          <article class="join-entry-card">
-            <span class="index">02 / Team Registration</span>
-            <h3>Build with your crew.</h3>
-            <p>Register an existing team, define roles, submit project direction, and prepare for the sprint environment together.</p>
-            <button class="button secondary" type="button" data-join-open="student">Register Team</button>
-          </article>
-          <article class="join-entry-card">
-            <span class="index">03 / Mentor Pathway</span>
-            <h3>Guide the next generation of builders.</h3>
-            <p>Support teams through technical guidance, product thinking, feedback, evaluation, and industry insight.</p>
-            <button class="button secondary" type="button" data-join-open="student">Become a Mentor</button>
-          </article>
-          <article class="join-entry-card">
-            <span class="index">04 / Partner / Sponsor</span>
-            <h3>Connect directly to execution-ready talent.</h3>
-            <p>Sponsor challenge tracks, mentor teams, introduce tools, or support ecosystem growth.</p>
-            <button class="button secondary" type="button" data-join-open="partner">Partner With GUILD SA</button>
-          </article>
-          <article class="join-entry-card is-wide">
-            <span class="index">05 / Campus Guild</span>
-            <h3>Launch the next node.</h3>
-            <p>Help establish a Campus Guild inside your institution and connect local builders into the national ecosystem.</p>
-            <button class="button secondary" type="button" data-join-open="partner">Start a Campus Guild</button>
-          </article>
-        </div>
-
-        <div class="join-application-intro" id="application-flow">
-          <p class="kicker reveal">Application flow</p>
-          <h2 class="reveal">One step at a time.</h2>
-          <p class="section-intro reveal">The onboarding experience is intentionally focused and low-friction. Every form reduces confusion, captures relevant signal, simplifies entry, and prepares participants for execution.</p>
-        </div>
-
-        <div class="join-flow reveal" data-motion="up" data-join-flow>
-          <div class="join-tabs" role="tablist" aria-label="Join form type">
-            <button class="join-tab is-active" type="button" role="tab" aria-selected="true" aria-controls="student-form" id="student-tab" data-join-tab="student">Builder application</button>
-            <button class="join-tab" type="button" role="tab" aria-selected="false" aria-controls="partner-form" id="partner-tab" data-join-tab="partner">Partner / ecosystem access</button>
+      <section class="site-section join-section">
+        <div class="shell">
+          <div class="section-header">
+            <div class="section-number reveal">01</div>
+            <div>
+              <p class="kicker reveal">Start here</p>
+              <h2 class="reveal">Choose your entry point.</h2>
+            </div>
           </div>
 
-          <form class="typeform-form is-active" id="student-form" role="tabpanel" aria-labelledby="student-tab" data-join-form="student" data-recipient="hello@guildsa.co.za" data-subject="Student event signup">
-            <div class="form-progress" aria-hidden="true"><span></span></div>
-            <div class="typeform-step is-active" data-step>
-              <span class="index">01 / Student</span>
-              <label for="student-name">First, what should we call you?</label>
-              <input id="student-name" name="Name" type="text" autocomplete="name" placeholder="Your full name" required>
-            </div>
-            <div class="typeform-step" data-step>
-              <span class="index">02 / Contact</span>
-              <label for="student-email">Where can we send event details?</label>
-              <input id="student-email" name="Email" type="email" autocomplete="email" placeholder="you@example.com" required>
-            </div>
-            <div class="typeform-step" data-step>
-              <span class="index">03 / Campus</span>
-              <label for="student-campus">Which institution are you from?</label>
-              <input id="student-campus" name="Institution" type="text" placeholder="University, college, bootcamp, or school" required>
-            </div>
-            <div class="typeform-step" data-step>
-              <span class="index">04 / Role</span>
-              <fieldset>
-                <legend>How are you entering the sprint?</legend>
-                <div class="choice-grid">
-                  <label><input type="radio" name="Entry path" value="Solo builder" required><span>Solo builder</span></label>
-                  <label><input type="radio" name="Entry path" value="With a team"><span>With a team</span></label>
-                  <label><input type="radio" name="Entry path" value="Looking for a team"><span>Looking for a team</span></label>
-                </div>
-              </fieldset>
-            </div>
-            <div class="typeform-step" data-step>
-              <span class="index">05 / Signal</span>
-              <label for="student-link">Show us one link if you have one.</label>
-              <input id="student-link" name="Portfolio or GitHub" type="url" placeholder="GitHub, portfolio, LinkedIn, or project link">
-            </div>
-            <div class="typeform-step" data-step>
-              <span class="index">06 / Idea</span>
-              <label for="student-idea">What do you want to build or learn at the event?</label>
-              <textarea id="student-idea" name="Build interest" rows="4" placeholder="A rough idea is enough. Constraints make it real." required></textarea>
-            </div>
-            <div class="typeform-actions">
-              <button class="button secondary" type="button" data-form-back>Back</button>
-              <button class="button" type="button" data-form-next>Next</button>
-              <button class="button" type="submit" data-form-submit>Send signup</button>
-            </div>
-            <p class="form-note" data-form-status aria-live="polite"></p>
-          </form>
-
-          <form class="typeform-form" id="partner-form" role="tabpanel" aria-labelledby="partner-tab" data-join-form="partner" data-recipient="partners@guildsa.co.za" data-subject="Sponsor and partnership enquiry" hidden>
-            <div class="form-progress" aria-hidden="true"><span></span></div>
-            <div class="typeform-step is-active" data-step>
-              <span class="index">01 / Partner</span>
-              <label for="partner-name">Who is leading this conversation?</label>
-              <input id="partner-name" name="Contact name" type="text" autocomplete="name" placeholder="Your name" required>
-            </div>
-            <div class="typeform-step" data-step>
-              <span class="index">02 / Company</span>
-              <label for="partner-company">Which organisation are you representing?</label>
-              <input id="partner-company" name="Organisation" type="text" placeholder="Company, fund, campus, or community" required>
-            </div>
-            <div class="typeform-step" data-step>
-              <span class="index">03 / Email</span>
-              <label for="partner-email">Where should we reply?</label>
-              <input id="partner-email" name="Email" type="email" autocomplete="email" placeholder="name@company.com" required>
-            </div>
-            <div class="typeform-step" data-step>
-              <span class="index">04 / Partnership</span>
-              <fieldset>
-                <legend>What kind of partnership are you exploring?</legend>
-                <div class="choice-grid">
-                  <label><input type="radio" name="Partnership type" value="Event sponsor" required><span>Event sponsor</span></label>
-                  <label><input type="radio" name="Partnership type" value="Challenge brief"><span>Challenge brief</span></label>
-                  <label><input type="radio" name="Partnership type" value="Mentorship"><span>Mentorship</span></label>
-                  <label><input type="radio" name="Partnership type" value="Campus expansion"><span>Campus expansion</span></label>
-                </div>
-              </fieldset>
-            </div>
-            <div class="typeform-step" data-step>
-              <span class="index">05 / Scope</span>
-              <label for="partner-scope">What outcome would make this useful for you?</label>
-              <textarea id="partner-scope" name="Partnership outcome" rows="4" placeholder="Talent access, brand visibility, product testing, campus activation..." required></textarea>
-            </div>
-            <div class="typeform-step" data-step>
-              <span class="index">06 / Timing</span>
-              <label for="partner-timeline">When would you like to move?</label>
-              <select id="partner-timeline" name="Timeline" required>
-                <option value="">Select timing</option>
-                <option>Immediately</option>
-                <option>This quarter</option>
-                <option>Next quarter</option>
-                <option>Still exploring</option>
-              </select>
-            </div>
-            <div class="typeform-actions">
-              <button class="button secondary" type="button" data-form-back>Back</button>
-              <button class="button" type="button" data-form-next>Next</button>
-              <button class="button" type="submit" data-form-submit>Send enquiry</button>
-            </div>
-            <p class="form-note" data-form-status aria-live="polite"></p>
-          </form>
-        </div>
-      </div>
-    </section>
-
-    <section class="site-section dark join-readiness-section">
-      <div class="shell">
-        <div class="section-header">
-          <div class="section-number reveal">05</div>
-          <div>
-            <p class="kicker reveal">What happens next</p>
-            <h2 class="reveal join-readiness-statement">Readiness before hype.</h2>
-            <p class="section-intro reveal">Once accepted into the ecosystem, participants receive the information needed to enter the sprint environment fully prepared. The goal is not vague community engagement. The goal is operational readiness.</p>
+          <div class="join-entry-grid reveal" data-motion="up">
+            <article class="join-entry-card"><span class="index">01</span><h3>Join as Student</h3><p>Register as an individual participant.</p><a class="button secondary" href="/join/student">Apply</a></article>
+            <article class="join-entry-card"><span class="index">02</span><h3>Register a Team</h3><p>Create a project team and invite members.</p><a class="button secondary" href="/join/team">Register</a></article>
+            <article class="join-entry-card"><span class="index">03</span><h3>Join via Invite</h3><p>Join an existing team.</p><a class="button secondary" href="/join/team/invite">Join Team</a></article>
+            <article class="join-entry-card"><span class="index">04</span><h3>Become a Mentor</h3><p>Guide the next generation of builders.</p><a class="button secondary" href="/join/mentor">Apply</a></article>
+            <article class="join-entry-card"><span class="index">05</span><h3>Partner with GUILD SA</h3><p>Connect directly to execution-ready talent.</p><a class="button secondary" href="/join/partner">Partner</a></article>
+            <article class="join-entry-card"><span class="index">06</span><h3>Sponsor an Event</h3><p>Support our sprints and hackathons.</p><a class="button secondary" href="/join/sponsor">Sponsor</a></article>
+            <article class="join-entry-card is-wide"><span class="index">07</span><h3>Start a Campus Guild</h3><p>Launch the next node at your university.</p><a class="button secondary" href="/join/campus">Start</a></article>
           </div>
         </div>
-        <div class="grid three join-next-grid">
-          <article class="card reveal"><span class="index">Confirm</span><h3>Receive the framework.</h3><p>Participants receive sprint rules, judging logic, expectations, technical requirements, and preparation guidance.</p></article>
-          <article class="card reveal"><span class="index">Connect</span><h3>Enter the network.</h3><p>Teams join official WhatsApp groups, Discord channels, sprint communication systems, and collaboration spaces before event day.</p></article>
-          <article class="card reveal"><span class="index">Arrive</span><h3>The build starts immediately.</h3><p>Check-in systems, badges, team verification, and opening structures move quickly so teams can focus on execution.</p></article>
-        </div>
-      </div>
-    </section>
+      </section>
+    </div>
 
-    <section class="site-section join-final-section">
-      <div class="shell">
-        <div class="join-final reveal" data-motion="scale">
-          <p class="kicker">Final call</p>
-          <h2>Build for South Africa. Build with intent.</h2>
-          <p>GUILD SA creates environments where builders collaborate seriously, execute visibly, solve meaningful problems, and move beyond passive learning.</p>
-          <a class="button" href="#application-flow">Enter ready to build</a>
+    <!-- Onboarding Forms Container -->
+    <div id="join-forms" class="join-forms-view" hidden>
+      <section class="site-section join-section">
+        <div class="shell">
+          <button class="button secondary" type="button" onclick="history.back()">&larr; Back to Options</button>
+          <div class="join-application-intro mt-4">
+            <p class="kicker" id="form-kicker">Application</p>
+            <h2 id="form-title">Complete your profile.</h2>
+          </div>
+
+          <div class="join-flow" data-join-flow>
+            
+            <!-- STUDENT FORM -->
+            <form class="typeform-form" id="student-form" data-join-form="student" data-type="student" hidden>
+              <div class="form-progress"><span></span></div>
+              <div class="typeform-step is-active" data-step><label>Full Name</label><input name="name" type="text" required></div>
+              <div class="typeform-step" data-step><label>Email</label><input name="email" type="email" required></div>
+              <div class="typeform-step" data-step><label>Phone Number</label><input name="phone" type="tel" required></div>
+              <div class="typeform-step" data-step><label>City</label><input name="city" type="text" required></div>
+              <div class="typeform-step" data-step><label>Institution</label><input name="institution" type="text" required></div>
+              <div class="typeform-step" data-step><label>Course / Degree</label><input name="course" type="text" required></div>
+              <div class="typeform-step" data-step><label>Year of Study</label><input name="year" type="text" required></div>
+              <div class="typeform-step" data-step><label>Skills</label><input name="skills" type="text" placeholder="e.g. React, Node.js, Design" required></div>
+              <div class="typeform-step" data-step><label>Preferred Role</label><select name="role" required><option value="">Select</option><option>Developer</option><option>Designer</option><option>PM</option></select></div>
+              <div class="typeform-step" data-step><label>GitHub URL</label><input name="github" type="url"></div>
+              <div class="typeform-step" data-step><label>LinkedIn URL</label><input name="linkedin" type="url"></div>
+              <div class="typeform-step" data-step><label>Portfolio URL</label><input name="portfolio" type="url"></div>
+              <div class="typeform-step" data-step><label>Portfolio / CV File</label><input name="portfolioFile" type="file" accept=".pdf,.doc,.docx,.png,.jpg,.jpeg,.webp"></div>
+              <div class="typeform-step" data-step><label>Looking for Team?</label><select name="lookingForTeam" required><option value="true">Yes</option><option value="false">No</option></select></div>
+              <div class="typeform-step" data-step><label>Event Selection</label><input name="event" type="text" required></div>
+              <div class="typeform-step" data-step><label><input type="checkbox" name="consentAccepted" required> I accept the <a href="/privacy.html" target="_blank" style="text-decoration: underline; color: inherit;">Terms & POPIA Consent</a></label></div>
+              <div class="typeform-step" data-step><label><input type="checkbox" name="mediaConsent" required> I provide Media Consent</label></div>
+              <div class="typeform-actions"><button class="button secondary" type="button" data-form-back>Back</button><button class="button" type="button" data-form-next>Next</button><button class="button" type="submit" data-form-submit>Submit</button></div>
+              <p class="form-note" data-form-status></p>
+            </form>
+
+            <!-- TEAM FORM -->
+            <form class="typeform-form" id="team-form" data-join-form="team" data-type="team" hidden>
+              <div class="form-progress"><span></span></div>
+              <div class="typeform-step is-active" data-step><label>Team Name</label><input name="teamName" type="text" required></div>
+              <div class="typeform-step" data-step><label>Team Capacity</label><input name="capacity" type="number" min="2" max="10" required></div>
+              <div class="typeform-step" data-step><label>Event</label><input name="event" type="text" required></div>
+              <div class="typeform-step" data-step><label>Track</label><input name="track" type="text" required></div>
+              <div class="typeform-step" data-step><label>Project Name</label><input name="projectName" type="text" required></div>
+              <div class="typeform-step" data-step><label>Problem Statement</label><textarea name="problemStatement" required></textarea></div>
+              <div class="typeform-step" data-step><label>Project Description</label><textarea name="projectDescription" required></textarea></div>
+              <div class="typeform-step" data-step><label>Team Leader Name</label><input name="leaderName" type="text" required></div>
+              <div class="typeform-step" data-step><label>Team Leader Email</label><input name="leaderEmail" type="email" required></div>
+              <div class="typeform-step" data-step><label>Phone Number</label><input name="phone" type="tel" required></div>
+              <div class="typeform-step" data-step><label>Institution</label><input name="institution" type="text" required></div>
+              <div class="typeform-step" data-step><label>Skills</label><input name="skills" type="text" required></div>
+              <div class="typeform-step" data-step><label>Preferred Role</label><select name="role" required><option value="">Select</option><option>Developer</option><option>Designer</option><option>PM</option></select></div>
+              <div class="typeform-step" data-step><label>GitHub</label><input name="github" type="url"></div>
+              <div class="typeform-step" data-step><label>LinkedIn</label><input name="linkedin" type="url"></div>
+              <div class="typeform-step" data-step><label>Portfolio</label><input name="portfolio" type="url"></div>
+              <div class="typeform-step" data-step><label>Portfolio / CV File</label><input name="portfolioFile" type="file" accept=".pdf,.doc,.docx,.png,.jpg,.jpeg,.webp"></div>
+              <div class="typeform-step" data-step><label><input type="checkbox" name="consentAccepted" required> I accept the <a href="/privacy.html" target="_blank" style="text-decoration: underline; color: inherit;">Terms & POPIA Consent</a></label></div>
+              <div class="typeform-step" data-step><label><input type="checkbox" name="mediaConsent" required> I provide Media Consent</label></div>
+              <div class="typeform-actions"><button class="button secondary" type="button" data-form-back>Back</button><button class="button" type="button" data-form-next>Next</button><button class="button" type="submit" data-form-submit>Submit</button></div>
+              <p class="form-note" data-form-status></p>
+            </form>
+
+            <!-- INVITE FORM -->
+            <form class="typeform-form" id="invite-form" data-join-form="invite" data-type="invite" hidden>
+              <div class="form-progress"><span></span></div>
+              <div class="typeform-step is-active" data-step><label>Invite Code</label><input name="inviteCode" type="text" id="invite-code-input" required></div>
+              <div class="typeform-step" data-step><label>Full Name</label><input name="name" type="text" required></div>
+              <div class="typeform-step" data-step><label>Email</label><input name="email" type="email" required></div>
+              <div class="typeform-step" data-step><label>Phone Number</label><input name="phone" type="tel" required></div>
+              <div class="typeform-step" data-step><label>Institution</label><input name="institution" type="text" required></div>
+              <div class="typeform-step" data-step><label>Skills</label><input name="skills" type="text" required></div>
+              <div class="typeform-step" data-step><label>Preferred Role</label><select name="role" required><option value="">Select</option><option>Developer</option><option>Designer</option><option>PM</option></select></div>
+              <div class="typeform-step" data-step><label>GitHub</label><input name="github" type="url"></div>
+              <div class="typeform-step" data-step><label>LinkedIn</label><input name="linkedin" type="url"></div>
+              <div class="typeform-step" data-step><label>Portfolio</label><input name="portfolio" type="url"></div>
+              <div class="typeform-step" data-step><label>Portfolio / CV File</label><input name="portfolioFile" type="file" accept=".pdf,.doc,.docx,.png,.jpg,.jpeg,.webp"></div>
+              <div class="typeform-step" data-step><label><input type="checkbox" name="consentAccepted" required> I accept the <a href="/privacy.html" target="_blank" style="text-decoration: underline; color: inherit;">Terms & POPIA Consent</a></label></div>
+              <div class="typeform-step" data-step><label><input type="checkbox" name="mediaConsent" required> I provide Media Consent</label></div>
+              <div class="typeform-actions"><button class="button secondary" type="button" data-form-back>Back</button><button class="button" type="button" data-form-next>Next</button><button class="button" type="submit" data-form-submit>Submit</button></div>
+              <p class="form-note" data-form-status></p>
+            </form>
+
+            <!-- MENTOR FORM -->
+            <form class="typeform-form" id="mentor-form" data-join-form="mentor" data-type="mentor" hidden>
+              <div class="form-progress"><span></span></div>
+              <div class="typeform-step is-active" data-step><label>Full Name</label><input name="name" type="text" required></div>
+              <div class="typeform-step" data-step><label>Email</label><input name="email" type="email" required></div>
+              <div class="typeform-step" data-step><label>Company</label><input name="company" type="text" required></div>
+              <div class="typeform-step" data-step><label>Role</label><input name="role" type="text" required></div>
+              <div class="typeform-step" data-step><label>Expertise</label><input name="expertise" type="text" required></div>
+              <div class="typeform-step" data-step><label>LinkedIn</label><input name="linkedin" type="url" required></div>
+              <div class="typeform-step" data-step><label>GitHub</label><input name="github" type="url"></div>
+              <div class="typeform-step" data-step><label>Bio</label><textarea name="bio" required></textarea></div>
+              <div class="typeform-step" data-step><label>Availability</label><input name="availability" type="text" required></div>
+              <div class="typeform-step" data-step><label><input type="checkbox" name="consentAccepted" required> I accept the <a href="/privacy.html" target="_blank" style="text-decoration: underline; color: inherit;">Terms & POPIA Consent</a></label></div>
+              <div class="typeform-step" data-step><label><input type="checkbox" name="mediaConsent" required> I provide Media Consent</label></div>
+              <div class="typeform-actions"><button class="button secondary" type="button" data-form-back>Back</button><button class="button" type="button" data-form-next>Next</button><button class="button" type="submit" data-form-submit>Submit</button></div>
+              <p class="form-note" data-form-status></p>
+            </form>
+
+            <!-- PARTNER FORM -->
+            <form class="typeform-form" id="partner-form" data-join-form="partner" data-type="partner" hidden>
+              <div class="form-progress"><span></span></div>
+              <div class="typeform-step is-active" data-step><label>Organization Name</label><input name="organizationName" type="text" required></div>
+              <div class="typeform-step" data-step><label>Contact Person</label><input name="contactPerson" type="text" required></div>
+              <div class="typeform-step" data-step><label>Email</label><input name="email" type="email" required></div>
+              <div class="typeform-step" data-step><label>Website</label><input name="website" type="url"></div>
+              <div class="typeform-step" data-step><label>Partnership Type</label><input name="partnershipType" type="text" required></div>
+              <div class="typeform-step" data-step><label>Support Type</label><input name="supportType" type="text" required></div>
+              <div class="typeform-step" data-step><label>Notes</label><textarea name="notes"></textarea></div>
+              <div class="typeform-step" data-step><label><input type="checkbox" name="consentAccepted" required> I accept the <a href="/privacy.html" target="_blank" style="text-decoration: underline; color: inherit;">Terms & POPIA Consent</a></label></div>
+              <div class="typeform-step" data-step><label><input type="checkbox" name="mediaConsent" required> I provide Media Consent</label></div>
+              <div class="typeform-actions"><button class="button secondary" type="button" data-form-back>Back</button><button class="button" type="button" data-form-next>Next</button><button class="button" type="submit" data-form-submit>Submit</button></div>
+              <p class="form-note" data-form-status></p>
+            </form>
+
+            <!-- SPONSOR FORM -->
+            <form class="typeform-form" id="sponsor-form" data-join-form="sponsor" data-type="sponsor" hidden>
+              <div class="form-progress"><span></span></div>
+              <div class="typeform-step is-active" data-step><label>Company Name</label><input name="companyName" type="text" required></div>
+              <div class="typeform-step" data-step><label>Contact Person</label><input name="contactPerson" type="text" required></div>
+              <div class="typeform-step" data-step><label>Contact Email</label><input name="contactEmail" type="email" required></div>
+              <div class="typeform-step" data-step><label>Website</label><input name="website" type="url"></div>
+              <div class="typeform-step" data-step><label>Sponsor Type</label><input name="sponsorType" type="text" required></div>
+              <div class="typeform-step" data-step><label>Contribution Type</label><input name="contributionType" type="text" required></div>
+              <div class="typeform-step" data-step><label>Sponsorship Value</label><input name="sponsorshipValue" type="text" required></div>
+              <div class="typeform-step" data-step><label>Notes</label><textarea name="notes"></textarea></div>
+              <div class="typeform-step" data-step><label><input type="checkbox" name="consentAccepted" required> I accept the <a href="/privacy.html" target="_blank" style="text-decoration: underline; color: inherit;">Terms & POPIA Consent</a></label></div>
+              <div class="typeform-step" data-step><label><input type="checkbox" name="mediaConsent" required> I provide Media Consent</label></div>
+              <div class="typeform-actions"><button class="button secondary" type="button" data-form-back>Back</button><button class="button" type="button" data-form-next>Next</button><button class="button" type="submit" data-form-submit>Submit</button></div>
+              <p class="form-note" data-form-status></p>
+            </form>
+
+            <!-- CAMPUS FORM -->
+            <form class="typeform-form" id="campus-form" data-join-form="campus" data-type="campus" hidden>
+              <div class="form-progress"><span></span></div>
+              <div class="typeform-step is-active" data-step><label>Institution Name</label><input name="institutionName" type="text" required></div>
+              <div class="typeform-step" data-step><label>Campus Name</label><input name="campusName" type="text" required></div>
+              <div class="typeform-step" data-step><label>Province</label><input name="province" type="text" required></div>
+              <div class="typeform-step" data-step><label>City</label><input name="city" type="text" required></div>
+              <div class="typeform-step" data-step><label>Applicant Name</label><input name="applicantName" type="text" required></div>
+              <div class="typeform-step" data-step><label>Applicant Email</label><input name="applicantEmail" type="email" required></div>
+              <div class="typeform-step" data-step><label>Existing Community Size</label><input name="communitySize" type="text" required></div>
+              <div class="typeform-step" data-step><label>Why Start a Guild</label><textarea name="whyStart" required></textarea></div>
+              <div class="typeform-step" data-step><label><input type="checkbox" name="consentAccepted" required> I accept the <a href="/privacy.html" target="_blank" style="text-decoration: underline; color: inherit;">Terms & POPIA Consent</a></label></div>
+              <div class="typeform-step" data-step><label><input type="checkbox" name="mediaConsent" required> I provide Media Consent</label></div>
+              <div class="typeform-actions"><button class="button secondary" type="button" data-form-back>Back</button><button class="button" type="button" data-form-next>Next</button><button class="button" type="submit" data-form-submit>Submit</button></div>
+              <p class="form-note" data-form-status></p>
+            </form>
+
+          </div>
         </div>
-      </div>
-    </section>
+      </section>
+    </div>
   </main>
 
   <footer class="footer" data-guild-footer></footer>
