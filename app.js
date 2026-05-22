@@ -403,11 +403,13 @@ function initGuildMenu() {
 initGuildMenu()
 
 function initJoinForms() {
-  const flow = document.querySelector('[data-join-flow]')
-  if (!flow) return
+  const path = window.location.pathname;
+  if (!path.startsWith('/join')) return;
 
-  const tabs = Array.from(flow.querySelectorAll('[data-join-tab]'))
-  const forms = Array.from(flow.querySelectorAll('[data-join-form]'))
+  const gateway = document.getElementById('join-gateway');
+  const formsContainer = document.getElementById('join-forms');
+  const forms = Array.from(document.querySelectorAll('[data-join-form]'));
+  if (!gateway || !formsContainer) return;
 
   const getSteps = (form) => Array.from(form.querySelectorAll('[data-step]'))
 
@@ -424,25 +426,6 @@ function initJoinForms() {
     form.classList.toggle('is-first-step', activeIndex === 0)
     form.classList.toggle('is-final-step', activeIndex === steps.length - 1)
     if (progressBar) progressBar.style.setProperty('--progress', progress)
-  }
-
-  function setActiveForm(type) {
-    tabs.forEach((tab) => {
-      const selected = tab.dataset.joinTab === type
-      tab.classList.toggle('is-active', selected)
-      tab.setAttribute('aria-selected', String(selected))
-    })
-
-    forms.forEach((form) => {
-      const selected = form.dataset.joinForm === type
-      form.hidden = !selected
-      form.classList.toggle('is-active', selected)
-      if (selected) {
-        updateForm(form)
-        const firstField = form.querySelector('.typeform-step.is-active input, .typeform-step.is-active textarea, .typeform-step.is-active select')
-        window.setTimeout(() => firstField?.focus({ preventScroll: true }), 80)
-      }
-    })
   }
 
   function validateStep(step) {
@@ -485,7 +468,50 @@ function initJoinForms() {
     window.setTimeout(() => activeField?.focus({ preventScroll: true }), 120)
   }
 
-  function submitForm(form) {
+  function fileToDataUrl(file) {
+    return new Promise((resolve, reject) => {
+      const reader = new FileReader()
+      reader.addEventListener('load', () => resolve(reader.result))
+      reader.addEventListener('error', () => reject(reader.error || new Error('Could not read upload.')))
+      reader.readAsDataURL(file)
+    })
+  }
+
+  async function buildJoinPayload(form) {
+    const data = new FormData(form)
+    const payload = {}
+    const uploads = []
+    const maxUploadSize = 5 * 1024 * 1024
+
+    for (const [name, value] of data.entries()) {
+      if (value instanceof File) {
+        if (!value.size) continue
+        if (value.size > maxUploadSize) {
+          throw new Error('Uploads must be 5 MB or smaller.')
+        }
+
+        uploads.push({
+          field: name,
+          filename: value.name,
+          contentType: value.type || 'application/octet-stream',
+          size: value.size,
+          data: await fileToDataUrl(value),
+        })
+        continue
+      }
+
+      payload[name] = value
+    }
+
+    form.querySelectorAll('input[type="checkbox"]').forEach((checkbox) => {
+      payload[checkbox.name] = checkbox.checked
+    })
+
+    if (uploads.length) payload.uploads = uploads
+    return payload
+  }
+
+  async function submitForm(form) {
     const steps = getSteps(form)
     const activeIndex = Number(form.dataset.activeStep || 0)
     const status = form.querySelector('[data-form-status]')
@@ -498,43 +524,99 @@ function initJoinForms() {
       return
     }
 
-    const data = new FormData(form)
-    const lines = Array.from(data.entries())
-      .filter(([, value]) => String(value).trim())
-      .map(([key, value]) => `${key}: ${value}`)
-
-    const recipient = form.dataset.recipient
-    const subject = form.dataset.subject
-    const body = [
-      subject,
-      '',
-      ...lines,
-      '',
-      'Sent from the GUILD SA join page.',
-    ].join('\n')
-
-    window.location.href = `mailto:${recipient}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`
+    const type = form.dataset.type;
 
     if (status) {
-      status.textContent = 'Your email draft is ready. Send it to complete the signup.'
-      status.className = 'form-note is-success'
+      status.textContent = 'Preparing your application...'
+      status.className = 'form-note'
+    }
+
+    const button = form.querySelector('[data-form-submit]');
+    if (button) button.disabled = true;
+
+    try {
+      const payload = await buildJoinPayload(form)
+
+      if (status) {
+        status.textContent = payload.uploads?.length ? 'Uploading and submitting your application...' : 'Submitting your application...'
+        status.className = 'form-note'
+      }
+
+      const response = await fetch('/api/join', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ type, payload })
+      });
+
+      const result = await response.json();
+
+      if (!response.ok) {
+        throw new Error(result.error || 'Submission failed');
+      }
+
+      if (status) {
+        status.textContent = 'Success! You are now in the system.'
+        status.className = 'form-note is-success'
+      }
+      
+      form.reset();
+      form.dataset.activeStep = '0';
+      updateForm(form);
+      
+      if (result.inviteUrl) {
+        alert(`Team Registered! Your team invite URL is: \n${result.inviteUrl}\n\nShare this link with your team members.`);
+      }
+
+    } catch (err) {
+      if (status) {
+        status.textContent = err.message || 'Network error. Please try again.'
+        status.className = 'form-note is-error'
+      }
+    } finally {
+      if (button) button.disabled = false;
     }
   }
 
-  tabs.forEach((tab) => {
-    tab.addEventListener('click', () => setActiveForm(tab.dataset.joinTab))
-  })
+  // Router Logic
+  const routeMatch = path.match(/^\/join\/([a-z]+)(\/invite\/([a-zA-Z0-9]+))?|^\/join\/team\/invite(\/([a-zA-Z0-9]+))?$/);
+  
+  if (path !== '/join' && path !== '/join.html' && path.startsWith('/join/')) {
+    gateway.hidden = true;
+    formsContainer.hidden = false;
 
-  document.querySelectorAll('[data-join-open]').forEach((trigger) => {
-    trigger.addEventListener('click', () => {
-      const type = trigger.dataset.joinOpen || 'student'
-      setActiveForm(type)
-      document.getElementById('application-flow')?.scrollIntoView({
-        behavior: 'smooth',
-        block: 'start',
-      })
-    })
-  })
+    let targetType = path.split('/')[2]; // e.g. /join/student -> student
+    
+    if (path.includes('/invite')) {
+      targetType = 'invite';
+    }
+
+    let inviteCode = '';
+    const parts = path.split('/');
+    if (targetType === 'invite' && parts.length >= 5) {
+      inviteCode = parts[4]; // /join/team/invite/CODE
+    }
+
+    forms.forEach((form) => {
+      const selected = form.dataset.joinForm === targetType;
+      form.hidden = !selected;
+      form.classList.toggle('is-active', selected);
+      
+      if (selected) {
+        updateForm(form);
+        const inviteInput = document.getElementById('invite-code-input');
+        if (inviteInput && inviteCode) {
+           inviteInput.value = inviteCode;
+        }
+        const firstField = form.querySelector('.typeform-step.is-active input, .typeform-step.is-active textarea, .typeform-step.is-active select')
+        window.setTimeout(() => firstField?.focus({ preventScroll: true }), 80)
+      }
+    });
+
+  } else {
+    // Show Gateway
+    gateway.hidden = false;
+    formsContainer.hidden = true;
+  }
 
   forms.forEach((form) => {
     form.dataset.activeStep = '0'
