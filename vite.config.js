@@ -1,4 +1,6 @@
 import { defineConfig, loadEnv } from 'vite'
+import path from 'node:path'
+import { pathToFileURL } from 'node:url'
 
 const rewriteMiddleware = () => {
   return {
@@ -11,7 +13,8 @@ const rewriteMiddleware = () => {
           req.on('end', async () => {
             try {
               // Dynamically import the netlify function for local dev
-              const { handler } = await import('./netlify/functions/join.js?t=' + Date.now());
+              const functionPath = path.resolve(process.cwd(), './netlify/functions/join.js');
+              const { handler } = await import(pathToFileURL(functionPath).href + '?t=' + Date.now());
               const event = { httpMethod: req.method, body: body, headers: req.headers };
               const result = await handler(event, {});
               
