@@ -1,9 +1,13 @@
+[build]
+  command = "npm run build"
+  publish = "dist"
+
 [[redirects]]
   from = "/api/*"
   to = "/.netlify/functions/:splat"
   status = 200
 
 [[redirects]]
-  from = "/join/*"
-  to = "/join.html"
+  from = "/*"
+  to = "/index.html"
   status = 200

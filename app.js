@@ -6,17 +6,17 @@ import { initGuildSystemSlider } from './system-slider.js'
 import { initDisplayHeadingIcons } from './display-icons.js'
 
 const footerMounts = document.querySelectorAll('[data-guild-footer]')
-const isHomePage = /(^\/$|\/index\.html$)/.test(window.location.pathname)
+const isHomePage = window.location.pathname === '/'
 
 const guildFooterHTML = `
   <div class="footer-shell">
     <section class="footer-categories" aria-label="GUILD SA pathways">
       <h2>Choose your entry point</h2>
-      <div class="footer-chips"><a href="/join.html">Students</a><a href="/join.html">Teams</a><a href="/partners.html">Mentors</a><a href="/partners.html">Partners</a><a href="/campus.html">Campus Guild</a><a href="/pipeline.html">Guild Labs</a></div>
+      <div class="footer-chips"><a href="/join">Students</a><a href="/join">Teams</a><a href="/partners">Mentors</a><a href="/partners">Partners</a><a href="/campus">Campus Guild</a><a href="/pipeline">Guild Labs</a></div>
     </section>
     <section class="footer-main">
       <div class="footer-contact"><h3>Stay in the loop.</h3><p>Get sprint dates, project drops, partner calls, and campus updates.</p><a href="mailto:guildsagroup@gmail.com">guildsagroup@gmail.com</a></div>
-      <div class="footer-links"><div><h3>About</h3><a href="/about.html">Vision</a><a href="/pipeline.html">Pipeline</a><a href="/events.html">Events</a></div><div><h3>Network</h3><a href="/campus.html">Campus Guild</a><a href="/partners.html">Partners</a><a href="/join.html">Join</a></div><div><h3>Signal</h3><a href="/partners.html">Projects</a><a href="/events.html">Demo Day</a><a href="/join.html">Contact</a></div></div>
+      <div class="footer-links"><div><h3>About</h3><a href="/about">Vision</a><a href="/pipeline">Pipeline</a><a href="/events">Events</a></div><div><h3>Network</h3><a href="/campus">Campus Guild</a><a href="/partners">Partners</a><a href="/join">Join</a></div><div><h3>Signal</h3><a href="/partners">Projects</a><a href="/events">Demo Day</a><a href="/join">Contact</a></div></div>
     </section>
     <div class="footer-wordmark">Guild SA</div>
     <div class="footer-bottom"><span>Build & ship real-world solutions</span><span>Website developed by Occxlnce. (c) GUILD SA. All rights reserved.</span></div>
@@ -128,7 +128,7 @@ function initActivationBanner() {
   banner.className = 'guild-activation-banner'
   banner.setAttribute('aria-label', 'GUILD SA AI Buildathon announcement')
   banner.innerHTML = `
-    <a href="/join.html" class="guild-activation-banner__link">
+    <a href="/join" class="guild-activation-banner__link">
       <span class="guild-activation-banner__track">
         <span class="guild-activation-banner__group">${bannerItems}</span>
         <span class="guild-activation-banner__group" aria-hidden="true">${bannerItems}</span>
@@ -661,12 +661,12 @@ function initGuildMenu() {
 
   const menuId = 'guild-side-menu'
   const menuItems = [
-    { href: '/about.html', label: 'About', number: '01' },
-    { href: '/pipeline.html', label: 'Pipeline', number: '02' },
-    { href: '/campus.html', label: 'Campus', number: '03' },
-    { href: '/events.html', label: 'Events', number: '04' },
-    { href: '/partners.html', label: 'Partners', number: '05' },
-    { href: '/join.html', label: 'Join', number: '06' },
+    { href: '/about', label: 'About', number: '01' },
+    { href: '/pipeline', label: 'Pipeline', number: '02' },
+    { href: '/campus', label: 'Campus', number: '03' },
+    { href: '/events', label: 'Events', number: '04' },
+    { href: '/partners', label: 'Partners', number: '05' },
+    { href: '/join', label: 'Join', number: '06' },
   ]
 
   const toggle = document.createElement('button')
@@ -719,8 +719,8 @@ function initGuildMenu() {
           <p data-menu-fade>Connect</p>
           <div class="guild-menu-socials">
             <a data-menu-fade href="mailto:guildsagroup@gmail.com">Email</a>
-            <a data-menu-fade href="/partners.html">Partner</a>
-            <a data-menu-fade href="/events.html">Demo Day</a>
+            <a data-menu-fade href="/partners">Partner</a>
+            <a data-menu-fade href="/events">Demo Day</a>
           </div>
         </div>
       </div>
@@ -840,258 +840,6 @@ function initGuildMenu() {
 }
 
 initGuildMenu()
-
-function initJoinForms() {
-  const path = window.location.pathname;
-  if (!path.startsWith('/join')) return;
-
-  const gateway = document.getElementById('join-gateway');
-  const formsContainer = document.getElementById('join-forms');
-  const forms = Array.from(document.querySelectorAll('[data-join-form]'));
-  if (!gateway || !formsContainer) return;
-
-  const getSteps = (form) => Array.from(form.querySelectorAll('[data-step]'))
-
-  function updateForm(form) {
-    const steps = getSteps(form)
-    const activeIndex = Number(form.dataset.activeStep || 0)
-    const progress = `${((activeIndex + 1) / steps.length) * 100}%`
-    const progressBar = form.querySelector('.form-progress span')
-
-    steps.forEach((step, index) => {
-      step.classList.toggle('is-active', index === activeIndex)
-    })
-
-    form.classList.toggle('is-first-step', activeIndex === 0)
-    form.classList.toggle('is-final-step', activeIndex === steps.length - 1)
-    if (progressBar) progressBar.style.setProperty('--progress', progress)
-  }
-
-  function validateStep(step) {
-    const fields = Array.from(step.querySelectorAll('input, textarea, select'))
-    const invalidField = fields.find((field) => !field.checkValidity())
-
-    fields.forEach((field) => field.classList.add('is-touched'))
-
-    if (invalidField) {
-      invalidField.reportValidity()
-      return false
-    }
-
-    return true
-  }
-
-  function moveStep(form, direction) {
-    const steps = getSteps(form)
-    const activeIndex = Number(form.dataset.activeStep || 0)
-    const nextIndex = Math.min(Math.max(activeIndex + direction, 0), steps.length - 1)
-    const status = form.querySelector('[data-form-status]')
-
-    if (direction > 0 && !validateStep(steps[activeIndex])) {
-      if (status) {
-        status.textContent = 'Fill this one in, then keep moving.'
-        status.className = 'form-note is-error'
-      }
-      return
-    }
-
-    if (status) {
-      status.textContent = ''
-      status.className = 'form-note'
-    }
-
-    form.dataset.activeStep = String(nextIndex)
-    updateForm(form)
-
-    const activeField = steps[nextIndex].querySelector('input:not([type="radio"]), textarea, select')
-    window.setTimeout(() => activeField?.focus({ preventScroll: true }), 120)
-  }
-
-  function fileToDataUrl(file) {
-    return new Promise((resolve, reject) => {
-      const reader = new FileReader()
-      reader.addEventListener('load', () => resolve(reader.result))
-      reader.addEventListener('error', () => reject(reader.error || new Error('Could not read upload.')))
-      reader.readAsDataURL(file)
-    })
-  }
-
-  async function buildJoinPayload(form) {
-    const data = new FormData(form)
-    const payload = {}
-    const uploads = []
-    const maxUploadSize = 5 * 1024 * 1024
-
-    for (const [name, value] of data.entries()) {
-      if (value instanceof File) {
-        if (!value.size) continue
-        if (value.size > maxUploadSize) {
-          throw new Error('Uploads must be 5 MB or smaller.')
-        }
-
-        uploads.push({
-          field: name,
-          filename: value.name,
-          contentType: value.type || 'application/octet-stream',
-          size: value.size,
-          data: await fileToDataUrl(value),
-        })
-        continue
-      }
-
-      payload[name] = value
-    }
-
-    form.querySelectorAll('input[type="checkbox"]').forEach((checkbox) => {
-      payload[checkbox.name] = checkbox.checked
-    })
-
-    if (uploads.length) payload.uploads = uploads
-    return payload
-  }
-
-  async function submitForm(form) {
-    const steps = getSteps(form)
-    const activeIndex = Number(form.dataset.activeStep || 0)
-    const status = form.querySelector('[data-form-status]')
-
-    if (!validateStep(steps[activeIndex]) || !form.checkValidity()) {
-      if (status) {
-        status.textContent = 'One answer still needs attention.'
-        status.className = 'form-note is-error'
-      }
-      return
-    }
-
-    const type = form.dataset.type;
-
-    if (status) {
-      status.textContent = 'Preparing your application...'
-      status.className = 'form-note'
-    }
-
-    const button = form.querySelector('[data-form-submit]');
-    if (button) button.disabled = true;
-
-    try {
-      const payload = await buildJoinPayload(form)
-
-      if (status) {
-        status.textContent = payload.uploads?.length ? 'Uploading and submitting your application...' : 'Submitting your application...'
-        status.className = 'form-note'
-      }
-
-      const response = await fetch('/api/join', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ type, payload })
-      });
-
-      const result = await response.json();
-
-      if (!response.ok) {
-        throw new Error(result.error || 'Submission failed');
-      }
-
-      if (status) {
-        status.textContent = 'Success! You are now in the system.'
-        status.className = 'form-note is-success'
-      }
-      
-      form.reset();
-      form.dataset.activeStep = '0';
-      updateForm(form);
-      
-      if (result.inviteUrl) {
-        alert(`Team Registered! Your team invite URL is: \n${result.inviteUrl}\n\nShare this link with your team members.`);
-      }
-
-    } catch (err) {
-      if (status) {
-        status.textContent = err.message || 'Network error. Please try again.'
-        status.className = 'form-note is-error'
-      }
-    } finally {
-      if (button) button.disabled = false;
-    }
-  }
-
-  // Router Logic
-  const routeMatch = path.match(/^\/join\/([a-z]+)(\/invite\/([a-zA-Z0-9]+))?|^\/join\/team\/invite(\/([a-zA-Z0-9]+))?$/);
-  
-  if (path !== '/join' && path !== '/join.html' && path.startsWith('/join/')) {
-    gateway.hidden = true;
-    formsContainer.hidden = false;
-
-    let targetType = path.split('/')[2]; // e.g. /join/student -> student
-    
-    if (path.includes('/invite')) {
-      targetType = 'invite';
-    }
-
-    let inviteCode = '';
-    const parts = path.split('/');
-    if (targetType === 'invite' && parts.length >= 5) {
-      inviteCode = parts[4]; // /join/team/invite/CODE
-    }
-
-    forms.forEach((form) => {
-      const selected = form.dataset.joinForm === targetType;
-      form.hidden = !selected;
-      form.classList.toggle('is-active', selected);
-      
-      if (selected) {
-        updateForm(form);
-        const inviteInput = document.getElementById('invite-code-input');
-        if (inviteInput && inviteCode) {
-           inviteInput.value = inviteCode;
-        }
-        const firstField = form.querySelector('.typeform-step.is-active input, .typeform-step.is-active textarea, .typeform-step.is-active select')
-        window.setTimeout(() => firstField?.focus({ preventScroll: true }), 80)
-      }
-    });
-
-  } else {
-    // Show Gateway
-    gateway.hidden = false;
-    formsContainer.hidden = true;
-  }
-
-  forms.forEach((form) => {
-    form.dataset.activeStep = '0'
-    updateForm(form)
-
-    form.addEventListener('click', (event) => {
-      if (event.target.closest('[data-form-next]')) moveStep(form, 1)
-      if (event.target.closest('[data-form-back]')) moveStep(form, -1)
-    })
-
-    form.addEventListener('submit', (event) => {
-      event.preventDefault()
-      submitForm(form)
-    })
-
-    form.addEventListener('keydown', (event) => {
-      if (event.key !== 'Enter' || event.target.matches('textarea')) return
-      event.preventDefault()
-      if (form.classList.contains('is-final-step')) {
-        submitForm(form)
-      } else {
-        moveStep(form, 1)
-      }
-    })
-
-    form.querySelectorAll('.choice-grid input').forEach((input) => {
-      input.addEventListener('change', () => {
-        window.setTimeout(() => {
-          if (!form.classList.contains('is-final-step')) moveStep(form, 1)
-        }, 180)
-      })
-    })
-  })
-}
-
-initJoinForms()
 
 function initCampusHighlightCards() {
   const board = document.querySelector('[data-campus-cards]')
@@ -1342,24 +1090,53 @@ function initCursorFollower() {
 
 initCursorFollower()
 
-const revealItems = document.querySelectorAll('.reveal')
+let revealObserver
 
-const observer = new IntersectionObserver((entries) => {
-  entries.forEach((entry) => {
-    if (entry.isIntersecting) {
-      entry.target.classList.add('is-visible')
-      observer.unobserve(entry.target)
-    }
+function initRevealAnimations(root = document) {
+  if (!revealObserver) {
+    revealObserver = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('is-visible')
+          revealObserver.unobserve(entry.target)
+        }
+      })
+    }, {
+      threshold: 0.18,
+      rootMargin: '0px 0px -8% 0px',
+    })
+  }
+
+  const revealItems = root.querySelectorAll('.reveal:not([data-reveal-bound])')
+
+  revealItems.forEach((item, index) => {
+    item.setAttribute('data-reveal-bound', 'true')
+    item.style.setProperty('--stagger', index % 5)
+    revealObserver.observe(item)
   })
-}, {
-  threshold: 0.18,
-  rootMargin: '0px 0px -8% 0px',
-})
+}
 
-revealItems.forEach((item, index) => {
-  item.style.setProperty('--stagger', index % 5)
-  observer.observe(item)
-})
+initRevealAnimations()
+
+window.guildInitRoute = (pathname) => {
+  const isHome = pathname === '/'
+
+  if (isHome) {
+    initGuildSpectrumHero()
+    initGuildPartnerCarousel()
+  }
+
+  initGuildSystemSlider()
+  initGuildShapes()
+  initCampusHighlightCards()
+  initSurfaceTilt()
+}
+
+window.guildRefreshPageUI = (root = document.getElementById('root')) => {
+  if (!root) return
+  initDisplayHeadingIcons(root)
+  initRevealAnimations(root)
+}
 
 function initSurfaceTilt() {
   if (!window.matchMedia('(hover: hover) and (pointer: fine)').matches) return

@@ -1,6 +1,7 @@
 import { defineConfig, loadEnv } from 'vite'
 import path from 'node:path'
 import { pathToFileURL } from 'node:url'
+import react from '@vitejs/plugin-react'
 
 const rewriteMiddleware = () => {
   return {
@@ -12,7 +13,6 @@ const rewriteMiddleware = () => {
           req.on('data', chunk => { body += chunk.toString(); });
           req.on('end', async () => {
             try {
-              // Dynamically import the netlify function for local dev
               const functionPath = path.resolve(process.cwd(), './netlify/functions/join.js');
               const { handler } = await import(pathToFileURL(functionPath).href + '?t=' + Date.now());
               const event = { httpMethod: req.method, body: body, headers: req.headers };
@@ -34,9 +34,22 @@ const rewriteMiddleware = () => {
           return;
         }
 
-        if (req.url.startsWith('/join/') && !req.url.includes('.')) {
-          req.url = '/join.html'
+        const url = req.url?.split('?')[0] || ''
+
+        if (
+          url.includes('.')
+          || url.startsWith('/@')
+          || url.startsWith('/src/')
+          || url.startsWith('/node_modules/')
+          || url === '/index.html'
+        ) {
+          return next()
         }
+
+        if (!url.startsWith('/api/')) {
+          req.url = '/index.html'
+        }
+
         next()
       })
     }
@@ -56,13 +69,6 @@ export default defineConfig(({ mode }) => {
       rollupOptions: {
         input: {
           main: 'index.html',
-          about: 'about.html',
-          pipeline: 'pipeline.html',
-          campus: 'campus.html',
-          events: 'events.html',
-          partners: 'partners.html',
-          join: 'join.html',
-          privacy: 'privacy.html',
         },
       },
     },
@@ -71,6 +77,6 @@ export default defineConfig(({ mode }) => {
         target: 'esnext',
       },
     },
-    plugins: [rewriteMiddleware()],
+    plugins: [react(), rewriteMiddleware()],
   }
 })
