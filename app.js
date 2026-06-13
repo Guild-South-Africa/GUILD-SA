@@ -839,6 +839,11 @@ function initGuildMenu() {
   })
 }
 
+window.guildInitChrome = () => {
+  initActivationBanner()
+  initGuildMenu()
+}
+
 initGuildMenu()
 
 function initCampusHighlightCards() {

@@ -38,12 +38,10 @@ export function useGuildPageEffects({ bodyClass = '' } = {}) {
 
     window.guildInitRoute?.(location.pathname)
     window.guildRefreshPageUI?.(root)
+    window.guildInitChrome?.()
   }, [location.pathname, bodyClass])
 
   useEffect(() => {
-    const root = document.getElementById('root')
-    if (!root) return undefined
-
     const handleClick = (event) => {
       const anchor = event.target.closest('a[href]')
       if (!anchor || anchor.target === '_blank' || event.metaKey || event.ctrlKey || event.shiftKey) {
@@ -59,7 +57,7 @@ export function useGuildPageEffects({ bodyClass = '' } = {}) {
       navigate(href)
     }
 
-    root.addEventListener('click', handleClick)
-    return () => root.removeEventListener('click', handleClick)
+    document.addEventListener('click', handleClick)
+    return () => document.removeEventListener('click', handleClick)
   }, [navigate])
 }

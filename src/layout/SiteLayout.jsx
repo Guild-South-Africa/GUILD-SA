@@ -1,6 +1,11 @@
+import { useEffect } from 'react'
 import { Link, Outlet } from 'react-router-dom'
 
 export default function SiteLayout() {
+  useEffect(() => {
+    window.guildInitChrome?.()
+  }, [])
+
   return (
     <>
       <nav className="site-nav" aria-label="Primary navigation">
