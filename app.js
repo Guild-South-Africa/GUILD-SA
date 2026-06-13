@@ -1,32 +1,15 @@
+import { initGuildSpectrumHero } from './hero-spectrum.js'
+import { initGuildPartnerCarousel } from './partner-carousel.js'
+import { initGuildShapes } from './guild-shapes.js'
+import { initSpectrumHover } from './spectrum-hover.js'
+import { initGuildSystemSlider } from './system-slider.js'
+import { initDisplayHeadingIcons } from './display-icons.js'
+
 const footerMounts = document.querySelectorAll('[data-guild-footer]')
 const isHomePage = /(^\/$|\/index\.html$)/.test(window.location.pathname)
 
 const guildFooterHTML = `
   <div class="footer-shell">
-    <section class="founders-panel" aria-label="GUILD SA founders">
-      <div class="footer-heading">
-        <div>
-          <p class="kicker">Co-founder circle</p>
-          <h2>Meet the people building the system.</h2>
-        </div>
-        <div class="footer-social">
-          <img src="https://res.cloudinary.com/dgwtaivvf/image/upload/v1777998000/Glass_Symbol_xgsngz.png" alt="" aria-hidden="true">
-          <div><strong>@guild.sa</strong><span>Follow the build</span></div>
-        </div>
-      </div>
-      <div class="founder-carousel">
-        <div class="founder-track">
-          <figure class="founder-card"><img src="https://res.cloudinary.com/dgwtaivvf/image/upload/v1778245359/sombra_kuc0d4.jpg" alt="Murunzi Tharaga"><figcaption><strong>Murunzi Tharaga</strong><span>Co-Founder & Creative Director</span></figcaption></figure>
-          <figure class="founder-card"><img src="https://res.cloudinary.com/dgwtaivvf/image/upload/v1778245359/eben_nnhqep.jpg" alt="Eben Mwema"><figcaption><strong>Eben Mwema</strong><span>Co-Founder & Product Lead</span></figcaption></figure>
-          <figure class="founder-card"><img src="https://res.cloudinary.com/dgwtaivvf/image/upload/v1778245360/thomas_amqlcl.jpg" alt="Thomas Murashidzi"><figcaption><strong>Thomas Murashidzi</strong><span>Co-Founder & Technical Lead</span></figcaption></figure>
-          <figure class="founder-card"><img src="https://res.cloudinary.com/dgwtaivvf/image/upload/v1778245359/ati_bvoows.jpg" alt="Ratjatji Malatji"><figcaption><strong>Ratjatji Malatji</strong><span>Co-Founder & Community Lead</span></figcaption></figure>
-          <figure class="founder-card"><img src="https://res.cloudinary.com/dgwtaivvf/image/upload/v1778245359/sombra_kuc0d4.jpg" alt="Murunzi Tharaga"><figcaption><strong>Murunzi Tharaga</strong><span>Co-Founder & Creative Director</span></figcaption></figure>
-          <figure class="founder-card"><img src="https://res.cloudinary.com/dgwtaivvf/image/upload/v1778245359/eben_nnhqep.jpg" alt="Eben Mwema"><figcaption><strong>Eben Mwema</strong><span>Co-Founder & Product Lead</span></figcaption></figure>
-          <figure class="founder-card"><img src="https://res.cloudinary.com/dgwtaivvf/image/upload/v1778245360/thomas_amqlcl.jpg" alt="Thomas Murashidzi"><figcaption><strong>Thomas Murashidzi</strong><span>Co-Founder & Technical Lead</span></figcaption></figure>
-          <figure class="founder-card"><img src="https://res.cloudinary.com/dgwtaivvf/image/upload/v1778245359/ati_bvoows.jpg" alt="Ratjatji Malatji"><figcaption><strong>Ratjatji Malatji</strong><span>Co-Founder & Community Lead</span></figcaption></figure>
-        </div>
-      </div>
-    </section>
     <section class="footer-categories" aria-label="GUILD SA pathways">
       <h2>Choose your entry point</h2>
       <div class="footer-chips"><a href="/join.html">Students</a><a href="/join.html">Teams</a><a href="/partners.html">Mentors</a><a href="/partners.html">Partners</a><a href="/campus.html">Campus Guild</a><a href="/pipeline.html">Guild Labs</a></div>
@@ -44,6 +27,390 @@ footerMounts.forEach((footer) => {
   footer.innerHTML = guildFooterHTML
 })
 
+const guildLoaderHTML = `
+  <section class="guild-loader" aria-label="Loading GUILD SA">
+    <div class="guild-loader__stage">
+      <div class="guild-loader__word" aria-hidden="true">
+        <div class="guild-loader__word-start">
+          <span class="guild-loader__letter">G</span>
+          <span class="guild-loader__letter">u</span>
+          <span class="guild-loader__letter">i</span>
+        </div>
+        <div class="guild-loader__box">
+          <div class="guild-loader__box-inner">
+            <div class="guild-loader__image">
+              <div class="guild-loader__image-wrap">
+                <video
+                  class="guild-loader__video"
+                  autoplay
+                  muted
+                  loop
+                  playsinline
+                  webkit-playsinline
+                  preload="auto"
+                  poster="https://res.cloudinary.com/dgwtaivvf/video/upload/so_0,f_jpg,q_auto:good,w_1200/v1778581653/GUILD_BC_vlf6cv.mp4"
+                >
+                  <source src="https://res.cloudinary.com/dgwtaivvf/video/upload/f_mp4,vc_h264,ac_none,q_auto:good/v1778581653/GUILD_BC_vlf6cv.mp4" type="video/mp4">
+                  <source src="https://res.cloudinary.com/dgwtaivvf/video/upload/f_webm,vc_vp9,ac_none,q_auto:good/v1778581653/GUILD_BC_vlf6cv.mp4" type="video/webm">
+                </video>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="guild-loader__word-end">
+          <span class="guild-loader__letter">l</span>
+          <span class="guild-loader__letter">d</span>
+        </div>
+      </div>
+    </div>
+    <div class="guild-loader__content" aria-hidden="true">
+      <div class="guild-loader__top">
+        <span>Guild SA</span>
+        <span>Build & ship real-world solutions</span>
+      </div>
+      <div class="guild-loader__bottom">
+        <div class="guild-loader__brand">
+          <span class="guild-loader__white-letter">G</span>
+          <span class="guild-loader__white-letter">u</span>
+          <span class="guild-loader__white-letter">i</span>
+          <span class="guild-loader__white-letter">l</span>
+          <span class="guild-loader__white-letter">d</span>
+          <span class="guild-loader__white-letter is-space">S</span>
+          <span class="guild-loader__white-letter">A</span>
+        </div>
+        <span class="guild-loader__credit">Execution becomes signal.</span>
+      </div>
+    </div>
+  </section>
+`
+
+function mountGuildLoader() {
+  if (!document.querySelector('link[data-guild-loader-preload]')) {
+    const preload = document.createElement('link')
+    preload.rel = 'preload'
+    preload.as = 'video'
+    preload.href = 'https://res.cloudinary.com/dgwtaivvf/video/upload/f_mp4,vc_h264,ac_none,q_auto:good/v1778581653/GUILD_BC_vlf6cv.mp4'
+    preload.type = 'video/mp4'
+    preload.dataset.guildLoaderPreload = 'true'
+    document.head.appendChild(preload)
+  }
+
+  document.body.classList.add('is-loading')
+
+  if (document.querySelector('.guild-loader')) return
+
+  document.body.insertAdjacentHTML('afterbegin', guildLoaderHTML)
+
+  const video = document.querySelector('.guild-loader__video')
+  if (!video) return
+
+  video.muted = true
+  video.defaultMuted = true
+  video.playsInline = true
+  video.play().catch(() => undefined)
+}
+
+mountGuildLoader()
+
+initDisplayHeadingIcons()
+
+function initActivationBanner() {
+  const nav = document.querySelector('.site-nav')
+  if (!nav || document.querySelector('.guild-activation-banner')) return
+
+  const bannerItems = `
+    <strong>GUILD SA AI BUILDATHON 01</strong>
+    <span>August 1, 2026 / Eduvos Menlyn Campus / Pretoria</span>
+    <em>100 Builders / One Day / One Campus</em>
+    <b>Applications Now Open</b>
+  `
+  const banner = document.createElement('aside')
+  banner.className = 'guild-activation-banner'
+  banner.setAttribute('aria-label', 'GUILD SA AI Buildathon announcement')
+  banner.innerHTML = `
+    <a href="/join.html" class="guild-activation-banner__link">
+      <span class="guild-activation-banner__track">
+        <span class="guild-activation-banner__group">${bannerItems}</span>
+        <span class="guild-activation-banner__group" aria-hidden="true">${bannerItems}</span>
+      </span>
+    </a>
+  `
+
+  nav.after(banner)
+}
+
+initActivationBanner()
+
+function initHeroPrismCanvas() {
+  if (document.querySelector('.guild-spectrum-hero')) return
+  const canvas = document.querySelector('[data-hero-prism]')
+  if (!canvas) return
+
+  const gl = canvas.getContext('webgl', { antialias: false, alpha: false })
+    || canvas.getContext('experimental-webgl', { antialias: false, alpha: false })
+  if (!gl) {
+    canvas.classList.add('is-unsupported')
+    return
+  }
+
+  const vertexSource = `
+    attribute vec2 position;
+    void main() {
+      gl_Position = vec4(position, 0.0, 1.0);
+    }
+  `
+
+  const fragmentSource = `
+    precision highp float;
+    uniform float uTime;
+    uniform vec2 uResolution;
+    uniform vec2 uMouse;
+
+    #define PI 3.14159265359
+    #define TAU 6.28318530718
+    #define MAX_STEPS 74
+    #define MAX_DIST 42.0
+    #define SURF_DIST 0.001
+
+    float hash(float n) {
+      return fract(sin(n) * 43758.5453123);
+    }
+
+    mat2 rot(float a) {
+      float s = sin(a);
+      float c = cos(a);
+      return mat2(c, -s, s, c);
+    }
+
+    float sdBox(vec3 p, vec3 b) {
+      vec3 q = abs(p) - b;
+      return length(max(q, 0.0)) + min(max(q.x, max(q.y, q.z)), 0.0);
+    }
+
+    float sdSphere(vec3 p, float r) {
+      return length(p) - r;
+    }
+
+    float sdExtrude(float d2, float z, float h) {
+      vec2 w = vec2(d2, abs(z) - h);
+      return min(max(w.x, w.y), 0.0) + length(max(w, 0.0));
+    }
+
+    float sdBrandAsterisk(vec3 p) {
+      float d = 999.0;
+      for (int i = 0; i < 3; i++) {
+        float angle = float(i) * PI / 3.0;
+        vec3 q = p;
+        q.xy = rot(angle) * q.xy;
+        d = min(d, sdBox(q, vec3(0.2, 1.05, 0.2)));
+      }
+      return d;
+    }
+
+    float sdBrandSemicircle(vec3 p) {
+      vec2 q = p.xy;
+      float halfDisk = max(length(q) - 1.02, q.y);
+      return sdExtrude(halfDisk, p.z, 0.2);
+    }
+
+    float sdBrandWave(vec3 p) {
+      vec3 q = p;
+      q.x = clamp(q.x, -1.55, 1.55);
+      float center = 0.17 * sin(q.x * PI * 1.45);
+      float ribbon = abs(p.y - center) - 0.16;
+      float span = abs(p.x) - 1.55;
+      float d2 = max(ribbon, span);
+      return sdExtrude(d2, p.z, 0.16);
+    }
+
+    float map(vec3 p) {
+      vec2 m = (uMouse - 0.5) * 2.0;
+      p.xy += m * 0.22;
+      p.xz *= rot(sin(uTime * 0.18) * 0.08);
+      p.yz *= rot(cos(uTime * 0.14) * 0.06);
+
+      vec3 asterisk = p - vec3(2.75, 1.32 + sin(uTime * 0.55) * 0.11, -0.2);
+      asterisk.xy *= rot(uTime * 0.22);
+      asterisk.xz *= rot(0.16 + sin(uTime * 0.3) * 0.12);
+
+      vec3 circle = p - vec3(4.55, 1.03 + cos(uTime * 0.48) * 0.09, 0.1);
+      circle.xy *= rot(-0.18 + uTime * 0.08);
+
+      vec3 semicircle = p - vec3(2.82, -1.34 + cos(uTime * 0.42) * 0.1, 0.02);
+      semicircle.xy *= rot(-0.06 + sin(uTime * 0.28) * 0.08);
+
+      vec3 wave = p - vec3(4.65, -1.4 + sin(uTime * 0.5) * 0.1, -0.08);
+      wave.xy *= rot(0.04 + sin(uTime * 0.26) * 0.08);
+
+      float d = sdBrandAsterisk(asterisk);
+      d = min(d, sdSphere(circle, 0.94));
+      d = min(d, sdBrandSemicircle(semicircle));
+      d = min(d, sdBrandWave(wave));
+      return d;
+    }
+
+    vec3 getNormal(vec3 p) {
+      vec2 e = vec2(0.001, 0.0);
+      return normalize(vec3(
+        map(p + e.xyy) - map(p - e.xyy),
+        map(p + e.yxy) - map(p - e.yxy),
+        map(p + e.yyx) - map(p - e.yyx)
+      ));
+    }
+
+    float raymarch(vec3 ro, vec3 rd) {
+      float t = 0.0;
+      for (int i = 0; i < MAX_STEPS; i++) {
+        vec3 p = ro + rd * t;
+        float d = map(p);
+        if (abs(d) < SURF_DIST || t > MAX_DIST) break;
+        t += d * 0.72;
+      }
+      return t;
+    }
+
+    vec3 getBackground(vec3 rd) {
+      vec3 black = vec3(0.0);
+      float grain = hash(dot(rd * 120.0, vec3(12.9898, 78.233, 54.53)));
+      float stars = step(0.985, grain) * pow(grain, 18.0) * 0.55;
+      float amberBand = pow(max(0.0, sin(rd.x * 2.4 + rd.y * 1.6 + uTime * 0.08)), 4.0);
+      float emberBand = pow(max(0.0, sin(rd.y * 2.9 - uTime * 0.05)), 3.0);
+      return black + vec3(1.0, 0.42, 0.03) * amberBand * 0.11 + vec3(1.0, 0.16, 0.0) * emberBand * 0.07 + vec3(stars);
+    }
+
+    vec3 getBrandShapeColor(vec3 p) {
+      vec3 yellow = vec3(1.0, 0.82, 0.02);
+      vec3 orange = vec3(1.0, 0.43, 0.05);
+      if (p.x < 3.65 && p.y > 0.0) return yellow;
+      if (p.x < 3.65 && p.y <= 0.0) return orange;
+      if (p.x >= 3.65 && p.y <= 0.0) return yellow;
+      return orange;
+    }
+
+    void main() {
+      vec2 uv = (gl_FragCoord.xy - 0.5 * uResolution) / min(uResolution.x, uResolution.y);
+      uv.x += 0.34;
+
+      vec2 m = (uMouse - 0.5) * 0.46;
+      vec3 ro = vec3(m.x * 1.55, m.y * 1.55, 5.35);
+      vec3 rd = normalize(vec3(uv, -1.0));
+      rd.xy *= rot(m.x * 0.18);
+      rd.yz *= rot(m.y * 0.16);
+
+      float t = raymarch(ro, rd);
+      vec3 color = vec3(0.0);
+
+      if (t < MAX_DIST) {
+        vec3 p = ro + rd * t;
+        vec3 normal = getNormal(p);
+        vec3 viewDir = normalize(ro - p);
+        float fresnel = pow(1.0 - max(dot(viewDir, normal), 0.0), 3.0);
+        vec3 lightDir = normalize(vec3(1.0, 1.0, -0.8));
+        vec3 halfDir = normalize(lightDir + viewDir);
+        float spec = pow(max(dot(normal, halfDir), 0.0), 130.0);
+        float edge = pow(1.0 - abs(dot(viewDir, normal)), 4.0);
+        vec3 brandColor = getBrandShapeColor(p);
+        vec3 gold = vec3(1.0, 0.78, 0.35);
+        vec3 whiteHot = vec3(1.0, 0.95, 0.84);
+        float diffuse = max(dot(normal, lightDir), 0.0);
+        color += getBackground(reflect(rd, normal)) * 2.8;
+        color += brandColor * (0.34 + diffuse * 1.15);
+        color += spec * whiteHot * 3.2;
+        color += fresnel * mix(brandColor, gold, 0.42 + 0.4 * sin(uTime + fresnel * TAU)) * 1.55;
+        color += edge * brandColor * 0.86;
+      } else {
+        color = getBackground(rd);
+      }
+
+      float vignette = 1.0 - length(uv) * 0.42;
+      color *= smoothstep(0.16, 1.0, vignette);
+      color = pow(color * 1.18, vec3(0.88));
+      gl_FragColor = vec4(color, 1.0);
+    }
+  `
+
+  function createShader(type, source) {
+    const shader = gl.createShader(type)
+    gl.shaderSource(shader, source)
+    gl.compileShader(shader)
+    if (!gl.getShaderParameter(shader, gl.COMPILE_STATUS)) {
+      console.warn('Hero shader compile failed:', gl.getShaderInfoLog(shader))
+      gl.deleteShader(shader)
+      return null
+    }
+    return shader
+  }
+
+  const vertexShader = createShader(gl.VERTEX_SHADER, vertexSource)
+  const fragmentShader = createShader(gl.FRAGMENT_SHADER, fragmentSource)
+  if (!vertexShader || !fragmentShader) return
+
+  const program = gl.createProgram()
+  gl.attachShader(program, vertexShader)
+  gl.attachShader(program, fragmentShader)
+  gl.linkProgram(program)
+  if (!gl.getProgramParameter(program, gl.LINK_STATUS)) {
+    console.warn('Hero shader link failed:', gl.getProgramInfoLog(program))
+    return
+  }
+
+  const positions = new Float32Array([-1, -1, 1, -1, -1, 1, 1, 1])
+  const positionBuffer = gl.createBuffer()
+  gl.bindBuffer(gl.ARRAY_BUFFER, positionBuffer)
+  gl.bufferData(gl.ARRAY_BUFFER, positions, gl.STATIC_DRAW)
+
+  const positionLocation = gl.getAttribLocation(program, 'position')
+  const uTime = gl.getUniformLocation(program, 'uTime')
+  const uResolution = gl.getUniformLocation(program, 'uResolution')
+  const uMouse = gl.getUniformLocation(program, 'uMouse')
+  const mouse = { x: 0.5, y: 0.5, targetX: 0.44, targetY: 0.54 }
+  let frame = null
+  let startTime = performance.now()
+
+  function resizeCanvas() {
+    const ratio = Math.min(window.devicePixelRatio || 1, 1.75)
+    const width = Math.max(1, Math.floor(canvas.clientWidth * ratio))
+    const height = Math.max(1, Math.floor(canvas.clientHeight * ratio))
+    if (canvas.width !== width || canvas.height !== height) {
+      canvas.width = width
+      canvas.height = height
+      gl.viewport(0, 0, width, height)
+    }
+  }
+
+  function render(now) {
+    resizeCanvas()
+    mouse.x += (mouse.targetX - mouse.x) * 0.045
+    mouse.y += (mouse.targetY - mouse.y) * 0.045
+    gl.clearColor(0, 0, 0, 1)
+    gl.clear(gl.COLOR_BUFFER_BIT)
+    gl.useProgram(program)
+    gl.uniform1f(uTime, (now - startTime) * 0.001)
+    gl.uniform2f(uResolution, canvas.width, canvas.height)
+    gl.uniform2f(uMouse, mouse.x, mouse.y)
+    gl.enableVertexAttribArray(positionLocation)
+    gl.bindBuffer(gl.ARRAY_BUFFER, positionBuffer)
+    gl.vertexAttribPointer(positionLocation, 2, gl.FLOAT, false, 0, 0)
+    gl.drawArrays(gl.TRIANGLE_STRIP, 0, 4)
+    frame = requestAnimationFrame(render)
+  }
+
+  canvas.addEventListener('pointermove', (event) => {
+    const rect = canvas.getBoundingClientRect()
+    mouse.targetX = (event.clientX - rect.left) / Math.max(rect.width, 1)
+    mouse.targetY = 1 - (event.clientY - rect.top) / Math.max(rect.height, 1)
+  }, { passive: true })
+
+  window.addEventListener('resize', resizeCanvas)
+  window.addEventListener('pagehide', () => {
+    if (frame) cancelAnimationFrame(frame)
+  }, { once: true })
+
+  frame = requestAnimationFrame(render)
+}
+
+initHeroPrismCanvas()
+
 function lerp(start, end, factor) {
   return start + (end - start) * factor
 }
@@ -55,11 +422,20 @@ function initScrollVelocitySkew() {
   const footer = document.querySelector('footer[data-guild-footer]')
   if (!main || !footer || document.getElementById('scroll-content')) return
 
+  const spectrumHero = main.querySelector('.guild-spectrum-hero')
+  if (spectrumHero) {
+    spectrumHero.remove()
+  }
+
   const scrollContent = document.createElement('div')
   scrollContent.id = 'scroll-content'
   scrollContent.className = 'scroll-content'
   main.before(scrollContent)
   scrollContent.append(main, footer)
+
+  if (spectrumHero) {
+    scrollContent.before(spectrumHero)
+  }
 
   let skew = 0
   let lastScrollTop = window.scrollY
@@ -106,6 +482,43 @@ function playAnimation(targets, keyframes, options) {
   return Promise.all(animations.map((animation) => animation.finished.catch(() => undefined)))
 }
 
+async function waitForLoaderVideo(video) {
+  video.muted = true
+  video.defaultMuted = true
+  video.playsInline = true
+  video.setAttribute('playsinline', '')
+  video.setAttribute('webkit-playsinline', '')
+
+  const tryPlay = () => video.play().catch(() => undefined)
+
+  if (video.readyState >= HTMLMediaElement.HAVE_ENOUGH_DATA) {
+    tryPlay()
+    return
+  }
+
+  await new Promise((resolve) => {
+    let settled = false
+    const finish = () => {
+      if (settled) return
+      settled = true
+      tryPlay()
+      resolve()
+    }
+
+    const timeout = window.setTimeout(finish, 5000)
+    const done = () => {
+      window.clearTimeout(timeout)
+      finish()
+    }
+
+    video.addEventListener('canplaythrough', done, { once: true })
+    video.addEventListener('canplay', tryPlay, { once: true })
+    video.addEventListener('loadeddata', tryPlay, { once: true })
+    video.addEventListener('error', done, { once: true })
+    video.load()
+  })
+}
+
 async function initGuildLoadingAnimation() {
   const loader = document.querySelector('.guild-loader')
   if (!loader) {
@@ -113,7 +526,7 @@ async function initGuildLoadingAnimation() {
     return
   }
 
-  if (!isHomePage || window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+  if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
     loader.classList.add('is-hidden')
     document.body.classList.remove('is-loading')
     return
@@ -128,16 +541,25 @@ async function initGuildLoadingAnimation() {
   const whiteLetters = loader.querySelectorAll('.guild-loader__white-letter')
   const metaItems = loader.querySelectorAll('.guild-loader__top span, .guild-loader__credit')
   const loaderImages = Array.from(loader.querySelectorAll('img'))
+  const loaderVideos = Array.from(loader.querySelectorAll('video'))
+
+  loaderVideos.forEach((video) => {
+    video.muted = true
+    video.play().catch(() => undefined)
+  })
 
   await Promise.race([
-    Promise.all(loaderImages.map((image) => {
-      if (image.complete) return Promise.resolve()
-      return image.decode ? image.decode().catch(() => undefined) : new Promise((resolve) => {
-        image.addEventListener('load', resolve, { once: true })
-        image.addEventListener('error', resolve, { once: true })
-      })
-    })),
-    wait(900),
+    Promise.all([
+      ...loaderImages.map((image) => {
+        if (image.complete) return Promise.resolve()
+        return image.decode ? image.decode().catch(() => undefined) : new Promise((resolve) => {
+          image.addEventListener('load', resolve, { once: true })
+          image.addEventListener('error', resolve, { once: true })
+        })
+      }),
+      ...loaderVideos.map((video) => waitForLoaderVideo(video)),
+    ]),
+    wait(5000),
   ])
 
   if (document.fonts?.ready) {
@@ -212,7 +634,24 @@ async function initGuildLoadingAnimation() {
   document.body.classList.remove('is-loading')
 }
 
-initGuildLoadingAnimation()
+function resetHorizontalScroll() {
+  document.documentElement.scrollLeft = 0
+  document.body.scrollLeft = 0
+}
+
+resetHorizontalScroll()
+window.addEventListener('load', resetHorizontalScroll, { once: true })
+window.addEventListener('resize', resetHorizontalScroll)
+
+initGuildLoadingAnimation().then(() => {
+  if (isHomePage) {
+    initGuildSpectrumHero()
+    initGuildPartnerCarousel()
+  }
+  initGuildSystemSlider()
+  initGuildShapes()
+  resetHorizontalScroll()
+})
 
 function initGuildMenu() {
   const nav = document.querySelector('.site-nav')
@@ -853,13 +1292,17 @@ function initHeadingWave() {
   ].join(','))
 
   waveTargets.forEach((target) => {
+    if (target.closest('[data-guild-system-slider]')) return
+    if (target.classList.contains('display-heading') || target.closest('.display-heading')) return
     splitWaveText(target)
   })
 }
 
 initHeadingWave()
 
-if (!isHomePage) {
+function initCursorFollower() {
+  if (document.querySelector('.cursor-symbol')) return
+
   const cursorFollower = document.createElement('div')
   cursorFollower.className = 'cursor-symbol'
   cursorFollower.setAttribute('aria-hidden', 'true')
@@ -896,6 +1339,8 @@ if (!isHomePage) {
 
   animateCursorFollower()
 }
+
+initCursorFollower()
 
 const revealItems = document.querySelectorAll('.reveal')
 
@@ -950,114 +1395,7 @@ function initSurfaceTilt() {
 
 initSurfaceTilt()
 
-function initCardHoverPreviews() {
-  if (!window.matchMedia('(hover: hover) and (pointer: fine)').matches) return
-  if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return
-
-  const previewTarget = [
-    '.compare-cell.positive',
-    '.story-panel.feature',
-    '.project-card',
-    '.pipeline-step',
-    '.system-node',
-    '.card',
-    '.panel',
-  ].map((selector) => document.querySelector(selector)).find(Boolean)
-
-  if (!previewTarget || document.querySelector('.hover-preview-plane')) return
-
-  const previewImages = [
-    'https://res.cloudinary.com/dgwtaivvf/image/upload/v1777998003/Hackathon_team_zrlwkj.jpg',
-    'https://res.cloudinary.com/dgwtaivvf/image/upload/v1777211575/Founders_Table_rkvq1q.png',
-    'https://res.cloudinary.com/dgwtaivvf/image/upload/v1777998011/Billboard2_evpkx2.png',
-    'https://res.cloudinary.com/dgwtaivvf/image/upload/v1777998022/Brand_Flags_izzch1.png',
-    'https://res.cloudinary.com/dgwtaivvf/image/upload/v1777998032/Guild_Hackathon_promotional_poster_on_window_su0yhg.png',
-    'https://res.cloudinary.com/dgwtaivvf/image/upload/v1777998038/hack_poster_e6kyfr.png',
-    'https://res.cloudinary.com/dgwtaivvf/image/upload/v1777998053/Poster_on_car_paozhi.png',
-  ]
-
-  const preview = document.createElement('div')
-  preview.className = 'hover-preview-plane'
-  preview.setAttribute('aria-hidden', 'true')
-  preview.innerHTML = `
-    <img class="hover-preview-img is-red" alt="">
-    <img class="hover-preview-img is-main" alt="">
-    <img class="hover-preview-img is-blue" alt="">
-  `
-  document.body.appendChild(preview)
-
-  const previewLayers = Array.from(preview.querySelectorAll('img'))
-  const state = {
-    targetX: window.innerWidth / 2,
-    targetY: window.innerHeight / 2,
-    x: window.innerWidth / 2,
-    y: window.innerHeight / 2,
-    previousX: window.innerWidth / 2,
-    previousY: window.innerHeight / 2,
-    visible: false,
-    activeTarget: null,
-  }
-
-  function setPreviewImage(src) {
-    previewLayers.forEach((image) => {
-      if (image.src !== src) image.src = src
-    })
-  }
-
-  previewTarget.classList.add('has-hover-preview')
-  if (!previewTarget.dataset.previewImage) {
-    previewTarget.dataset.previewImage = previewImages[0]
-  }
-
-  previewTarget.addEventListener('pointerenter', (event) => {
-    state.visible = true
-    state.activeTarget = previewTarget
-    state.targetX = event.clientX
-    state.targetY = event.clientY
-    setPreviewImage(previewTarget.dataset.previewImage)
-    preview.classList.add('is-visible')
-    previewTarget.classList.add('is-preview-active')
-  })
-
-  previewTarget.addEventListener('pointermove', (event) => {
-    state.targetX = event.clientX
-    state.targetY = event.clientY
-  }, { passive: true })
-
-  previewTarget.addEventListener('pointerleave', () => {
-    state.visible = false
-    previewTarget.classList.remove('is-preview-active')
-    preview.classList.remove('is-visible')
-    state.activeTarget = null
-  })
-
-  function animatePreview() {
-    state.previousX = state.x
-    state.previousY = state.y
-    state.x += (state.targetX - state.x) * 0.18
-    state.y += (state.targetY - state.y) * 0.18
-
-    const velocityX = state.x - state.previousX
-    const velocityY = state.y - state.previousY
-    const speed = Math.min(Math.hypot(velocityX, velocityY), 34)
-    const skew = Math.max(Math.min(velocityX * 0.16, 8), -8)
-    const lift = Math.max(Math.min(velocityY * -0.08, 6), -6)
-    const split = (state.visible ? 2.5 : 0) + speed * 0.12
-
-    preview.style.setProperty('--preview-x', `${state.x.toFixed(2)}px`)
-    preview.style.setProperty('--preview-y', `${state.y.toFixed(2)}px`)
-    preview.style.setProperty('--preview-skew', `${skew.toFixed(2)}deg`)
-    preview.style.setProperty('--preview-lift', `${lift.toFixed(2)}deg`)
-    preview.style.setProperty('--preview-split', `${split.toFixed(2)}px`)
-    preview.style.setProperty('--preview-scale', state.visible ? '1' : '0.92')
-
-    requestAnimationFrame(animatePreview)
-  }
-
-  animatePreview()
-}
-
-initCardHoverPreviews()
+initSpectrumHover()
 
 const floatingItems = document.querySelectorAll('.float-on-scroll')
 
@@ -1073,70 +1411,3 @@ function updateScrollMotion() {
 window.addEventListener('scroll', updateScrollMotion, { passive: true })
 window.addEventListener('resize', updateScrollMotion)
 updateScrollMotion()
-
-const symbolCard = document.querySelector('.hero-symbol-card')
-
-if (symbolCard && window.matchMedia('(pointer: fine)').matches) {
-  const homeCursorSymbol = document.createElement('div')
-  homeCursorSymbol.className = 'cursor-symbol home-symbol-cursor'
-  homeCursorSymbol.setAttribute('aria-hidden', 'true')
-  homeCursorSymbol.innerHTML = '<img src="https://res.cloudinary.com/dgwtaivvf/image/upload/v1777213445/Glass_Symbol_polfar.png" alt="">'
-  document.body.appendChild(homeCursorSymbol)
-
-  const state = {
-    targetX: window.innerWidth * 0.72,
-    targetY: window.innerHeight * 0.48,
-    x: window.innerWidth * 0.72,
-    y: window.innerHeight * 0.48,
-    previousX: window.innerWidth * 0.72,
-    previousY: window.innerHeight * 0.48,
-    size: 0,
-    active: false,
-    pointerSeen: false,
-  }
-
-  const setTargetFromPointer = (event) => {
-    if (event.pointerType === 'touch') return
-    state.targetX = event.clientX
-    state.targetY = event.clientY
-    state.pointerSeen = true
-  }
-
-  const updateSymbolSize = () => {
-    const viewport = window.innerHeight || 1
-    const hero = document.querySelector('.page-hero')
-    const heroRect = hero ? hero.getBoundingClientRect() : { bottom: viewport }
-    const progress = Math.min(Math.max((viewport * 0.74 - heroRect.bottom) / (viewport * 0.82), 0), 1)
-    const maxSize = Math.min(Math.max(window.innerWidth * 0.28, 260), 520)
-    const minSize = window.innerWidth < 760 ? 86 : 118
-    state.size = Math.round(maxSize - (maxSize - minSize) * progress)
-    state.active = progress > 0.02
-    document.body.classList.toggle('symbol-following', state.active)
-    homeCursorSymbol.classList.toggle('is-active', state.active)
-    homeCursorSymbol.style.setProperty('--symbol-size', `${state.size}px`)
-  }
-
-  const animateSymbol = () => {
-    state.previousX = state.x
-    state.previousY = state.y
-    const followStrength = state.active ? 0.18 : 0.12
-    state.x += (state.targetX - state.x) * followStrength
-    state.y += (state.targetY - state.y) * followStrength
-    const velocityX = state.x - state.previousX
-    const velocityY = state.y - state.previousY
-    const tilt = Math.max(Math.min(velocityX * 0.12, 10), -10)
-    const travel = Math.min(Math.hypot(velocityX, velocityY), 28)
-    const scale = state.active ? 1 + travel * 0.0018 : 1
-    homeCursorSymbol.style.setProperty('--symbol-x', `${state.x.toFixed(2)}px`)
-    homeCursorSymbol.style.setProperty('--symbol-y', `${state.y.toFixed(2)}px`)
-    homeCursorSymbol.style.setProperty('--symbol-tilt', `${tilt.toFixed(2)}deg`)
-    homeCursorSymbol.style.setProperty('--symbol-follow-scale', scale.toFixed(3))
-    requestAnimationFrame(animateSymbol)
-  }
-
-  window.addEventListener('pointermove', setTargetFromPointer, { passive: true })
-  window.addEventListener('scroll', updateSymbolSize, { passive: true })
-  window.addEventListener('resize', updateSymbolSize)
-  updateSymbolSize()
-  animateSymbol()
-}
