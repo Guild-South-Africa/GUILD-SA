@@ -68,13 +68,13 @@ async function airtableRequest(table, method, records) {
       Authorization: `Bearer ${AIRTABLE_TOKEN}`,
       'Content-Type': 'application/json',
     },
-    body: JSON.stringify({ records }),
+    body: JSON.stringify({ records, typecast: true }),
   });
 
   if (!response.ok) {
     const errorText = await response.text();
     console.error('Airtable API Error:', errorText);
-    throw new HttpError(response.status, 'Airtable rejected the submission. Check the table and field names.');
+    throw new HttpError(response.status, airtableErrorMessage(errorText));
   }
 
   return response.json();
@@ -157,7 +157,8 @@ async function uploadToCloudinary(upload, joinType) {
   const data = await response.json().catch(() => ({}));
   if (!response.ok) {
     console.error('Cloudinary API Error:', data);
-    throw new HttpError(response.status, 'Cloudinary rejected the uploaded file.');
+    const detail = data.error?.message || JSON.stringify(data);
+    throw new HttpError(response.status, `Cloudinary rejected the uploaded file: ${detail}`);
   }
 
   return {
@@ -178,6 +179,61 @@ async function uploadPayloadFiles(payload, joinType) {
 
 function cleanString(value) {
   return typeof value === 'string' && value.trim() ? value.trim() : undefined;
+}
+
+function airtableErrorMessage(errorText) {
+  try {
+    const data = JSON.parse(errorText);
+    return data.error?.message || data.error?.type || 'Airtable rejected the submission. Check the table and field names.';
+  } catch {
+    return 'Airtable rejected the submission. Check the table and field names.';
+  }
+}
+
+function compactFields(fields) {
+  return Object.fromEntries(
+    Object.entries(fields).filter(([, value]) => {
+      if (value === undefined || value === null) return false;
+      if (typeof value === 'string' && !value.trim()) return false;
+      if (Array.isArray(value) && !value.length) return false;
+      return true;
+    })
+  );
+}
+
+function multiSelect(value) {
+  if (Array.isArray(value)) return value.map(cleanString).filter(Boolean);
+  if (!value) return undefined;
+  return String(value).split(',').map((item) => item.trim()).filter(Boolean);
+}
+
+function normalizeYearOfStudy(value) {
+  const year = cleanString(value);
+  if (!year) return undefined;
+
+  const normalized = year.toLowerCase();
+  if (['1', '1st', 'first'].includes(normalized)) return '1st Year';
+  if (['2', '2nd', 'second'].includes(normalized)) return '2nd Year';
+  if (['3', '3rd', 'third'].includes(normalized)) return '3rd Year';
+  if (['4', '4th', 'fourth'].includes(normalized)) return '4th Year';
+  if (normalized.includes('post')) return 'Postgraduate';
+  return year;
+}
+
+function normalizePreferredRole(value) {
+  const role = cleanString(value);
+  if (!role) return undefined;
+  if (role.toLowerCase() === 'pm') return 'Product Manager';
+  return role;
+}
+
+async function eventLinks(eventName) {
+  const event = cleanString(eventName);
+  if (!event) return undefined;
+  if (/^rec[a-zA-Z0-9]{14,}$/.test(event)) return [event];
+
+  const lookup = await airtableFindByFormula('Events', `{Event Name}='${escapeAirtableString(event)}'`);
+  return lookup.records?.length ? [lookup.records[0].id] : undefined;
 }
 
 function uploadedUrl(uploadedFiles, field) {
@@ -224,26 +280,27 @@ export const handler = async (event) => {
 
     switch (type) {
       case 'student': {
+        const registeredEvents = await eventLinks(payload.event);
         const participantRecord = await airtableRequest('Participants', 'POST', [{
-          fields: {
+          fields: compactFields({
             'Full Name': payload.name,
             Email: payload.email,
             'Phone Number': payload.phone,
             City: payload.city,
             Institution: payload.institution,
             'Course / Degree': payload.course,
-            'Year of Study': payload.year,
-            Skills: payload.skills,
-            'Preferred Role': payload.role,
+            'Year of Study': normalizeYearOfStudy(payload.year),
+            Skills: multiSelect(payload.skills),
+            'Preferred Role': normalizePreferredRole(payload.role),
             'GitHub URL': payload.github,
             'LinkedIn URL': payload.linkedin,
             'Portfolio URL': portfolioUrl(payload, uploadedFiles),
             'Looking for Team': payload.lookingForTeam === true || payload.lookingForTeam === 'true',
+            'Registered Events': registeredEvents,
             'Consent Accepted': true,
             'Media Consent': true,
             Status: 'Applied',
-            'Registration Date': new Date().toISOString(),
-          },
+          }),
         }]);
         result = { success: true, participantId: participantRecord.records[0].id, uploads: uploadedFiles };
         break;
@@ -251,40 +308,41 @@ export const handler = async (event) => {
 
       case 'team': {
         const inviteCode = generateInviteCode();
+        const linkedEvents = await eventLinks(payload.event);
         const leaderRecord = await airtableRequest('Participants', 'POST', [{
-          fields: {
+          fields: compactFields({
             'Full Name': payload.leaderName,
             Email: payload.leaderEmail,
             'Phone Number': payload.phone,
             Institution: payload.institution,
-            Skills: payload.skills,
-            'Preferred Role': payload.role,
+            Skills: multiSelect(payload.skills),
+            'Preferred Role': normalizePreferredRole(payload.role),
             'GitHub URL': payload.github,
             'LinkedIn URL': payload.linkedin,
             'Portfolio URL': portfolioUrl(payload, uploadedFiles),
+            'Registered Events': linkedEvents,
             'Consent Accepted': true,
             'Media Consent': true,
             Status: 'Applied',
-            'Registration Date': new Date().toISOString(),
-          },
+          }),
         }]);
         const leaderId = leaderRecord.records[0].id;
 
         const teamRecord = await airtableRequest('Teams', 'POST', [{
-          fields: {
+          fields: compactFields({
             'Team Name': payload.teamName,
             'Team Capacity': parseInt(payload.capacity, 10),
-            Event: payload.event,
+            Event: linkedEvents,
             Track: payload.track,
             'Project Name': payload.projectName,
             'Problem Statement': payload.problemStatement,
             'Project Description': payload.projectDescription,
-            'Invite Code': inviteCode,
-            Status: 'Forming',
-            'Submission Status': 'Pending',
-            Leader: [leaderId],
+            'Team Invite Code': inviteCode,
+            'Team Status': 'Active',
+            'Submission Status': 'Not Started',
+            'Team Lead': [leaderId],
             Members: [leaderId],
-          },
+          }),
         }]);
 
         const teamId = teamRecord.records[0].id;
@@ -310,29 +368,28 @@ export const handler = async (event) => {
           return jsonResponse(400, { error: 'Invalid invite code.' });
         }
 
-        const teamLookup = await airtableFindByFormula('Teams', `{Invite Code}='${escapeAirtableString(inviteCode)}'`);
+        const teamLookup = await airtableFindByFormula('Teams', `{Team Invite Code}='${escapeAirtableString(inviteCode)}'`);
         if (!teamLookup.records?.length) {
           return jsonResponse(404, { error: 'Invalid invite code.' });
         }
 
         const teamId = teamLookup.records[0].id;
         const participantRecord = await airtableRequest('Participants', 'POST', [{
-          fields: {
+          fields: compactFields({
             'Full Name': payload.name,
             Email: payload.email,
             'Phone Number': payload.phone,
             Institution: payload.institution,
-            Skills: payload.skills,
-            'Preferred Role': payload.role,
+            Skills: multiSelect(payload.skills),
+            'Preferred Role': normalizePreferredRole(payload.role),
             'GitHub URL': payload.github,
             'LinkedIn URL': payload.linkedin,
             'Portfolio URL': portfolioUrl(payload, uploadedFiles),
             'Consent Accepted': true,
             'Media Consent': true,
             Status: 'Applied',
-            'Registration Date': new Date().toISOString(),
             Team: [teamId],
-          },
+          }),
         }]);
 
         result = { success: true, participantId: participantRecord.records[0].id, teamId, uploads: uploadedFiles };
@@ -341,20 +398,14 @@ export const handler = async (event) => {
 
       case 'mentor': {
         const mentorRecord = await airtableRequest('Mentors', 'POST', [{
-          fields: {
+          fields: compactFields({
             'Full Name': payload.name,
             Email: payload.email,
-            Company: payload.company,
-            Role: payload.role,
-            Expertise: payload.expertise,
-            LinkedIn: payload.linkedin,
-            GitHub: payload.github,
-            Bio: payload.bio,
+            Expertise: multiSelect(payload.expertise),
+            'LinkedIn URL': payload.linkedin,
             Availability: payload.availability,
-            'Consent Accepted': true,
-            'Media Consent': true,
-            Status: 'Applied',
-          },
+            Status: 'Available',
+          }),
         }]);
         result = { success: true, mentorId: mentorRecord.records[0].id, uploads: uploadedFiles };
         break;
@@ -362,18 +413,13 @@ export const handler = async (event) => {
 
       case 'partner': {
         const partnerRecord = await airtableRequest('Partners', 'POST', [{
-          fields: {
+          fields: compactFields({
             'Organization Name': payload.organizationName,
-            'Contact Person': payload.contactPerson,
-            Email: payload.email,
-            Website: payload.website,
+            'Contact Name': payload.contactPerson,
+            'Contact Email': payload.email,
             'Partnership Type': payload.partnershipType,
-            'Support Type': payload.supportType,
-            Notes: payload.notes,
-            'Consent Accepted': true,
-            'Media Consent': true,
-            Status: 'Prospect',
-          },
+            Status: 'Pending',
+          }),
         }]);
         result = { success: true, partnerId: partnerRecord.records[0].id };
         break;
@@ -381,19 +427,13 @@ export const handler = async (event) => {
 
       case 'sponsor': {
         const sponsorRecord = await airtableRequest('Sponsors', 'POST', [{
-          fields: {
-            'Company Name': payload.companyName,
-            'Contact Person': payload.contactPerson,
+          fields: compactFields({
+            'Organization Name': payload.companyName,
+            'Contact Name': payload.contactPerson,
             'Contact Email': payload.contactEmail,
-            Website: payload.website,
-            'Sponsor Type': payload.sponsorType,
-            'Contribution Type': payload.contributionType,
-            'Sponsorship Value': payload.sponsorshipValue,
-            Notes: payload.notes,
-            'Consent Accepted': true,
-            'Media Consent': true,
-            Status: 'Prospect',
-          },
+            Tier: payload.sponsorType,
+            Benefits: [payload.contributionType, payload.sponsorshipValue, payload.notes].map(cleanString).filter(Boolean).join('\n'),
+          }),
         }]);
         result = { success: true, sponsorId: sponsorRecord.records[0].id };
         break;
@@ -401,19 +441,15 @@ export const handler = async (event) => {
 
       case 'campus': {
         const campusRecord = await airtableRequest('Campuses', 'POST', [{
-          fields: {
-            'Institution Name': payload.institutionName,
+          fields: compactFields({
+            Institution: payload.institutionName,
             'Campus Name': payload.campusName,
             Province: payload.province,
             City: payload.city,
-            'Applicant Name': payload.applicantName,
-            'Applicant Email': payload.applicantEmail,
-            'Existing Community Size': payload.communitySize,
-            'Why Start a Guild': payload.whyStart,
-            'Consent Accepted': true,
-            'Media Consent': true,
-            Status: 'Prospect',
-          },
+            'Campus Lead Name': payload.applicantName,
+            'Campus Lead Email': payload.applicantEmail,
+            Active: false,
+          }),
         }]);
         result = { success: true, campusId: campusRecord.records[0].id };
         break;

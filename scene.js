@@ -14,11 +14,11 @@ const params = {
   fishScale: 1.2,
   speedMultiplier: 7,
   tailSpeed: 7,
-  fishColor: '#f07c00',
+  fishColor: '#e1b43e',
   fov: 45,
   ambientColor: '#ffffff',
   ambientIntensity: 3.1,
-  dirColor: '#f07c00',
+  dirColor: '#f4b12e',
   dirIntensity: 3.8,
   fogNear: 900,
   fogFar: 2800,
@@ -59,9 +59,9 @@ function createDotTexture() {
   canvas.height = 64
   const context = canvas.getContext('2d')
   const gradient = context.createRadialGradient(32, 32, 0, 32, 32, 28)
-  gradient.addColorStop(0, 'rgba(240, 124, 0, 0.95)')
-  gradient.addColorStop(0.44, 'rgba(240, 124, 0, 0.7)')
-  gradient.addColorStop(1, 'rgba(240, 124, 0, 0)')
+  gradient.addColorStop(0, 'rgba(225, 180, 62, 0.95)')
+  gradient.addColorStop(0.44, 'rgba(244, 177, 46, 0.7)')
+  gradient.addColorStop(1, 'rgba(225, 180, 62, 0)')
   context.fillStyle = gradient
   context.beginPath()
   context.arc(32, 32, 28, 0, Math.PI * 2)
@@ -97,7 +97,7 @@ const waveGeometry = new THREE.BufferGeometry()
 waveGeometry.setAttribute('position', new THREE.BufferAttribute(wavePositions, 3))
 
 const waveMaterial = new THREE.PointsMaterial({
-  color: 0xf07c00,
+  color: 0xe1b43e,
   map: createDotTexture(),
   size: 6,
   sizeAttenuation: true,
