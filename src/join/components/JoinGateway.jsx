@@ -1,6 +1,7 @@
 import { Link } from 'react-router-dom'
 import { PATHWAY_CARDS } from '../lib/formConfigs'
 import { useGuildPageEffects } from '../../hooks/useGuildPageEffects'
+import EditorialCta from '../../components/EditorialCta'
 
 const WHY_APPLY = [
   { title: 'Build A Real MVP', copy: 'Work with a team to create a functioning product.' },
@@ -65,7 +66,7 @@ export default function JoinGateway() {
           <h1 className="reveal" data-motion="left">Apply To Join The First 100 Builders.</h1>
           <p className="hero-copy reveal">Applications are now open for the inaugural GUILD SA AI Buildathon at Eduvos Menlyn. Join a one-day AI Buildathon where teams build real-world solutions, present publicly, and unlock future opportunities.</p>
           <div className="partner-hero-evidence reveal" aria-label="Buildathon availability">
-            <span>100 Builder Seats Available</span>
+            <span>100 Builders</span>
             <span>01 August 2026</span>
             <span>Eduvos Menlyn</span>
             <span>Pretoria</span>
@@ -210,20 +211,20 @@ export default function JoinGateway() {
         </div>
       </section>
 
-      <section className="site-section join-final-section">
-        <div className="shell">
-          <div className="join-final reveal" data-motion="scale">
-            <p className="kicker reveal">Join the movement</p>
-            <h2>More Than A Buildathon.</h2>
-            <p>GUILD SA is building a national ecosystem of student builders, mentors, partners, and innovators. The inaugural AI Buildathon is the first step.</p>
-            <p>Join the people helping shape what comes next.</p>
-            <div className="waitlist-actions">
-              <Link className="button reveal" to="/join/student">Apply Now</Link>
-              <Link className="button secondary reveal" to="/partners">Partner With Us</Link>
-            </div>
-          </div>
-        </div>
-      </section>
+      <EditorialCta
+        anchor="100"
+        kicker="Final step"
+        title="Apply To Join The First 100 Builders."
+        copy={[
+          'GUILD SA is building a national ecosystem of student builders, mentors, partners, and innovators. The inaugural AI Buildathon is the first step.',
+          'Join the people helping shape what comes next.',
+        ]}
+        primaryLabel="Apply Now"
+        primaryTo="/join/student"
+        secondaryLabel="Partner With Us"
+        secondaryTo="/partners"
+        dark={false}
+      />
     </div>
   )
 }

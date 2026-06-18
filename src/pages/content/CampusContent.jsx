@@ -1,4 +1,5 @@
 import AppLink from '../../components/AppLink'
+import EditorialCta from '../../components/EditorialCta'
 
 export default function CampusContent() {
   return (
@@ -169,25 +170,25 @@ export default function CampusContent() {
                 <div>
                   <p className="kicker reveal">Expansion roadmap</p>
                   <h2 className="reveal">Growing The Network.</h2>
-                  <p className="section-intro reveal">The long-term vision is a connected network of Campus Guilds operating across universities and private institutions throughout South Africa.</p>
+                  <p className="section-intro reveal">The long-term vision is a connected network of Campus Guilds across universities and private institutions throughout South Africa.</p>
                   <p className="section-intro reveal">Expansion begins with Eduvos Menlyn and grows campus by campus through partnerships, student leadership, and demonstrated success.</p>
                 </div>
               </div>
               <div className="grid four">
                 <article className="card reveal">
-                  <span className="index">Node 01</span>
+                  <span className="index">01</span>
                   <h3>Eduvos Menlyn</h3>
                   <p style={{ color: 'var(--orange)', fontWeight: '600', marginBottom: '1rem' }}>01 August 2026</p>
                   <p>The pilot Campus Guild and first live environment where the GUILD SA model takes shape.</p>
                 </article>
                 <article className="card reveal">
-                  <span className="index">Node 02</span>
+                  <span className="index">02</span>
                   <h3>Future Partner Campus</h3>
                   <p style={{ color: 'var(--orange)', fontWeight: '600', marginBottom: '1rem' }}>Coming soon</p>
                   <p>The next Campus Guild activation as partnerships and student leadership scale the network.</p>
                 </article>
                 <article className="card reveal">
-                  <span className="index">Node 03</span>
+                  <span className="index">03</span>
                   <h3>Future Partner Campus</h3>
                   <p style={{ color: 'var(--orange)', fontWeight: '600', marginBottom: '1rem' }}>Coming soon</p>
                   <p>Additional institutions joining the national builder network as the model proves out.</p>
@@ -233,19 +234,14 @@ export default function CampusContent() {
             </div>
           </section>
 
-          <section className="site-section dark about-cta-section">
-            <div className="shell">
-              <div className="about-cta">
-                <p className="kicker reveal">Get started</p>
-                <h2 className="reveal">Start Building With Others.</h2>
-                <p className="section-intro reveal">Whether you're looking for teammates, projects, mentorship, or your next Buildathon, the Campus Guild is where the journey begins.</p>
-                <div className="waitlist-actions">
-                  <AppLink className="button reveal" to="/join">Join The Guild</AppLink>
-                  <AppLink className="button secondary reveal" to="/events">Explore Events</AppLink>
-                </div>
-              </div>
-            </div>
-          </section>
+          <EditorialCta
+            kicker="Get started"
+            title="Start Building With Others."
+            copy="Whether you're looking for teammates, projects, mentorship, or your next Buildathon, the Campus Guild is where the journey begins."
+            primaryLabel="Join The Guild"
+            secondaryLabel="Explore Events"
+            secondaryTo="/events"
+          />
     </>
   )
 }

@@ -3,6 +3,8 @@ import { createRoot } from 'react-dom/client'
 import { BrowserRouter } from 'react-router-dom'
 import App from './App'
 import '../style.css'
+import './styles/editorial-system.css'
+import './lib/editorial-grid.js'
 import '../app.js'
 import '../scene.js'
 

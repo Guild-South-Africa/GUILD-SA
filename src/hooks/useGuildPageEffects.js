@@ -39,6 +39,11 @@ export function useGuildPageEffects({ bodyClass = '' } = {}) {
     window.guildInitRoute?.(location.pathname)
     window.guildRefreshPageUI?.(root)
     window.guildInitChrome?.()
+    window.guildInitEditorialGrid?.()
+
+    return () => {
+      window.cleanupGuildSpectrumHero?.()
+    }
   }, [location.pathname, bodyClass])
 
   useEffect(() => {

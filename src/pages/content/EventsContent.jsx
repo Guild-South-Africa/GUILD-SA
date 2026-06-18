@@ -1,4 +1,6 @@
 import AppLink from '../../components/AppLink'
+import EditorialCta from '../../components/EditorialCta'
+import { EVENT_TIMELINE } from '../../lib/eventTimeline'
 
 export default function EventsContent() {
   return (
@@ -116,12 +118,13 @@ export default function EventsContent() {
                 </div>
               </div>
               <div className="timeline">
-                <div className="timeline-row event-timeline-row reveal"><span className="time">07:00</span><h3>Plan</h3><p>Teams arrive, review briefs, align roles, and define MVP scope.</p></div>
-                <div className="timeline-row event-timeline-row reveal"><span className="time">07:45</span><h3>Build</h3><p>Focused sprint begins — prototype, iterate, and ship with modern AI tools.</p></div>
-                <div className="timeline-row event-timeline-row reveal"><span className="time">11:15</span><h3>Break</h3><p>Short recharge before the afternoon push.</p></div>
-                <div className="timeline-row event-timeline-row reveal"><span className="time">12:00</span><h3>Test</h3><p>Refine functionality, improve UX, test workflows, and prepare live demonstrations.</p></div>
-                <div className="timeline-row event-timeline-row reveal"><span className="time">15:15</span><h3>Demo</h3><p>Teams present working solutions to mentors, judges, and ecosystem partners.</p></div>
-                <div className="timeline-row event-timeline-row reveal"><span className="time">17:00</span><h3>Launch</h3><p>Winners announced. Selected teams enter incubation and continuation pathways.</p></div>
+                {EVENT_TIMELINE.map((row) => (
+                  <div key={row.time} className="timeline-row event-timeline-row reveal">
+                    <span className="time">{row.time}</span>
+                    <h3>{row.title}</h3>
+                    <p>{row.copy}</p>
+                  </div>
+                ))}
               </div>
             </div>
           </section>
@@ -159,9 +162,9 @@ export default function EventsContent() {
                 </div>
               </div>
               <div className="grid three partner-signal-grid">
-                <article className="card reveal"><span className="index">Eduvos</span><h3>Campus Host</h3><p>Eduvos Menlyn anchors the inaugural Buildathon — the physical home where 100 builders meet, collaborate, and ship.</p><div className="tags"><span>Campus</span><span>Host</span></div></article>
-                <article className="card reveal"><span className="index">Lovable</span><h3>AI Build Platform Partner</h3><p>Lovable provides the AI development environment and participant credits to accelerate MVP creation throughout the day.</p><div className="tags"><span>AI tools</span><span>Credits</span></div></article>
-                <article className="card reveal"><span className="index">VelozTech</span><h3>Industry Innovation Partner</h3><p>VelozTech brings industry context, mentorship, incubation pathways, and talent development opportunities to the cohort.</p><div className="tags"><span>Mentorship</span><span>Pathways</span></div></article>
+                <article className="card reveal"><span className="index">01</span><h3>Eduvos</h3><p>Eduvos Menlyn anchors the inaugural Buildathon — the physical home where 100 builders meet, collaborate, and ship.</p><div className="tags"><span>Campus</span><span>Host</span></div></article>
+                <article className="card reveal"><span className="index">02</span><h3>Lovable</h3><p>Lovable provides the AI development environment and participant credits to accelerate MVP creation throughout the day.</p><div className="tags"><span>AI tools</span><span>Credits</span></div></article>
+                <article className="card reveal"><span className="index">03</span><h3>VelozTech</h3><p>VelozTech brings industry context, mentorship, incubation pathways, and talent development opportunities to the cohort.</p><div className="tags"><span>Mentorship</span><span>Pathways</span></div></article>
               </div>
             </div>
           </section>
@@ -225,19 +228,9 @@ export default function EventsContent() {
             </div>
           </section>
 
-          <section className="site-section dark about-cta-section">
-            <div className="shell">
-              <div className="about-cta">
-                <p className="kicker reveal">Applications are now open</p>
-                <h2 className="reveal">Applications Are Now Open.</h2>
-                <p className="section-intro reveal">100 builders. One campus. One day. Join the inaugural GUILD SA AI Buildathon and help launch a new generation of builders.</p>
-                <div className="waitlist-actions">
-                  <AppLink className="button reveal" to="/join">Apply Now</AppLink>
-                  <AppLink className="button secondary reveal" to="/partners">Partner With Us</AppLink>
-                </div>
-              </div>
-            </div>
-          </section>
+          <EditorialCta
+            copy="100 builders. One campus. One day. Join the inaugural GUILD SA AI Buildathon and help launch a new generation of builders."
+          />
     </>
   )
 }

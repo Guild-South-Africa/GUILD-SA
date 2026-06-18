@@ -1,4 +1,5 @@
 import AppLink from '../../components/AppLink'
+import EditorialCta from '../../components/EditorialCta'
 
 export default function PipelineContent() {
   return (
@@ -6,8 +7,8 @@ export default function PipelineContent() {
       <section className="page-hero compact">
             <div className="shell">
               <p className="eyebrow reveal">02 / Pipeline</p>
-              <h1 className="reveal" data-motion="left">From Potential To Proof.</h1>
-              <p className="hero-copy reveal">The GUILD SA pipeline helps students move from learning to building, from building to visible execution, and from execution to opportunity.</p>
+              <h1 className="reveal" data-motion="left">Student → Builder → Proof → Opportunity.</h1>
+              <p className="hero-copy reveal">The GUILD SA pipeline transforms students into visible builders — moving from learning to execution, from execution to proof, and from proof to real opportunity.</p>
               <p className="hero-copy reveal">Every stage of the system is designed to answer one question: Can this builder actually ship?</p>
               <AppLink className="button reveal" to="/join">Join The Buildathon</AppLink>
             </div>
@@ -22,12 +23,10 @@ export default function PipelineContent() {
                   <h2 className="reveal">How Builders Move Through The Ecosystem</h2>
                   <p className="section-intro reveal">The objective is not participation. The objective is visible capability. Every stage exists to make execution easier to evaluate.</p>
                   <div className="about-transform-list reveal">
-                    <span>Discover</span>
-                    <span>Join</span>
-                    <span>Build</span>
-                    <span>Demo</span>
-                    <span>Get Seen</span>
-                    <span>Continue</span>
+                    <span>Student</span>
+                    <span>Builder</span>
+                    <span>Proof</span>
+                    <span>Opportunity</span>
                   </div>
                 </div>
               </div>
@@ -45,37 +44,37 @@ export default function PipelineContent() {
               </div>
               <div className="pipeline-flow">
                 <article className="pipeline-step reveal">
-                  <span>01 - Discover</span>
-                  <h3>Find the ecosystem.</h3>
+                  <span>01</span>
+                  <h3>Discover the ecosystem.</h3>
                   <p>Students discover GUILD SA through campuses, events, partners, communities, and referrals.</p>
                   <strong className="pipeline-rule">Goal: Understand what the ecosystem is and what it expects.</strong>
                 </article>
                 <article className="pipeline-step reveal">
-                  <span>02 - Join</span>
+                  <span>02</span>
                   <h3>Enter the system.</h3>
                   <p>Students register individually or with existing teams.</p>
                   <strong className="pipeline-rule">Goal: Commit to building.</strong>
                 </article>
                 <article className="pipeline-step reveal">
-                  <span>03 - Build</span>
+                  <span>03</span>
                   <h3>Move into execution.</h3>
                   <p>Teams scope, prototype, iterate, and solve problems under practical constraints.</p>
                   <strong className="pipeline-rule">Goal: Create something real.</strong>
                 </article>
                 <article className="pipeline-step reveal">
-                  <span>04 - Demo</span>
+                  <span>04</span>
                   <h3>Present publicly.</h3>
                   <p>Teams demonstrate products, explain decisions, and defend implementation choices.</p>
                   <strong className="pipeline-rule">Goal: Make capability visible.</strong>
                 </article>
                 <article className="pipeline-step reveal">
-                  <span>05 - Exposure</span>
+                  <span>05</span>
                   <h3>Become discoverable.</h3>
                   <p>Projects, demos, repositories, and team profiles become visible to the wider ecosystem.</p>
                   <strong className="pipeline-rule">Goal: Create evidence.</strong>
                 </article>
                 <article className="pipeline-step reveal">
-                  <span>06 - Continue</span>
+                  <span>06</span>
                   <h3>Move beyond the event.</h3>
                   <p>Selected teams enter Guild Labs, mentorship pathways, showcases, incubation opportunities, and partner conversations.</p>
                   <strong className="pipeline-rule">Goal: Convert momentum into opportunity.</strong>
@@ -182,7 +181,7 @@ export default function PipelineContent() {
                 <div>
                   <p className="kicker reveal">Ecosystem impact</p>
                   <h2 className="reveal">A System Designed To Scale.</h2>
-                  <p className="section-intro reveal">The pilot at Eduvos Menlyn is the first node in a national builder network — designed to grow campus by campus, builder by builder.</p>
+                  <p className="section-intro reveal">The pilot at Eduvos Menlyn is the first campus in a national builder network — designed to grow campus by campus, builder by builder.</p>
                 </div>
               </div>
               <div className="stat-strip">
@@ -194,19 +193,13 @@ export default function PipelineContent() {
             </div>
           </section>
 
-          <section className="site-section dark about-cta-section">
-            <div className="shell">
-              <div className="about-cta">
-                <p className="kicker reveal">Enter the pipeline</p>
-                <h2 className="reveal">Ready To Enter The Pipeline?</h2>
-                <p className="section-intro reveal">The journey begins with one decision. Join the inaugural GUILD SA AI Buildathon and start building visible proof of what you can do.</p>
-                <div className="waitlist-actions">
-                  <AppLink className="button reveal" to="/join">Apply Now</AppLink>
-                  <AppLink className="button secondary reveal" to="/events">Explore Events</AppLink>
-                </div>
-              </div>
-            </div>
-          </section>
+          <EditorialCta
+            kicker="Enter the pipeline"
+            title="Ready To Enter The Pipeline?"
+            copy="The journey begins with one decision. Join the inaugural GUILD SA AI Buildathon and start building visible proof of what you can do."
+            secondaryLabel="Explore Events"
+            secondaryTo="/events"
+          />
     </>
   )
 }

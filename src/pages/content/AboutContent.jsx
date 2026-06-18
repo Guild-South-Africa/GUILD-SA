@@ -1,4 +1,5 @@
 import AppLink from '../../components/AppLink'
+import EditorialCta from '../../components/EditorialCta'
 
 export default function AboutContent() {
   return (
@@ -100,7 +101,7 @@ export default function AboutContent() {
                 </div>
               </div>
               <div className="about-entry-grid">
-                <article className="about-entry-card reveal"><span>Campus Guilds</span><p>Student builder communities within institutions — structured nodes, not casual clubs.</p></article>
+                <article className="about-entry-card reveal"><span>Campus Guilds</span><p>Student builder communities within institutions — structured environments, not casual clubs.</p></article>
                 <article className="about-entry-card reveal"><span>Buildathons</span><p>High-pressure execution environments where teams ship under real constraints.</p></article>
                 <article className="about-entry-card reveal"><span>Guild Labs</span><p>Continuation pathways for promising teams ready to keep building.</p></article>
                 <article className="about-entry-card reveal"><span>Showcases</span><p>Public visibility for builders and projects — proof that travels beyond the room.</p></article>
@@ -117,14 +118,14 @@ export default function AboutContent() {
                 <div>
                   <p className="kicker reveal">National vision</p>
                   <h2 className="reveal">Building The Execution Layer For South Africa.</h2>
-                  <p className="section-intro reveal">GUILD SA begins with a pilot node at Eduvos Menlyn. The long-term vision is a distributed network of student builder communities operating across universities and private institutions throughout South Africa.</p>
+                  <p className="section-intro reveal">GUILD SA begins with a pilot campus at Eduvos Menlyn. The long-term vision is a distributed network of student builder communities across universities and private institutions throughout South Africa.</p>
                   <p className="section-intro reveal">Success is not measured by the number of events. Success is measured by more builders creating, more projects shipping, more talent becoming visible, and more opportunities being unlocked.</p>
                 </div>
               </div>
               <div className="stat-strip">
                 <div className="stat reveal"><strong>26+</strong><span>Public Universities</span></div>
                 <div className="stat reveal"><strong>150+</strong><span>Private Institutions</span></div>
-                <div className="stat reveal"><strong>1</strong><span>Pilot Node</span></div>
+                <div className="stat reveal"><strong>1</strong><span>Pilot Campus</span></div>
                 <div className="stat reveal"><strong>100+</strong><span>Builders In The First Cohort</span></div>
               </div>
               <p className="section-intro reveal" style={{ marginTop: '2rem' }}>National Expansion Roadmap — from one campus activation to a connected builder network across South Africa.</p>
@@ -158,7 +159,7 @@ export default function AboutContent() {
               <div className="section-header">
                 <div className="section-number reveal">09</div>
                 <div>
-                  <p className="kicker reveal">Founding team</p>
+                  <p className="kicker reveal">Founding Operators</p>
                   <h2 className="reveal">Building The Infrastructure Behind The Movement.</h2>
                   <p className="section-intro reveal">GUILD SA is being built by a multidisciplinary founding team focused on creating the systems, partnerships, and environments that help student builders succeed.</p>
                 </div>
@@ -180,19 +181,12 @@ export default function AboutContent() {
             </div>
           </section>
 
-          <section className="site-section dark about-cta-section">
-            <div className="shell">
-              <div className="about-cta">
-                <p className="kicker reveal">Join the movement</p>
-                <h2 className="reveal">Join The Next Generation Of Builders.</h2>
-                <p className="section-intro reveal">Whether you're a student, mentor, institution, or partner, there is a place for you in the ecosystem. The future belongs to people who build.</p>
-                <div className="waitlist-actions">
-                  <AppLink className="button reveal" to="/join">Join The Guild</AppLink>
-                  <AppLink className="button secondary reveal" to="/partners">Partner With Us</AppLink>
-                </div>
-              </div>
-            </div>
-          </section>
+          <EditorialCta
+            kicker="Join the movement"
+            title="Join The Next Generation Of Builders."
+            copy="Whether you're a student, mentor, institution, or partner, there is a place for you in the ecosystem. The future belongs to people who build."
+            primaryLabel="Join The Guild"
+          />
     </>
   )
 }

@@ -1,4 +1,5 @@
 import AppLink from '../../components/AppLink'
+import EditorialCta from '../../components/EditorialCta'
 
 export default function PartnersContent() {
   return (
@@ -6,7 +7,7 @@ export default function PartnersContent() {
       <section className="page-hero compact">
             <div className="shell">
               <p className="eyebrow reveal">05 / Partners</p>
-              <h1 className="reveal" data-motion="left">Building The Ecosystem Behind The Builders.</h1>
+              <h1 className="reveal" data-motion="left">Access Builders Before The Market Finds Them.</h1>
               <p className="hero-copy reveal">GUILD SA connects campuses, students, mentors, technology platforms, and industry partners through real-world execution environments.</p>
               <p className="hero-copy reveal">The inaugural AI Buildathon is only the beginning. The long-term vision is a national network of builders, projects, institutions, and opportunities connected through a shared system of execution.</p>
               <AppLink className="button reveal" to="/join">Become A Partner</AppLink>
@@ -45,9 +46,9 @@ export default function PartnersContent() {
                 </div>
               </div>
               <div className="grid three partner-signal-grid">
-                <article className="card reveal"><span className="index">Eduvos Menlyn</span><h3>Campus Host</h3><p>Supporting the first campus node and pilot builder cohort at Eduvos Menlyn, Pretoria.</p><div className="tags"><span>Campus</span><span>Host</span></div></article>
-                <article className="card reveal"><span className="index">Lovable</span><h3>AI Build Platform Partner</h3><p>Providing tooling and development credits for rapid MVP creation throughout the Buildathon.</p><div className="tags"><span>AI tools</span><span>Credits</span></div></article>
-                <article className="card reveal"><span className="index">VelozTech</span><h3>Industry Innovation Partner</h3><p>Supporting challenge framing, mentorship, continuation pathways, and talent development opportunities.</p><div className="tags"><span>Mentorship</span><span>Pathways</span></div></article>
+                <article className="card reveal"><span className="index">01</span><h3>Eduvos</h3><p>Supporting the first pilot campus and builder cohort at Eduvos Menlyn, Pretoria.</p><div className="tags"><span>Campus</span><span>Host</span></div></article>
+                <article className="card reveal"><span className="index">02</span><h3>Lovable</h3><p>Providing tooling and development credits for rapid MVP creation throughout the Buildathon.</p><div className="tags"><span>AI tools</span><span>Credits</span></div></article>
+                <article className="card reveal"><span className="index">03</span><h3>VelozTech</h3><p>Supporting challenge framing, mentorship, continuation pathways, and talent development opportunities.</p><div className="tags"><span>Mentorship</span><span>Pathways</span></div></article>
               </div>
             </div>
           </section>
@@ -137,7 +138,7 @@ export default function PartnersContent() {
                 <div className="section-number reveal">07</div>
                 <div>
                   <p className="kicker reveal">How projects create value</p>
-                  <h2 className="reveal">Every Project Creates Signal.</h2>
+                  <h2 className="reveal">Every Project Creates Proof.</h2>
                   <p className="section-intro reveal">The Buildathon produces more than presentations. It produces evidence. Partners gain visibility into problem solving, product thinking, technical execution, team collaboration, leadership, communication, and innovation.</p>
                   <p className="section-intro reveal">Every project becomes an inspectable proof layer.</p>
                 </div>
@@ -193,20 +194,18 @@ export default function PartnersContent() {
             </div>
           </section>
 
-          <section className="site-section partner-final-section">
-            <div className="shell">
-              <div className="partner-final reveal" data-motion="scale">
-                <p className="kicker reveal">Join the network</p>
-                <h2>Become Part Of The Ecosystem.</h2>
-                <p>Support the next generation of builders through mentorship, tooling, innovation, talent pathways, campus activations, and project continuation opportunities.</p>
-                <p>Whether you're a technology company, startup, institution, or innovation partner, there is a place for you in the network.</p>
-                <div className="waitlist-actions">
-                  <AppLink className="button reveal" to="/join">Become A Partner</AppLink>
-                  <a className="button secondary reveal" href="mailto:guildsagroup@gmail.com">Schedule A Conversation</a>
-                </div>
-              </div>
-            </div>
-          </section>
+          <EditorialCta
+            kicker="Join the network"
+            title="Become Part Of The Ecosystem."
+            copy={[
+              'Support the next generation of builders through mentorship, tooling, innovation, talent pathways, campus activations, and project continuation opportunities.',
+              'Whether you\'re a technology company, startup, institution, or innovation partner, there is a place for you in the network.',
+            ]}
+            primaryLabel="Become A Partner"
+            secondaryLabel="Schedule A Conversation"
+            secondaryHref="mailto:guildsagroup@gmail.com"
+            dark={false}
+          />
     </>
   )
 }

@@ -15,7 +15,8 @@
     "react-dom": "^19.2.7",
     "react-router-dom": "^7.17.0",
     "stats-gl": "^4.0.2",
-    "three": "^0.183.2"
+    "three": "^0.183.2",
+    "threejs-components": "^0.0.19"
   },
   "devDependencies": {
     "@vitejs/plugin-react": "^4.7.0",

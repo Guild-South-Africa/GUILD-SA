@@ -5,7 +5,7 @@ import { initSpectrumHover } from './spectrum-hover.js'
 import { initGuildSystemSlider } from './system-slider.js'
 import { initDisplayHeadingIcons } from './display-icons.js'
 
-const footerMounts = document.querySelectorAll('[data-guild-footer]')
+
 const isHomePage = window.location.pathname === '/'
 
 const guildFooterHTML = `
@@ -23,9 +23,15 @@ const guildFooterHTML = `
   </div>
 `
 
-footerMounts.forEach((footer) => {
-  footer.innerHTML = guildFooterHTML
-})
+function mountGuildFooter() {
+  document.querySelectorAll('[data-guild-footer]').forEach((footer) => {
+    if (footer.dataset.footerMounted === 'true') return
+    footer.innerHTML = guildFooterHTML
+    footer.dataset.footerMounted = 'true'
+  })
+}
+
+mountGuildFooter()
 
 const guildLoaderHTML = `
   <section class="guild-loader" aria-label="Loading GUILD SA">
@@ -418,29 +424,18 @@ function lerp(start, end, factor) {
 function initScrollVelocitySkew() {
   if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return
 
-  const main = document.querySelector('main')
-  const footer = document.querySelector('footer[data-guild-footer]')
-  if (!main || !footer || document.getElementById('scroll-content')) return
-
-  const spectrumHero = main.querySelector('.guild-spectrum-hero')
-  if (spectrumHero) {
-    spectrumHero.remove()
-  }
-
-  const scrollContent = document.createElement('div')
-  scrollContent.id = 'scroll-content'
-  scrollContent.className = 'scroll-content'
-  main.before(scrollContent)
-  scrollContent.append(main, footer)
-
-  if (spectrumHero) {
-    scrollContent.before(spectrumHero)
-  }
+  const scrollContent = document.getElementById('scroll-content')
+  if (!scrollContent || scrollContent.dataset.skewInit === 'true') return
+  scrollContent.dataset.skewInit = 'true'
 
   let skew = 0
   let lastScrollTop = window.scrollY
 
   function scrollLoop() {
+    if (!document.getElementById('scroll-content')) {
+      // If elements are fully destroyed / route changes and it unmounts
+      return
+    }
     const scrollTop = window.scrollY
     const velocity = scrollTop - lastScrollTop
     lastScrollTop = scrollTop
@@ -460,8 +455,6 @@ function initScrollVelocitySkew() {
 
   scrollLoop()
 }
-
-initScrollVelocitySkew()
 
 function wait(duration) {
   return new Promise((resolve) => {
@@ -840,8 +833,11 @@ function initGuildMenu() {
 }
 
 window.guildInitChrome = () => {
+  mountGuildFooter()
   initActivationBanner()
   initGuildMenu()
+  initScrollVelocitySkew()
+  window.guildInitEditorialGrid?.()
 }
 
 initGuildMenu()

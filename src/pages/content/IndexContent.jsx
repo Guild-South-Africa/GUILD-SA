@@ -1,4 +1,6 @@
 import AppLink from '../../components/AppLink'
+import EditorialCta from '../../components/EditorialCta'
+import { EVENT_TIMELINE } from '../../lib/eventTimeline'
 
 export default function IndexContent() {
   return (
@@ -17,9 +19,9 @@ export default function IndexContent() {
                 <a href="mailto:guildsagroup@gmail.com" className="guild-spectrum-email">guildsagroup@gmail.com</a>
                 <span className="guild-spectrum-meta__year">— 2026</span>
               </div>
-              <div className="guild-spectrum-meta__item guild-spectrum-meta__bl">100 Builder Seats</div>
-              <div className="guild-spectrum-meta__item guild-spectrum-meta__bc guild-spectrum-split">Applications Open</div>
-              <div className="guild-spectrum-meta__item guild-spectrum-meta__br">01 Aug 2026</div>
+              <div className="guild-spectrum-meta__item guild-spectrum-meta__bl">100 Builders</div>
+              <div className="guild-spectrum-meta__item guild-spectrum-meta__bc guild-spectrum-split">Eduvos Menlyn</div>
+              <div className="guild-spectrum-meta__item guild-spectrum-meta__br">01 August 2026</div>
             </div>
 
             <section className="guild-spectrum-section" aria-label="GUILD SA introduction">
@@ -120,14 +122,14 @@ export default function IndexContent() {
                 </p>
                 <div className="guild-spectrum-grid">
                   <div className="guild-spectrum-grid__col"><div className="guild-spectrum-label guild-spectrum-label--1 guild-spectrum-split">Guild SA<br />Master<br />Brand</div></div>
-                  <div className="guild-spectrum-grid__col"><div className="guild-spectrum-label guild-spectrum-label--2 guild-spectrum-split">Campus<br />Guild<br />Node</div></div>
+                  <div className="guild-spectrum-grid__col"><div className="guild-spectrum-label guild-spectrum-label--2 guild-spectrum-split">Campus<br />Guild<br />Home</div></div>
                   <div className="guild-spectrum-grid__col"><div className="guild-spectrum-label guild-spectrum-label--3 guild-spectrum-split">Guilders<br />Members<br />Identity</div></div>
                   <div className="guild-spectrum-grid__col"><div className="guild-spectrum-label guild-spectrum-label--4 guild-spectrum-split">Guild Labs<br />Output<br />MVPs</div></div>
                   <div className="guild-spectrum-grid__col"><div className="guild-spectrum-label guild-spectrum-label--5 guild-spectrum-split">Partners<br />Industry<br />Briefs</div></div>
                   <div className="guild-spectrum-grid__col"><div className="guild-spectrum-label guild-spectrum-label--4 guild-spectrum-split">Sprint<br />Event<br />Pressure</div></div>
                   <div className="guild-spectrum-grid__col"><div className="guild-spectrum-label guild-spectrum-label--3 guild-spectrum-split">Demo<br />Day<br />Proof</div></div>
                   <div className="guild-spectrum-grid__col"><div className="guild-spectrum-label guild-spectrum-label--2 guild-spectrum-split">Buildathon<br />AI<br />Sprint</div></div>
-                  <div className="guild-spectrum-grid__col"><div className="guild-spectrum-label guild-spectrum-label--1 guild-spectrum-split">Signal<br />Ship<br />Continue</div></div>
+                  <div className="guild-spectrum-grid__col"><div className="guild-spectrum-label guild-spectrum-label--1 guild-spectrum-split">Ship<br />Prove<br />Continue</div></div>
                 </div>
               </div>
             </div>
@@ -135,17 +137,24 @@ export default function IndexContent() {
 
           <section className="site-section dark home-statement-section">
             <div className="shell">
-              <h2 className="home-statement reveal" data-motion="scale">South Africa Has Talent.<br /><span className="home-statement-accent">Now It Needs Proof</span></h2>
-              <p className="section-intro reveal" style={{ maxWidth: '62ch', margin: '2rem auto 0', textAlign: 'center' }}>The GUILD SA AI Buildathon exists to help students move beyond theory and demonstrate what they can actually build. In one day, teams will collaborate, prototype, test, and present working AI-powered solutions in front of mentors, judges, and ecosystem partners. This is not a lecture. This is execution.</p>
+              <div className="section-header section-header--centered">
+                <div className="section-number reveal">01</div>
+                <div>
+                  <p className="kicker reveal">Why this exists</p>
+                  <h2 className="home-statement reveal" data-motion="scale">South Africa Has Talent.<br /><span className="home-statement-accent">Now It Needs Proof</span></h2>
+                  <p className="section-intro reveal">The GUILD SA AI Buildathon exists to help students move beyond theory and demonstrate what they can actually build. In one day, teams will collaborate, prototype, test, and present working AI-powered solutions in front of mentors, judges, and ecosystem partners. This is not a lecture. This is execution.</p>
+                </div>
+              </div>
             </div>
           </section>
 
           <section className="site-section">
             <div className="shell">
               <div className="section-header">
+                <div className="section-number reveal">02</div>
                 <div>
-                  <p className="kicker reveal">Why apply</p>
-                  <h2 className="reveal">Why Apply?</h2>
+                  <p className="kicker reveal">What participants gain</p>
+                  <h2 className="reveal">What You Leave With.</h2>
                   <p className="section-intro reveal">Five outcomes that turn one day of building into evidence, exposure, and future opportunity.</p>
                 </div>
               </div>
@@ -176,9 +185,14 @@ export default function IndexContent() {
 
           <section className="guild-partner-showcase" aria-label="GUILD SA ecosystem partners">
             <div className="shell guild-partner-showcase__intro">
-              <p className="kicker reveal">Ecosystem partners</p>
-              <h2 className="reveal">Built With Partners Who Believe In Builders.</h2>
-              <p className="section-intro reveal">Campus access, AI build tooling, and industry mentorship — backing the first 100-student cohort.</p>
+              <div className="section-header">
+                <div className="section-number reveal">03</div>
+                <div>
+                  <p className="kicker reveal">Ecosystem partners</p>
+                  <h2 className="reveal">Built With Partners Who Believe In Builders.</h2>
+                  <p className="section-intro reveal">Campus access, AI build tooling, and industry mentorship — backing the first 100-student cohort.</p>
+                </div>
+              </div>
             </div>
 
             <div className="guild-partner-carousel" data-guild-partner-carousel>
@@ -201,15 +215,15 @@ export default function IndexContent() {
               <div className="guild-partner-carousel__content">
                 <div className="guild-partner-carousel__panel is-active" data-carousel-panel>
                   <div className="guild-partner-carousel__copy" data-carousel-copy>
-                    <p className="guild-partner-carousel__index">Campus Host</p>
-                    <h3>Eduvos Menlyn</h3>
+                    <p className="guild-partner-carousel__index">01</p>
+                    <h3>Eduvos</h3>
                     <p>Hosts the inaugural Buildathon — giving 100 builders campus access, workspace, and a live stage to ship and demo.</p>
                   </div>
                   <AppLink to="/join" className="button guild-partner-carousel__cta">Apply Now</AppLink>
                 </div>
                 <div className="guild-partner-carousel__panel" data-carousel-panel>
                   <div className="guild-partner-carousel__copy" data-carousel-copy>
-                    <p className="guild-partner-carousel__index">Platform Partner</p>
+                    <p className="guild-partner-carousel__index">02</p>
                     <h3>Lovable</h3>
                     <p>Powers rapid MVP development with AI build credits and tooling so teams ship faster on event day.</p>
                   </div>
@@ -217,7 +231,7 @@ export default function IndexContent() {
                 </div>
                 <div className="guild-partner-carousel__panel" data-carousel-panel>
                   <div className="guild-partner-carousel__copy" data-carousel-copy>
-                    <p className="guild-partner-carousel__index">Industry Partner</p>
+                    <p className="guild-partner-carousel__index">03</p>
                     <h3>VelozTech</h3>
                     <p>Frames real industry challenges, mentors teams, and opens continuation pathways for standout projects.</p>
                   </div>
@@ -230,19 +244,21 @@ export default function IndexContent() {
           <section className="site-section home-system-section">
             <div className="shell">
               <div className="section-header">
+                <div className="section-number reveal">04</div>
                 <div>
-                  <p className="kicker reveal">Build day</p>
+                  <p className="kicker reveal">Event experience</p>
                   <h2 className="reveal">What Happens On Build Day?</h2>
                   <p className="section-intro reveal">07:00–17:00 at Eduvos Menlyn. One journey: Plan → Build → Test → Demo → Launch.</p>
                 </div>
               </div>
               <div className="timeline">
-                <div className="timeline-row event-timeline-row reveal"><span className="time">07:00</span><h3>Plan</h3><p>Teams arrive, review challenge briefs, align roles, and define MVP scope.</p></div>
-                <div className="timeline-row event-timeline-row reveal"><span className="time">07:45</span><h3>Build</h3><p>Focused sprint begins — prototype, iterate, and ship with modern AI tools.</p></div>
-                <div className="timeline-row event-timeline-row reveal"><span className="time">11:15</span><h3>Break</h3><p>Short recharge before the afternoon push.</p></div>
-                <div className="timeline-row event-timeline-row reveal"><span className="time">12:00</span><h3>Test</h3><p>Refine functionality, improve UX, test workflows, and prepare live demonstrations.</p></div>
-                <div className="timeline-row event-timeline-row reveal"><span className="time">15:15</span><h3>Demo</h3><p>Teams present working solutions to mentors, judges, and ecosystem partners.</p></div>
-                <div className="timeline-row event-timeline-row reveal"><span className="time">17:00</span><h3>Launch</h3><p>Winners announced. Selected teams enter incubation and continuation pathways.</p></div>
+                {EVENT_TIMELINE.map((row) => (
+                  <div key={row.time} className="timeline-row event-timeline-row reveal">
+                    <span className="time">{row.time}</span>
+                    <h3>{row.title}</h3>
+                    <p>{row.copy}</p>
+                  </div>
+                ))}
               </div>
             </div>
           </section>
@@ -291,6 +307,7 @@ export default function IndexContent() {
           <section className="site-section">
             <div className="shell">
               <div className="section-header">
+                <div className="section-number reveal">05</div>
                 <div>
                   <p className="kicker reveal">The challenge</p>
                   <h2 className="reveal">One Day. One Team. One Working Solution.</h2>
@@ -301,31 +318,12 @@ export default function IndexContent() {
             </div>
           </section>
 
-          <section className="site-section home-proof-section">
-            <div className="shell">
-              <div className="section-header">
-                <div>
-                  <p className="kicker reveal">Build stack</p>
-                  <h2 className="reveal">Build With Modern AI Tools.</h2>
-                  <p className="section-intro reveal">The tools that compress the distance between idea, prototype, demo, and deployment.</p>
-                </div>
-              </div>
-              <div className="tool-grid">
-                <article className="tool-card reveal"><span>Cursor</span><p>Ship faster with AI-assisted development.</p></article>
-                <article className="tool-card reveal"><span>Lovable</span><p>Prototype and iterate on product interfaces rapidly.</p></article>
-                <article className="tool-card reveal"><span>GitHub</span><p>Collaborate, version, and signal your build.</p></article>
-                <article className="tool-card reveal"><span>Figma</span><p>Design interfaces before you ship.</p></article>
-                <article className="tool-card reveal"><span>Netlify</span><p>Deploy demos that are live and shareable.</p></article>
-                <article className="tool-card reveal"><span>Render</span><p>Run backends that make MVPs real.</p></article>
-              </div>
-            </div>
-          </section>
-
           <section className="site-section dark">
             <div className="shell">
               <div className="section-header">
+                <div className="section-number reveal">06</div>
                 <div>
-                  <p className="kicker reveal">GUILD SA difference</p>
+                  <p className="kicker reveal">Why GUILD SA</p>
                   <h2 className="reveal">Why GUILD SA Is Different</h2>
                 </div>
               </div>
@@ -341,8 +339,9 @@ export default function IndexContent() {
           <section className="site-section">
             <div className="shell">
               <div className="section-header">
+                <div className="section-number reveal">07</div>
                 <div>
-                  <p className="kicker reveal">Beyond the buildathon</p>
+                  <p className="kicker reveal">Future pathways</p>
                   <h2 className="reveal">Beyond The Buildathon</h2>
                   <p className="section-intro reveal">GUILD SA is not a single event. The Buildathon is the first step into a growing ecosystem of campus communities, future build sprints, project showcases, industry partnerships, mentorship opportunities, and incubation pathways.</p>
                 </div>
@@ -362,7 +361,7 @@ export default function IndexContent() {
                       <div className="guild-system-slider__content">
                         <p className="guild-system-slider__label">Master brand</p>
                         <h3 className="guild-system-slider__title">Guild SA</h3>
-                        <p className="guild-system-slider__description">National authority, trust, positioning, and public signal.</p>
+                        <p className="guild-system-slider__description">National authority, trust, positioning, and public credibility.</p>
                         <button type="button" className="guild-system-slider__play ripple" aria-label="Play layer animation">
                           <span className="guild-system-slider__icon"><svg viewBox="0 0 512 512"><use href="#guild-system-play"></use></svg></span>
                         </button>
@@ -372,7 +371,7 @@ export default function IndexContent() {
                       <img className="guild-system-slider__cover" src="https://res.cloudinary.com/dgwtaivvf/image/upload/v1777998003/Hackathon_team_zrlwkj.jpg" alt="" loading="lazy" decoding="async" aria-hidden="true" />
                       <div className="guild-system-slider__visual"></div>
                       <div className="guild-system-slider__content">
-                        <p className="guild-system-slider__label">Platform layer</p>
+                        <p className="guild-system-slider__label">Campus layer</p>
                         <h3 className="guild-system-slider__title">Campus Guild</h3>
                         <p className="guild-system-slider__description">The student-facing program inside each institution.</p>
                         <button type="button" className="guild-system-slider__play ripple" aria-label="Play layer animation">
@@ -617,27 +616,40 @@ export default function IndexContent() {
             </div>
           </section>
 
-          <section className="site-section home-waitlist-section">
+          <section className="site-section dark">
             <div className="shell">
-              <div className="waitlist-panel reveal" data-motion="scale">
+              <div className="section-header">
+                <div className="section-number reveal">08</div>
                 <div>
-                  <p className="kicker">Applications are now open</p>
-                  <h2>Applications Are Now Open</h2>
-                  <p>100 builders. One campus. One day. Join the inaugural GUILD SA AI Buildathon and help launch a new generation of student builders.</p>
-                </div>
-                <div className="waitlist-actions">
-                  <AppLink className="button" to="/join">Apply Now</AppLink>
-                  <AppLink className="button secondary" to="/partners">Partner With Us</AppLink>
-                </div>
-                <div className="waitlist-tags" aria-label="Available waitlist paths">
-                  <span>Student builder</span>
-                  <span>Mentor</span>
-                  <span>Sponsor</span>
-                  <span>Institution</span>
+                  <p className="kicker reveal">Founding operators</p>
+                  <h2 className="reveal">The Team Building The Infrastructure.</h2>
+                  <p className="section-intro reveal">GUILD SA is being built by a multidisciplinary founding team focused on creating the systems, partnerships, and environments that help student builders succeed.</p>
                 </div>
               </div>
+              <section className="founders-panel" aria-label="GUILD SA founding operators">
+                <div className="founder-carousel">
+                  <div className="founder-track">
+                    <figure className="founder-card"><img src="https://res.cloudinary.com/dgwtaivvf/image/upload/v1778245359/sombra_kuc0d4.jpg" alt="Murunzi Tharaga" /><figcaption><strong>Murunzi Tharaga</strong><span>Co-Founder & Creative Director</span></figcaption></figure>
+                    <figure className="founder-card"><img src="https://res.cloudinary.com/dgwtaivvf/image/upload/v1778245359/eben_nnhqep.jpg" alt="Eben Mwema" /><figcaption><strong>Eben Mwema</strong><span>Co-Founder & Product Lead</span></figcaption></figure>
+                    <figure className="founder-card"><img src="https://res.cloudinary.com/dgwtaivvf/image/upload/v1778245360/thomas_amqlcl.jpg" alt="Thomas Murashidzi" /><figcaption><strong>Thomas Murashidzi</strong><span>Co-Founder & Technical Lead</span></figcaption></figure>
+                    <figure className="founder-card"><img src="https://res.cloudinary.com/dgwtaivvf/image/upload/v1778245359/ati_bvoows.jpg" alt="Ratjatji Malatji" /><figcaption><strong>Ratjatji Malatji</strong><span>Co-Founder & Community Lead</span></figcaption></figure>
+                    <figure className="founder-card"><img src="https://res.cloudinary.com/dgwtaivvf/image/upload/v1778245359/sombra_kuc0d4.jpg" alt="Murunzi Tharaga" /><figcaption><strong>Murunzi Tharaga</strong><span>Co-Founder & Creative Director</span></figcaption></figure>
+                    <figure className="founder-card"><img src="https://res.cloudinary.com/dgwtaivvf/image/upload/v1778245359/eben_nnhqep.jpg" alt="Eben Mwema" /><figcaption><strong>Eben Mwema</strong><span>Co-Founder & Product Lead</span></figcaption></figure>
+                    <figure className="founder-card"><img src="https://res.cloudinary.com/dgwtaivvf/image/upload/v1778245360/thomas_amqlcl.jpg" alt="Thomas Murashidzi" /><figcaption><strong>Thomas Murashidzi</strong><span>Co-Founder & Technical Lead</span></figcaption></figure>
+                    <figure className="founder-card"><img src="https://res.cloudinary.com/dgwtaivvf/image/upload/v1778245359/ati_bvoows.jpg" alt="Ratjatji Malatji" /><figcaption><strong>Ratjatji Malatji</strong><span>Co-Founder & Community Lead</span></figcaption></figure>
+                  </div>
+                </div>
+              </section>
             </div>
           </section>
+
+          <EditorialCta
+            anchor="100"
+            kicker="Apply to join the first 100 builders"
+            title="Applications Are Now Open."
+            copy="100 builders. One campus. One day. Join the inaugural GUILD SA AI Buildathon and help launch a new generation of student builders."
+            dark={false}
+          />
     </>
   )
 }

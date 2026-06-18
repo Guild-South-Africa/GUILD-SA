@@ -21,9 +21,10 @@ export default function SiteLayout() {
         </div>
       </nav>
 
-      <Outlet />
-
-      <footer className="footer" data-guild-footer />
+      <div id="scroll-content" className="scroll-content">
+        <Outlet />
+        <footer className="footer" data-guild-footer />
+      </div>
     </>
   )
 }
