@@ -94,7 +94,8 @@ export default function CampusContent() {
                 </div>
               </div>
               <div className="stat-strip">
-                <div className="stat reveal"><strong>100</strong><span>Builders</span></div>
+                <div className="stat reveal"><strong>~100</strong><span>Campus Pool</span></div>
+                <div className="stat reveal"><strong>40</strong><span>Sprint Floor</span></div>
                 <div className="stat reveal"><strong>1</strong><span>Pilot Campus</span></div>
                 <div className="stat reveal"><strong>01 Aug</strong><span>2026</span></div>
                 <div className="stat reveal"><strong>PTA</strong><span>Pretoria</span></div>

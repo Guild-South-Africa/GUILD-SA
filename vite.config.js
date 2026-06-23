@@ -34,6 +34,32 @@ const rewriteMiddleware = () => {
           return;
         }
 
+        if (req.url === '/api/subscribe' && req.method === 'POST') {
+          let body = '';
+          req.on('data', chunk => { body += chunk.toString(); });
+          req.on('end', async () => {
+            try {
+              const functionPath = path.resolve(process.cwd(), './netlify/functions/subscribe.js');
+              const { handler } = await import(pathToFileURL(functionPath).href + '?t=' + Date.now());
+              const event = { httpMethod: req.method, body: body, headers: req.headers };
+              const result = await handler(event, {});
+              
+              res.statusCode = result.statusCode || 200;
+              if (result.headers) {
+                for (const [key, value] of Object.entries(result.headers)) {
+                  res.setHeader(key, value);
+                }
+              }
+              res.setHeader('Content-Type', 'application/json');
+              res.end(result.body || '{}');
+            } catch (err) {
+              res.statusCode = 500;
+              res.end(JSON.stringify({ error: err.message }));
+            }
+          });
+          return;
+        }
+
         const url = req.url?.split('?')[0] || ''
 
         if (

@@ -1,4 +1,4 @@
-import { initGuildSpectrumHero } from './hero-spectrum.js'
+import { initCinematicHero, destroyCinematicHero } from './cinematic-hero.js'
 import { initGuildPartnerCarousel } from './partner-carousel.js'
 import { initGuildShapes } from './guild-shapes.js'
 import { initSpectrumHover } from './spectrum-hover.js'
@@ -127,7 +127,7 @@ function initActivationBanner() {
   const bannerItems = `
     <strong>GUILD SA AI BUILDATHON 01</strong>
     <span>August 1, 2026 / Eduvos Menlyn Campus / Pretoria</span>
-    <em>100 Builders / One Day / One Campus</em>
+    <em>~100 Campus Pool / 40 Sprint Floor / 10-Hour Live Build</em>
     <b>Applications Now Open</b>
   `
   const banner = document.createElement('aside')
@@ -148,7 +148,7 @@ function initActivationBanner() {
 initActivationBanner()
 
 function initHeroPrismCanvas() {
-  if (document.querySelector('.guild-spectrum-hero')) return
+  if (document.querySelector('[data-guild-cinematic-hero]')) return
   const canvas = document.querySelector('[data-hero-prism]')
   if (!canvas) return
 
@@ -638,7 +638,7 @@ window.addEventListener('resize', resetHorizontalScroll)
 
 initGuildLoadingAnimation().then(() => {
   if (isHomePage) {
-    initGuildSpectrumHero()
+    initCinematicHero()
     initGuildPartnerCarousel()
   }
   initGuildSystemSlider()
@@ -1123,8 +1123,10 @@ window.guildInitRoute = (pathname) => {
   const isHome = pathname === '/'
 
   if (isHome) {
-    initGuildSpectrumHero()
+    initCinematicHero()
     initGuildPartnerCarousel()
+  } else {
+    destroyCinematicHero()
   }
 
   initGuildSystemSlider()

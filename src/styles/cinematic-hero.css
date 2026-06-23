@@ -1,0 +1,342 @@
+@property --guild-globe-rY {
+  syntax: "<angle>";
+  inherits: false;
+  initial-value: 0deg;
+}
+
+@property --guild-globe-rY2 {
+  syntax: "<angle>";
+  inherits: false;
+  initial-value: 0deg;
+}
+
+@property --guild-globe-spread {
+  syntax: "<number>";
+  inherits: true;
+  initial-value: 0;
+}
+
+@property --guild-bubble-scale {
+  syntax: "<number>";
+  inherits: false;
+  initial-value: 1;
+}
+
+@property --guild-glow-alpha {
+  syntax: "<number>";
+  inherits: false;
+  initial-value: 0;
+}
+
+body.has-cinematic-hero {
+  background: var(--paper);
+}
+
+body.has-cinematic-hero .home-statement-section {
+  position: relative;
+  z-index: 6;
+}
+
+.guild-cinematic-hero__globe {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 10;
+  pointer-events: none;
+}
+
+.guild-globe__wrapper {
+  will-change: transform;
+  pointer-events: auto;
+}
+
+.guild-globe__scene {
+  position: relative;
+  width: min(400px, 72vw);
+  aspect-ratio: 1;
+  perspective: 1500px;
+  transform-style: preserve-3d;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transform: rotateY(var(--guild-globe-rY2));
+  animation: guild-globe-rotate 10s linear infinite;
+  --guild-globe-spread: 0;
+  transition: --guild-globe-spread 1.2s cubic-bezier(0.25, 1, 0.5, 1);
+  pointer-events: auto;
+  cursor: crosshair;
+}
+
+.guild-globe__scene:hover {
+  --guild-globe-spread: 1;
+}
+
+.guild-globe__scene i {
+  position: absolute;
+  width: 60px;
+  aspect-ratio: 1;
+  border-radius: 50%;
+  background-color: var(--dot-color);
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  opacity: 1;
+  --guild-bubble-scale: 1;
+  --guild-glow-alpha: 0;
+  transition:
+    --guild-bubble-scale 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275),
+    --guild-glow-alpha 0.4s ease,
+    --guild-globe-spread 1.2s cubic-bezier(0.25, 1, 0.5, 1);
+  box-shadow:
+    0 2px 8px rgba(17, 17, 17, 0.08),
+    0 0 calc(30px * var(--guild-glow-alpha)) calc(10px * var(--guild-glow-alpha)) var(--dot-color);
+  transform: translate3d(
+      calc((var(--x) + (var(--rx) - var(--x)) * var(--guild-globe-spread)) * 1px),
+      calc((var(--y) + (var(--ry) - var(--y)) * var(--guild-globe-spread)) * 1px),
+      calc((var(--z) + (var(--rz) - var(--z)) * var(--guild-globe-spread)) * 1px)
+    )
+    rotateY(var(--guild-globe-rY))
+    scale(var(--guild-bubble-scale)) !important;
+  animation: guild-globe-rotate-n 10s linear infinite;
+}
+
+.guild-globe__scene i:hover {
+  --guild-bubble-scale: 1.8;
+  --guild-glow-alpha: 0.8;
+  z-index: 100;
+}
+
+@keyframes guild-globe-rotate {
+  0% { --guild-globe-rY2: 0deg; }
+  100% { --guild-globe-rY2: 360deg; }
+}
+
+@keyframes guild-globe-rotate-n {
+  0% { --guild-globe-rY: 0deg; }
+  100% { --guild-globe-rY: -360deg; }
+}
+
+.guild-cinematic-hero {
+  position: relative;
+  width: 100%;
+  height: 200vh;
+  z-index: 5;
+  isolation: isolate;
+}
+
+.guild-cinematic-hero__sticky {
+  position: sticky;
+  top: 0;
+  height: 100vh;
+  width: 100%;
+  overflow: hidden;
+  isolation: isolate;
+}
+
+.guild-cinematic-hero__copy {
+  position: relative;
+  height: 100%;
+  width: 100%;
+  z-index: 1;
+  pointer-events: none;
+}
+
+.guild-cinematic-hero__title {
+  position: absolute;
+  margin: 0;
+  font-family: "Space Grotesk", "Inter", "Helvetica Neue", Arial, sans-serif;
+  font-size: clamp(3.5rem, 14vw, 9rem);
+  font-weight: 500;
+  letter-spacing: -0.04em;
+  line-height: 0.95;
+  color: var(--ink);
+}
+
+.guild-cinematic-hero__title--1 {
+  left: clamp(1rem, 4vw, 2.5rem);
+  top: 18%;
+}
+
+.guild-cinematic-hero__title--2 {
+  right: clamp(1rem, 4vw, 2.5rem);
+  top: 38%;
+  color: var(--brand-amber);
+}
+
+.guild-cinematic-hero__title--3 {
+  left: clamp(18%, 28vw, 28%);
+  top: 58%;
+}
+
+.guild-cinematic-hero__lede {
+  position: absolute;
+  left: clamp(1.25rem, 4vw, 2.5rem);
+  top: 46%;
+  max-width: 300px;
+  margin: 0;
+  font-size: 0.94rem;
+  line-height: 1.65;
+  color: rgba(17, 17, 17, 0.8);
+  font-weight: 500;
+}
+
+.guild-cinematic-hero__location {
+  color: var(--brand-clay);
+  font-weight: 700;
+  letter-spacing: 0.04em;
+}
+
+.guild-cinematic-hero__stat {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+}
+
+.guild-cinematic-hero__stat-row {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.guild-cinematic-hero__stat-line {
+  display: none;
+  width: 6rem;
+  height: 1px;
+  background: rgba(17, 17, 17, 0.2);
+}
+
+.guild-cinematic-hero__stat-value {
+  font-family: "Space Grotesk", "Inter", sans-serif;
+  font-size: clamp(2rem, 4vw, 3rem);
+  font-weight: 500;
+  letter-spacing: -0.03em;
+  color: var(--ink);
+}
+
+.guild-cinematic-hero__stat-value--sm {
+  font-size: clamp(1.35rem, 3vw, 2.25rem);
+}
+
+.guild-cinematic-hero__stat-label {
+  margin-top: 0.25rem;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: rgba(17, 17, 17, 0.6);
+}
+
+.guild-cinematic-hero__stat--builders {
+  right: clamp(1.25rem, 6vw, 6rem);
+  top: 14%;
+  align-items: flex-end;
+}
+
+.guild-cinematic-hero__stat--builders .guild-cinematic-hero__stat-row {
+  justify-content: flex-end;
+}
+
+.guild-cinematic-hero__stat--builders .guild-cinematic-hero__stat-line {
+  transform: rotate(20deg);
+}
+
+.guild-cinematic-hero__stat--day {
+  left: clamp(1.25rem, 5vw, 5rem);
+  bottom: clamp(5rem, 12vh, 6rem);
+  align-items: flex-start;
+}
+
+.guild-cinematic-hero__stat--day .guild-cinematic-hero__stat-line {
+  transform: rotate(-20deg);
+}
+
+.guild-cinematic-hero__stat--mvp {
+  right: clamp(1.25rem, 5vw, 5rem);
+  bottom: clamp(4rem, 10vh, 5rem);
+  align-items: flex-end;
+}
+
+.guild-cinematic-hero__stat--mvp .guild-cinematic-hero__stat-row {
+  justify-content: flex-end;
+}
+
+.guild-cinematic-hero__stat--mvp .guild-cinematic-hero__stat-line {
+  transform: rotate(-20deg);
+}
+
+.guild-cinematic-hero__actions {
+  position: absolute;
+  left: clamp(1.25rem, 4vw, 2.5rem);
+  bottom: clamp(1.5rem, 4vh, 2.5rem);
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  z-index: 12;
+  pointer-events: auto;
+}
+
+.guild-cinematic-hero__fade {
+  pointer-events: none;
+  position: absolute;
+  inset: auto 0 0;
+  height: 12rem;
+  background: linear-gradient(to bottom, transparent, var(--paper));
+  z-index: 1;
+}
+
+.guild-cinematic-hero.is-static .guild-cinematic-hero__title,
+.guild-cinematic-hero.is-static .guild-cinematic-hero__lede,
+.guild-cinematic-hero.is-static .guild-cinematic-hero__stat,
+.guild-cinematic-hero.is-static .guild-cinematic-hero__actions {
+  opacity: 1;
+  transform: none;
+}
+
+@media (min-width: 768px) {
+  .guild-cinematic-hero__stat-line {
+    display: block;
+  }
+}
+
+@media (max-width: 767px) {
+  .guild-cinematic-hero {
+    height: 170vh;
+  }
+
+  .guild-cinematic-hero__title--3 {
+    left: 12%;
+  }
+
+  .guild-cinematic-hero__lede {
+    top: 50%;
+    max-width: min(280px, 78vw);
+    font-size: 0.85rem;
+  }
+
+  .guild-cinematic-hero__stat--builders {
+    top: 10%;
+  }
+
+  .guild-cinematic-hero__stat--day {
+    bottom: 7.5rem;
+  }
+
+  .guild-cinematic-hero__actions {
+    width: min(100%, 320px);
+  }
+
+  .guild-globe__scene i {
+    width: 44px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .guild-globe__scene,
+  .guild-globe__scene i {
+    animation: none;
+  }
+
+  .guild-cinematic-hero__globe {
+    display: none;
+  }
+}

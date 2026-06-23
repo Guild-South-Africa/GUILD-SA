@@ -31,7 +31,7 @@ export function useGuildPageEffects({ bodyClass = '' } = {}) {
   const navigate = useNavigate()
 
   useEffect(() => {
-    document.body.classList.toggle('has-spectrum-hero', bodyClass === 'has-spectrum-hero')
+    document.body.classList.toggle('has-cinematic-hero', bodyClass === 'has-cinematic-hero')
 
     const root = document.getElementById('root')
     patchInternalLinks(root)

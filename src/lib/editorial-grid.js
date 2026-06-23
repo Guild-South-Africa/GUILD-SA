@@ -6,7 +6,7 @@ const OPTICAL_SELECTORS = [
   '.guild-partner-carousel__index',
   '.join-final h2',
   '.home-statement',
-  '.guild-spectrum-title',
+  '.guild-cinematic-hero__title',
   '.display-heading',
 ].join(', ')
 

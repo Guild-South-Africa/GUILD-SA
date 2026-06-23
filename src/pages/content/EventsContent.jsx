@@ -9,13 +9,13 @@ export default function EventsContent() {
             <div className="shell">
               <p className="eyebrow reveal">04 / GUILD SA AI Buildathon 01</p>
               <h1 className="reveal" data-motion="left">Build A Real Product.<br />Present It To Industry.</h1>
-              <p className="hero-copy reveal">Join 100 student builders at Eduvos Menlyn for a one-day AI Buildathon focused on execution, collaboration, and real-world problem solving.</p>
+              <p className="hero-copy reveal">Campus registrations open to a ~100-student pool at Eduvos Menlyn. Forty elite second- and third-year developers will be selected for a 10-hour live sprint focused on execution, collaboration, and real-world problem solving.</p>
               <p className="activation-meta reveal">Powered by Eduvos • Lovable • VelozTech</p>
               <div className="partner-hero-evidence reveal" aria-label="Buildathon facts">
-                <span>100 Builders</span>
-                <span>3–5 Per Team</span>
+                <span>~100 Campus Pool</span>
+                <span>40 Sprint Floor</span>
                 <span>01 August 2026</span>
-                <span>07:00–17:00</span>
+                <span>10-Hour Sprint</span>
               </div>
               <div className="waitlist-actions reveal">
                 <AppLink className="button" to="/join">Apply Now</AppLink>
@@ -73,7 +73,8 @@ export default function EventsContent() {
                 <article className="about-entry-card reveal"><span>Venue</span><p>Eduvos Menlyn Campus</p></article>
                 <article className="about-entry-card reveal"><span>Location</span><p>Pretoria</p></article>
                 <article className="about-entry-card reveal"><span>Format</span><p>One-Day AI Buildathon</p></article>
-                <article className="about-entry-card reveal"><span>Capacity</span><p>100 Builders</p></article>
+                <article className="about-entry-card reveal"><span>Campus Pool</span><p>~100 Registrations</p></article>
+                <article className="about-entry-card reveal"><span>Sprint Floor</span><p>40 Elite Developers (2nd &amp; 3rd Year)</p></article>
                 <article className="about-entry-card reveal"><span>Team Size</span><p>3–5 Participants</p></article>
               </div>
             </div>
@@ -162,7 +163,7 @@ export default function EventsContent() {
                 </div>
               </div>
               <div className="grid three partner-signal-grid">
-                <article className="card reveal"><span className="index">01</span><h3>Eduvos</h3><p>Eduvos Menlyn anchors the inaugural Buildathon — the physical home where 100 builders meet, collaborate, and ship.</p><div className="tags"><span>Campus</span><span>Host</span></div></article>
+                <article className="card reveal"><span className="index">01</span><h3>Eduvos</h3><p>Eduvos Menlyn anchors the inaugural Buildathon — the physical home where the campus pool registers and forty elite developers sprint, collaborate, and ship.</p><div className="tags"><span>Campus</span><span>Host</span></div></article>
                 <article className="card reveal"><span className="index">02</span><h3>Lovable</h3><p>Lovable provides the AI development environment and participant credits to accelerate MVP creation throughout the day.</p><div className="tags"><span>AI tools</span><span>Credits</span></div></article>
                 <article className="card reveal"><span className="index">03</span><h3>VelozTech</h3><p>VelozTech brings industry context, mentorship, incubation pathways, and talent development opportunities to the cohort.</p><div className="tags"><span>Mentorship</span><span>Pathways</span></div></article>
               </div>
@@ -229,7 +230,10 @@ export default function EventsContent() {
           </section>
 
           <EditorialCta
-            copy="100 builders. One campus. One day. Join the inaugural GUILD SA AI Buildathon and help launch a new generation of builders."
+            anchor="40"
+            kicker="Campus registrations open"
+            title="Applications Are Now Open."
+            copy="~100-student campus pool. Forty elite second- and third-year developers on the sprint floor. One 10-hour live build at Eduvos Menlyn — help launch a new generation of student builders."
           />
     </>
   )

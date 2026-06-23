@@ -118,7 +118,8 @@ export default function AboutContent() {
                 <div>
                   <p className="kicker reveal">National vision</p>
                   <h2 className="reveal">Building The Execution Layer For South Africa.</h2>
-                  <p className="section-intro reveal">GUILD SA begins with a pilot campus at Eduvos Menlyn. The long-term vision is a distributed network of student builder communities across universities and private institutions throughout South Africa.</p>
+                  <p className="section-intro reveal">GUILD SA begins with a pilot campus at Eduvos Menlyn. Campus registrations open to a ~100-student pool; forty elite second- and third-year developers will be selected for the 10-hour live sprint.</p>
+                  <p className="section-intro reveal">The long-term vision is a distributed network of student builder communities across universities and private institutions throughout South Africa.</p>
                   <p className="section-intro reveal">Success is not measured by the number of events. Success is measured by more builders creating, more projects shipping, more talent becoming visible, and more opportunities being unlocked.</p>
                 </div>
               </div>
@@ -126,7 +127,8 @@ export default function AboutContent() {
                 <div className="stat reveal"><strong>26+</strong><span>Public Universities</span></div>
                 <div className="stat reveal"><strong>150+</strong><span>Private Institutions</span></div>
                 <div className="stat reveal"><strong>1</strong><span>Pilot Campus</span></div>
-                <div className="stat reveal"><strong>100+</strong><span>Builders In The First Cohort</span></div>
+                <div className="stat reveal"><strong>~100</strong><span>Campus Registration Pool</span></div>
+                <div className="stat reveal"><strong>40</strong><span>Sprint Floor Developers</span></div>
               </div>
               <p className="section-intro reveal" style={{ marginTop: '2rem' }}>National Expansion Roadmap — from one campus activation to a connected builder network across South Africa.</p>
             </div>

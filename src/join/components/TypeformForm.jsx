@@ -1,5 +1,6 @@
 import { useCallback, useEffect, useMemo, useRef, useState } from 'react'
 import { submitJoin } from '../lib/submitJoin'
+import TeamInviteSuccess from './TeamInviteSuccess'
 
 function buildInitialValues(steps, defaults = {}) {
   const values = { ...defaults }
@@ -168,6 +169,7 @@ export default function TypeformForm({ type, config, initialValues = {} }) {
   const [touchedFields, setTouchedFields] = useState({})
   const [status, setStatus] = useState({ text: '', tone: '' })
   const [submitting, setSubmitting] = useState(false)
+  const [teamInvite, setTeamInvite] = useState(null)
   const formRef = useRef(null)
 
   const isFirstStep = activeStep === 0
@@ -234,14 +236,21 @@ export default function TypeformForm({ type, config, initialValues = {} }) {
 
       const result = await submitJoin(type, formData)
 
+      if (result.inviteCode && result.inviteUrl) {
+        setTeamInvite({
+          inviteCode: result.inviteCode,
+          inviteUrl: result.inviteUrl,
+          emailSent: result.inviteEmailSent === true,
+          leaderEmail: formData.leaderEmail || '',
+        })
+        setStatus({ text: '', tone: '' })
+        return
+      }
+
       setStatus({ text: 'Success! You are now in the system.', tone: 'is-success' })
       setFormData(buildInitialValues(flatSteps, initialValues))
       setActiveStep(0)
       setTouchedFields({})
-
-      if (result.inviteUrl) {
-        window.alert(`Team Registered! Your team invite URL is: \n${result.inviteUrl}\n\nShare this link with your team members.`)
-      }
     } catch (error) {
       setStatus({ text: error.message || 'Network error. Please try again.', tone: 'is-error' })
     } finally {
@@ -260,6 +269,14 @@ export default function TypeformForm({ type, config, initialValues = {} }) {
   }
 
   return (
+    teamInvite ? (
+      <TeamInviteSuccess
+        inviteCode={teamInvite.inviteCode}
+        inviteUrl={teamInvite.inviteUrl}
+        emailSent={teamInvite.emailSent}
+        leaderEmail={teamInvite.leaderEmail}
+      />
+    ) : (
     <form
       ref={formRef}
       className={`typeform-form is-active${isFirstStep ? ' is-first-step' : ''}${isFinalStep ? ' is-final-step' : ''}`}
@@ -298,5 +315,6 @@ export default function TypeformForm({ type, config, initialValues = {} }) {
 
       <p className={`form-note${status.tone ? ` ${status.tone}` : ''}`}>{status.text}</p>
     </form>
+    )
   )
 }

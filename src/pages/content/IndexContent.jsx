@@ -1,141 +1,15 @@
 import AppLink from '../../components/AppLink'
 import EditorialCta from '../../components/EditorialCta'
+import MailingListForm from '../../components/MailingListForm'
+import CinematicHero from '../../components/CinematicHero'
 import { EVENT_TIMELINE } from '../../lib/eventTimeline'
 
 export default function IndexContent() {
   return (
     <>
-      <div className="guild-spectrum-hero" id="guild-spectrum-hero">
-            <div className="guild-spectrum-gradients" aria-hidden="true">
-              <div className="guild-spectrum-gradient guild-spectrum-gradient--1"></div>
-              <div className="guild-spectrum-gradient guild-spectrum-gradient--2"></div>
-              <div className="guild-spectrum-gradient guild-spectrum-gradient--3"></div>
-            </div>
-            <div className="guild-spectrum-gradient-overlay" aria-hidden="true"></div>
+      <CinematicHero />
 
-            <div className="guild-spectrum-meta">
-              <div className="guild-spectrum-meta__item guild-spectrum-meta__tl">Build & Ship</div>
-              <div className="guild-spectrum-meta__item guild-spectrum-meta__tr">
-                <a href="mailto:guildsagroup@gmail.com" className="guild-spectrum-email">guildsagroup@gmail.com</a>
-                <span className="guild-spectrum-meta__year">— 2026</span>
-              </div>
-              <div className="guild-spectrum-meta__item guild-spectrum-meta__bl">100 Builders</div>
-              <div className="guild-spectrum-meta__item guild-spectrum-meta__bc guild-spectrum-split">Eduvos Menlyn</div>
-              <div className="guild-spectrum-meta__item guild-spectrum-meta__br">01 August 2026</div>
-            </div>
-
-            <section className="guild-spectrum-section" aria-label="GUILD SA introduction">
-              <p className="guild-spectrum-eyebrow guild-spectrum-split">GUILD SA AI Buildathon 01 / 01 August 2026 / Eduvos Menlyn, Pretoria</p>
-              <h1 className="guild-spectrum-title guild-spectrum-split display-heading" aria-label="Build AI Solutions. Ship a Real MVP. Get Seen by Industry.">
-                <span className="display-line">
-                  <span className="display-icon display-icon--gold" aria-hidden="true">
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                      <path d="M12 4v16M4 12h16" stroke-linecap="round" />
-                    </svg>
-                  </span>
-                  <span className="display-text">Build AI Solutions</span>
-                </span>
-                <span className="display-line">
-                  <span className="display-text">Ship a Real MVP</span>
-                </span>
-                <span className="display-line">
-                  <span className="display-text">Get Seen by Industry</span>
-                  <span className="display-icon display-icon--sun" aria-hidden="true">
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                      <circle cx="12" cy="12" r="8" />
-                      <path d="M12 8v8M8 12h8" stroke-linecap="round" />
-                    </svg>
-                  </span>
-                </span>
-              </h1>
-              <div className="guild-spectrum-content">
-                <nav className="guild-spectrum-keywords" aria-label="GUILD SA Buildathon actions">
-                  <AppLink className="guild-spectrum-keyword guild-spectrum-split" to="/join">Apply Now</AppLink>
-                  <AppLink className="guild-spectrum-keyword guild-spectrum-split" to="/events">View Event Details</AppLink>
-                  <AppLink className="guild-spectrum-keyword guild-spectrum-split" to="/join">Mentors</AppLink>
-                  <AppLink className="guild-spectrum-keyword guild-spectrum-split" to="/partners">Partners</AppLink>
-                </nav>
-                <div className="guild-spectrum-copy">
-                  <p className="guild-spectrum-text guild-spectrum-split">Join 100 student builders at Eduvos Menlyn for a one-day AI Buildathon where teams design, build, and publicly demonstrate real-world solutions.</p>
-                  <p className="guild-spectrum-text guild-spectrum-split">Powered by Eduvos • Lovable • VelozTech. 100 builder seats available. 07:00–17:00. One campus. One day. One working product.</p>
-                </div>
-              </div>
-            </section>
-
-            <div className="guild-spectrum-scroll-space" aria-hidden="true"></div>
-
-            <div className="guild-spectrum-animation">
-              <div className="guild-spectrum-stage">
-                <div className="guild-spectrum-svg-wrap">
-                  <svg className="guild-spectrum-svg" viewBox="0 0 1567 584" preserveAspectRatio="none" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-                    <g clipPath="url(#guildClip)" filter="url(#guildBlur)">
-                      <path d="M1219 584H1393V184H1219V584Z" fill="url(#guildGrad0)" />
-                      <path d="M1045 584H1219V104H1045V584Z" fill="url(#guildGrad1)" />
-                      <path d="M348 584H174L174 184H348L348 584Z" fill="url(#guildGrad2)" />
-                      <path d="M522 584H348L348 104H522L522 584Z" fill="url(#guildGrad3)" />
-                      <path d="M697 584H522L522 54H697L697 584Z" fill="url(#guildGrad4)" />
-                      <path d="M870 584H1045V54H870V584Z" fill="url(#guildGrad5)" />
-                      <path d="M870 584H697L697 0H870L870 584Z" fill="url(#guildGrad6)" />
-                      <path d="M174 585H0.000183105L-3.75875e-06 295H174L174 585Z" fill="url(#guildGrad7)" />
-                      <path d="M1393 584H1567V294H1393V584Z" fill="url(#guildGrad8)" />
-                    </g>
-                    <defs>
-                      <filter id="guildBlur" x="-30" y="-30" width="1627" height="644" filterUnits="userSpaceOnUse" colorInterpolationFilters="sRGB">
-                        <feFlood floodOpacity="0" result="BackgroundImageFix" />
-                        <feBlend mode="normal" in="SourceGraphic" in2="BackgroundImageFix" result="shape" />
-                        <feGaussianBlur stdDeviation="15" result="effect1_foregroundBlur" />
-                      </filter>
-                      <linearGradient id="guildGrad0" x1="1306" y1="584" x2="1306" y2="184" gradientUnits="userSpaceOnUse">
-                        <stop stopColor="#000000" /><stop offset="0.18" stopColor="#E1B43E" /><stop offset="0.28" stopColor="#F4B12E" /><stop offset="0.41" stopColor="#FFFFFF" /><stop offset="0.59" stopColor="#FE980F" /><stop offset="0.68" stopColor="#E37226" /><stop offset="0.8" stopColor="#E1B43E" /><stop offset="1" stopColor="#E1B43E" stopOpacity="0" />
-                      </linearGradient>
-                      <linearGradient id="guildGrad1" x1="1132" y1="584" x2="1132" y2="104" gradientUnits="userSpaceOnUse">
-                        <stop stopColor="#000000" /><stop offset="0.18" stopColor="#E1B43E" /><stop offset="0.28" stopColor="#F4B12E" /><stop offset="0.41" stopColor="#FFFFFF" /><stop offset="0.59" stopColor="#FE980F" /><stop offset="0.68" stopColor="#E37226" /><stop offset="0.8" stopColor="#E1B43E" /><stop offset="1" stopColor="#E1B43E" stopOpacity="0" />
-                      </linearGradient>
-                      <linearGradient id="guildGrad2" x1="261" y1="584" x2="261" y2="184" gradientUnits="userSpaceOnUse">
-                        <stop stopColor="#000000" /><stop offset="0.18" stopColor="#E1B43E" /><stop offset="0.28" stopColor="#F4B12E" /><stop offset="0.41" stopColor="#FFFFFF" /><stop offset="0.59" stopColor="#FE980F" /><stop offset="0.68" stopColor="#E37226" /><stop offset="0.8" stopColor="#E1B43E" /><stop offset="1" stopColor="#E1B43E" stopOpacity="0" />
-                      </linearGradient>
-                      <linearGradient id="guildGrad3" x1="435" y1="584" x2="435" y2="104" gradientUnits="userSpaceOnUse">
-                        <stop stopColor="#000000" /><stop offset="0.18" stopColor="#E1B43E" /><stop offset="0.28" stopColor="#F4B12E" /><stop offset="0.41" stopColor="#FFFFFF" /><stop offset="0.59" stopColor="#FE980F" /><stop offset="0.68" stopColor="#E37226" /><stop offset="0.8" stopColor="#E1B43E" /><stop offset="1" stopColor="#E1B43E" stopOpacity="0" />
-                      </linearGradient>
-                      <linearGradient id="guildGrad4" x1="609.501" y1="584" x2="609.501" y2="54" gradientUnits="userSpaceOnUse">
-                        <stop stopColor="#000000" /><stop offset="0.18" stopColor="#E1B43E" /><stop offset="0.28" stopColor="#F4B12E" /><stop offset="0.41" stopColor="#FFFFFF" /><stop offset="0.59" stopColor="#FE980F" /><stop offset="0.68" stopColor="#E37226" /><stop offset="0.8" stopColor="#E1B43E" /><stop offset="1" stopColor="#E1B43E" stopOpacity="0" />
-                      </linearGradient>
-                      <linearGradient id="guildGrad5" x1="957.5" y1="584" x2="957.5" y2="54" gradientUnits="userSpaceOnUse">
-                        <stop stopColor="#000000" /><stop offset="0.18" stopColor="#E1B43E" /><stop offset="0.28" stopColor="#F4B12E" /><stop offset="0.41" stopColor="#FFFFFF" /><stop offset="0.59" stopColor="#FE980F" /><stop offset="0.68" stopColor="#E37226" /><stop offset="0.8" stopColor="#E1B43E" /><stop offset="1" stopColor="#E1B43E" stopOpacity="0" />
-                      </linearGradient>
-                      <linearGradient id="guildGrad6" x1="783.501" y1="584" x2="783.501" y2="0" gradientUnits="userSpaceOnUse">
-                        <stop stopColor="#000000" /><stop offset="0.18" stopColor="#E1B43E" /><stop offset="0.28" stopColor="#F4B12E" /><stop offset="0.41" stopColor="#FFFFFF" /><stop offset="0.59" stopColor="#FE980F" /><stop offset="0.68" stopColor="#E37226" /><stop offset="0.8" stopColor="#E1B43E" /><stop offset="1" stopColor="#E1B43E" stopOpacity="0" />
-                      </linearGradient>
-                      <linearGradient id="guildGrad7" x1="87.0003" y1="585" x2="87.0003" y2="295" gradientUnits="userSpaceOnUse">
-                        <stop stopColor="#000000" /><stop offset="0.18" stopColor="#E1B43E" /><stop offset="0.28" stopColor="#F4B12E" /><stop offset="0.41" stopColor="#FFFFFF" /><stop offset="0.59" stopColor="#FE980F" /><stop offset="0.68" stopColor="#E37226" /><stop offset="0.8" stopColor="#E1B43E" /><stop offset="1" stopColor="#E1B43E" stopOpacity="0" />
-                      </linearGradient>
-                      <linearGradient id="guildGrad8" x1="1480" y1="584" x2="1480" y2="294" gradientUnits="userSpaceOnUse">
-                        <stop stopColor="#000000" /><stop offset="0.18" stopColor="#E1B43E" /><stop offset="0.28" stopColor="#F4B12E" /><stop offset="0.41" stopColor="#FFFFFF" /><stop offset="0.59" stopColor="#FE980F" /><stop offset="0.68" stopColor="#E37226" /><stop offset="0.8" stopColor="#E1B43E" /><stop offset="1" stopColor="#E1B43E" stopOpacity="0" />
-                      </linearGradient>
-                      <clipPath id="guildClip"><rect width="1567" height="584" fill="white" /></clipPath>
-                    </defs>
-                  </svg>
-                </div>
-                <p className="guild-spectrum-stage-title guild-spectrum-split">
-                  Build. Ship. Prove.<br />
-                  In One Day At Eduvos Menlyn
-                </p>
-                <div className="guild-spectrum-grid">
-                  <div className="guild-spectrum-grid__col"><div className="guild-spectrum-label guild-spectrum-label--1 guild-spectrum-split">Guild SA<br />Master<br />Brand</div></div>
-                  <div className="guild-spectrum-grid__col"><div className="guild-spectrum-label guild-spectrum-label--2 guild-spectrum-split">Campus<br />Guild<br />Home</div></div>
-                  <div className="guild-spectrum-grid__col"><div className="guild-spectrum-label guild-spectrum-label--3 guild-spectrum-split">Guilders<br />Members<br />Identity</div></div>
-                  <div className="guild-spectrum-grid__col"><div className="guild-spectrum-label guild-spectrum-label--4 guild-spectrum-split">Guild Labs<br />Output<br />MVPs</div></div>
-                  <div className="guild-spectrum-grid__col"><div className="guild-spectrum-label guild-spectrum-label--5 guild-spectrum-split">Partners<br />Industry<br />Briefs</div></div>
-                  <div className="guild-spectrum-grid__col"><div className="guild-spectrum-label guild-spectrum-label--4 guild-spectrum-split">Sprint<br />Event<br />Pressure</div></div>
-                  <div className="guild-spectrum-grid__col"><div className="guild-spectrum-label guild-spectrum-label--3 guild-spectrum-split">Demo<br />Day<br />Proof</div></div>
-                  <div className="guild-spectrum-grid__col"><div className="guild-spectrum-label guild-spectrum-label--2 guild-spectrum-split">Buildathon<br />AI<br />Sprint</div></div>
-                  <div className="guild-spectrum-grid__col"><div className="guild-spectrum-label guild-spectrum-label--1 guild-spectrum-split">Ship<br />Prove<br />Continue</div></div>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <section className="site-section dark home-statement-section">
+      <section className="site-section dark home-statement-section">
             <div className="shell">
               <div className="section-header section-header--centered">
                 <div className="section-number reveal">01</div>
@@ -190,7 +64,7 @@ export default function IndexContent() {
                 <div>
                   <p className="kicker reveal">Ecosystem partners</p>
                   <h2 className="reveal">Built With Partners Who Believe In Builders.</h2>
-                  <p className="section-intro reveal">Campus access, AI build tooling, and industry mentorship — backing the first 100-student cohort.</p>
+                  <p className="section-intro reveal">Campus access, AI build tooling, and industry mentorship — backing a ~100-student registration pool and a 40-developer sprint floor.</p>
                 </div>
               </div>
             </div>
@@ -217,7 +91,7 @@ export default function IndexContent() {
                   <div className="guild-partner-carousel__copy" data-carousel-copy>
                     <p className="guild-partner-carousel__index">01</p>
                     <h3>Eduvos</h3>
-                    <p>Hosts the inaugural Buildathon — giving 100 builders campus access, workspace, and a live stage to ship and demo.</p>
+                    <p>Hosts the inaugural Buildathon — giving the campus pool workspace and a live stage where forty elite developers sprint, ship, and demo.</p>
                   </div>
                   <AppLink to="/join" className="button guild-partner-carousel__cta">Apply Now</AppLink>
                 </div>
@@ -643,11 +517,25 @@ export default function IndexContent() {
             </div>
           </section>
 
+          <section className="site-section mailing-list-section">
+            <div className="shell">
+              <div className="section-header">
+                <div className="section-number reveal">09</div>
+                <div>
+                  <p className="kicker reveal">Mailing list</p>
+                  <h2 className="reveal">Get The Latest Updates.</h2>
+                  <p className="section-intro reveal">Sprint dates, project drops, partner calls, and campus updates — delivered to your inbox.</p>
+                </div>
+              </div>
+              <MailingListForm source="home" />
+            </div>
+          </section>
+
           <EditorialCta
-            anchor="100"
-            kicker="Apply to join the first 100 builders"
+            anchor="40"
+            kicker="Campus registrations open"
             title="Applications Are Now Open."
-            copy="100 builders. One campus. One day. Join the inaugural GUILD SA AI Buildathon and help launch a new generation of student builders."
+            copy="~100-student campus pool. Forty elite second- and third-year developers on the sprint floor. One 10-hour live build at Eduvos Menlyn — join the inaugural GUILD SA AI Buildathon."
             dark={false}
           />
     </>

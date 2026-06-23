@@ -186,10 +186,10 @@ export default function PartnersContent() {
                 </div>
               </div>
               <div className="stat-strip">
-                <div className="stat reveal"><strong>100+</strong><span>Pilot Builders</span></div>
+                <div className="stat reveal"><strong>~100</strong><span>Campus Pool</span></div>
+                <div className="stat reveal"><strong>40</strong><span>Sprint Floor</span></div>
                 <div className="stat reveal"><strong>1</strong><span>Pilot Campus</span></div>
                 <div className="stat reveal"><strong>3–5</strong><span>Builders Per Team</span></div>
-                <div className="stat reveal"><strong>Growing</strong><span>National Network</span></div>
               </div>
             </div>
           </section>

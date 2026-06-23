@@ -63,13 +63,13 @@ export default function JoinGateway() {
       <section className="page-hero compact join-hero">
         <div className="shell">
           <p className="eyebrow reveal">06 / Apply</p>
-          <h1 className="reveal" data-motion="left">Apply To Join The First 100 Builders.</h1>
-          <p className="hero-copy reveal">Applications are now open for the inaugural GUILD SA AI Buildathon at Eduvos Menlyn. Join a one-day AI Buildathon where teams build real-world solutions, present publicly, and unlock future opportunities.</p>
+          <h1 className="reveal" data-motion="left">Apply To Join The Campus Pool.</h1>
+          <p className="hero-copy reveal">Applications are now open for the inaugural GUILD SA AI Buildathon at Eduvos Menlyn. Campus registrations open to a ~100-student pool — forty elite second- and third-year developers will be selected for the 10-hour live sprint.</p>
           <div className="partner-hero-evidence reveal" aria-label="Buildathon availability">
-            <span>100 Builders</span>
+            <span>~100 Campus Pool</span>
+            <span>40 Sprint Floor</span>
             <span>01 August 2026</span>
             <span>Eduvos Menlyn</span>
-            <span>Pretoria</span>
           </div>
           <div className="waitlist-actions reveal">
             <Link className="button" to="/join/student">Apply Now</Link>
@@ -161,7 +161,7 @@ export default function JoinGateway() {
             <div>
               <p className="kicker reveal">How selection works</p>
               <h2 className="reveal">How We Select The Cohort.</h2>
-              <p className="section-intro reveal">The pilot Buildathon is limited to 100 builders. Applications are reviewed to create balanced teams with diverse skills and backgrounds.</p>
+              <p className="section-intro reveal">Campus registrations open to a ~100-student pool. Forty elite second- and third-year developers will be selected for the 10-hour live sprint. Applications are reviewed to create balanced teams with diverse skills and backgrounds.</p>
               <p className="section-intro reveal">The goal is not to select the most experienced people. The goal is to create the strongest possible collaborative environment.</p>
             </div>
           </div>
@@ -212,12 +212,12 @@ export default function JoinGateway() {
       </section>
 
       <EditorialCta
-        anchor="100"
-        kicker="Final step"
-        title="Apply To Join The First 100 Builders."
+        anchor="40"
+        kicker="Sprint floor selection"
+        title="Forty Elite Developers. One Live Sprint."
         copy={[
+          'Campus registrations open to a ~100-student pool. Forty elite second- and third-year developers will be selected for the 10-hour live sprint at Eduvos Menlyn.',
           'GUILD SA is building a national ecosystem of student builders, mentors, partners, and innovators. The inaugural AI Buildathon is the first step.',
-          'Join the people helping shape what comes next.',
         ]}
         primaryLabel="Apply Now"
         primaryTo="/join/student"

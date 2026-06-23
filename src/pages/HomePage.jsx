@@ -4,7 +4,7 @@ import { meta } from '../content/index.content'
 
 export default function HomePage() {
   return (
-    <PageShell meta={meta} bodyClass="has-spectrum-hero">
+    <PageShell meta={meta} bodyClass="has-cinematic-hero">
       <IndexContent />
     </PageShell>
   )

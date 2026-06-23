@@ -5190,6 +5190,88 @@ h3 span {
   color: var(--black);
 }
 
+.join-success-panel {
+  min-height: 560px;
+  padding: clamp(24px, 5vw, 64px);
+  border: 1px solid rgba(17, 17, 17, 0.12);
+  background: var(--paper);
+}
+
+.join-success-panel__title {
+  margin: 0 0 12px;
+  font-size: clamp(2rem, 5vw, 3rem);
+  line-height: 1.05;
+  letter-spacing: -0.03em;
+}
+
+.join-success-panel__lede {
+  max-width: 42rem;
+  margin: 0 0 28px;
+  color: rgba(17, 17, 17, 0.72);
+  line-height: 1.6;
+}
+
+.join-invite-block + .join-invite-block {
+  margin-top: 20px;
+}
+
+.join-invite-block__label {
+  margin: 0 0 8px;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: rgba(17, 17, 17, 0.55);
+}
+
+.join-invite-copy-row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 12px;
+}
+
+.join-invite-block__value {
+  display: inline-block;
+  padding: 10px 14px;
+  font-size: clamp(1.25rem, 3vw, 1.75rem);
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  background: rgba(17, 17, 17, 0.04);
+  border: 1px solid rgba(17, 17, 17, 0.1);
+}
+
+.join-invite-block__link {
+  flex: 1 1 240px;
+  min-width: 0;
+  word-break: break-all;
+  color: inherit;
+  font-weight: 600;
+}
+
+.join-invite-copy-btn {
+  flex: 0 0 auto;
+}
+
+.join-success-panel__note {
+  margin: 24px 0 0;
+  color: rgba(17, 17, 17, 0.65);
+  font-size: 0.92rem;
+  line-height: 1.5;
+}
+
+.join-success-panel__note.is-success {
+  color: var(--black);
+  font-weight: 600;
+}
+
+.join-success-panel__actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 28px;
+}
+
 .join-readiness-section {
   position: relative;
   overflow: hidden;
