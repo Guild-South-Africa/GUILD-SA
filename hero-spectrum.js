@@ -633,3 +633,16 @@ export function initGuildSpectrumHero() {
 
   window.addEventListener('resize', () => ScrollTrigger.refresh())
 }
+
+export function cleanupGuildSpectrumHero() {
+  document.querySelectorAll('.guild-spectrum-stage--portaled').forEach((el) => {
+    el.remove()
+  })
+  if (typeof ScrollTrigger !== 'undefined' && ScrollTrigger.getAll) {
+    ScrollTrigger.getAll().forEach((trigger) => {
+      trigger.kill()
+    })
+  }
+}
+
+window.cleanupGuildSpectrumHero = cleanupGuildSpectrumHero

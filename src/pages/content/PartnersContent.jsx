@@ -1,0 +1,220 @@
+import AppLink from '../../components/AppLink'
+import EditorialCta from '../../components/EditorialCta'
+import PartnerSpotlight, { PartnerDirectoryNav } from '../../components/PartnerSpotlight'
+import { ECOSYSTEM_PARTNERS } from '../../lib/partners'
+
+export default function PartnersContent() {
+  return (
+    <>
+      <section className="page-hero compact">
+            <div className="shell">
+              <p className="eyebrow reveal">05 / Partners</p>
+              <h1 className="reveal" data-motion="left">Access Builders Before The Market Finds Them.</h1>
+              <p className="hero-copy reveal">GUILD SA connects campuses, students, mentors, technology platforms, and industry partners through real-world execution environments.</p>
+              <p className="hero-copy reveal">The inaugural AI Buildathon is only the beginning. The long-term vision is a national network of builders, projects, institutions, and opportunities connected through a shared system of execution.</p>
+              <AppLink className="button reveal" to="/join">Become A Partner</AppLink>
+            </div>
+          </section>
+
+          <section className="site-section">
+            <div className="shell">
+              <div className="section-header">
+                <div className="section-number reveal">02</div>
+                <div>
+                  <p className="kicker reveal">Why partner with GUILD SA?</p>
+                  <h2 className="reveal">Access Builders Before The Market Finds Them.</h2>
+                  <p className="section-intro reveal">Most organizations only see talent after graduation. GUILD SA creates visibility much earlier.</p>
+                  <p className="section-intro reveal">The ecosystem helps organizations evaluate capability through execution rather than credentials alone.</p>
+                </div>
+              </div>
+              <div className="about-entry-grid">
+                <article className="about-entry-card reveal"><span>Emerging Technical Talent</span><p>Meet builders before they enter the formal job market.</p></article>
+                <article className="about-entry-card reveal"><span>Multidisciplinary Teams</span><p>See how students collaborate across product, design, development, and AI.</p></article>
+                <article className="about-entry-card reveal"><span>AI-Powered Product Builders</span><p>Access teams shipping modern products under real constraints.</p></article>
+                <article className="about-entry-card reveal"><span>Real-World Projects</span><p>Evaluate ideas through working demos, not pitch decks.</p></article>
+                <article className="about-entry-card reveal"><span>Campus Communities</span><p>Build presence inside institutions where future talent gathers.</p></article>
+                <article className="about-entry-card reveal"><span>Innovation Opportunities</span><p>Discover products, founders, and ideas worth supporting early.</p></article>
+              </div>
+            </div>
+          </section>
+
+          <section className="site-section">
+            <div className="shell">
+              <div className="section-header">
+                <div className="section-number reveal">03</div>
+                <div>
+                  <p className="kicker reveal">Founding ecosystem partners</p>
+                  <h2 className="reveal">Meet The Partners.</h2>
+                  <p className="section-intro reveal">Each organisation plays a distinct role in the inaugural Buildathon chapter. Jump to a dedicated profile to learn what they contribute and how they support student builders.</p>
+                  <PartnerDirectoryNav partners={ECOSYSTEM_PARTNERS} />
+                </div>
+              </div>
+            </div>
+          </section>
+
+          {ECOSYSTEM_PARTNERS.map((partner, index) => (
+            <PartnerSpotlight key={partner.id} partner={partner} index={index} dark={index % 2 === 1} />
+          ))}
+
+          <section className="site-section">
+            <div className="shell">
+              <div className="section-header">
+                <div className="section-number reveal">05</div>
+                <div>
+                  <p className="kicker reveal">What partners contribute</p>
+                  <h2 className="reveal">Multiple Ways To Participate.</h2>
+                </div>
+              </div>
+              <div className="about-entry-grid">
+                <article className="about-entry-card reveal"><span>Challenge Tracks</span><p>Bring real problems for builders to solve.</p></article>
+                <article className="about-entry-card reveal"><span>Mentorship</span><p>Guide teams through execution and product thinking.</p></article>
+                <article className="about-entry-card reveal"><span>Tooling</span><p>Provide platforms, APIs, credits, or infrastructure.</p></article>
+                <article className="about-entry-card reveal"><span>Judging</span><p>Help evaluate projects and identify high-potential builders.</p></article>
+                <article className="about-entry-card reveal"><span>Talent Pathways</span><p>Create internships, practicals, WIL opportunities, and recruitment channels.</p></article>
+                <article className="about-entry-card reveal"><span>Incubation</span><p>Support promising projects beyond the event.</p></article>
+              </div>
+            </div>
+          </section>
+
+          <section className="site-section dark">
+            <div className="shell">
+              <div className="section-header">
+                <div className="section-number reveal">06</div>
+                <div>
+                  <p className="kicker reveal">What partners receive</p>
+                  <h2 className="reveal">What Partnership Creates.</h2>
+                </div>
+              </div>
+              <div className="about-entry-grid">
+                <article className="about-entry-card reveal"><span>Talent Visibility</span><p>See builders in action — under pressure, in teams, shipping real work.</p></article>
+                <article className="about-entry-card reveal"><span>Brand Exposure</span><p>Reach engaged student communities inside institutions.</p></article>
+                <article className="about-entry-card reveal"><span>Innovation Access</span><p>Gain visibility into new ideas, products, and problem spaces.</p></article>
+                <article className="about-entry-card reveal"><span>Community Presence</span><p>Build trust within emerging builder ecosystems.</p></article>
+                <article className="about-entry-card reveal"><span>Recruitment Opportunities</span><p>Identify talent through demonstrated execution, not assumptions.</p></article>
+                <article className="about-entry-card reveal"><span>Long-Term Relationships</span><p>Build direct connections with future builders and founders.</p></article>
+              </div>
+            </div>
+          </section>
+
+          <section className="partner-logo-section" aria-labelledby="builder-network-title">
+            <div className="shell">
+              <div className="partner-logo-header">
+                <p className="kicker reveal">The builder network</p>
+                <div>
+                  <h2 id="builder-network-title" className="reveal">A Network Built Around Execution.</h2>
+                  <p className="section-intro reveal">The ecosystem combines students, mentors, partners, institutions, builders, projects, and technology platforms. Each layer strengthens the others.</p>
+                  <p className="section-intro reveal">The result is a growing network where opportunities, talent, and innovation become easier to discover.</p>
+                </div>
+              </div>
+            </div>
+            <div className="shell">
+              <div className="tool-ecosystem-wall reveal">
+                <span>Students</span>
+                <span>Mentors</span>
+                <span>Partners</span>
+                <span>Institutions</span>
+                <span>Builders</span>
+                <span>Projects</span>
+              </div>
+            </div>
+            <div className="partner-logo-carousel reveal" aria-label="Technology platforms in the GUILD SA ecosystem">
+              <div className="partner-logo-track">
+                <span>Lovable</span>
+                <span>Eduvos</span>
+                <span>VelozTech</span>
+                <span>HLTC</span>
+                <span>Cursor</span>
+                <span>GitHub</span>
+                <span>Figma</span>
+                <span>Render</span>
+                <span>Netlify</span>
+                <span>Lovable</span>
+                <span>Eduvos</span>
+                <span>VelozTech</span>
+                <span>HLTC</span>
+                <span>Cursor</span>
+                <span>GitHub</span>
+                <span>Figma</span>
+                <span>Render</span>
+                <span>Netlify</span>
+              </div>
+            </div>
+          </section>
+
+          <section className="site-section">
+            <div className="shell">
+              <div className="section-header">
+                <div className="section-number reveal">08</div>
+                <div>
+                  <p className="kicker reveal">How projects create value</p>
+                  <h2 className="reveal">Every Project Creates Proof.</h2>
+                  <p className="section-intro reveal">The Buildathon produces more than presentations. It produces evidence. Partners gain visibility into problem solving, product thinking, technical execution, team collaboration, leadership, communication, and innovation.</p>
+                  <p className="section-intro reveal">Every project becomes an inspectable proof layer.</p>
+                </div>
+              </div>
+              <div className="about-entry-grid">
+                <article className="about-entry-card reveal"><span>Problem</span><p>What the team chose to solve and why it matters.</p></article>
+                <article className="about-entry-card reveal"><span>Solution</span><p>The working product, prototype, or validated execution path.</p></article>
+                <article className="about-entry-card reveal"><span>Team</span><p>Who contributed, led, built, designed, and presented.</p></article>
+                <article className="about-entry-card reveal"><span>Execution</span><p>Repositories, demos, technical decisions, and iteration history.</p></article>
+                <article className="about-entry-card reveal"><span>Feedback</span><p>Reviews from mentors, judges, and practitioners.</p></article>
+                <article className="about-entry-card reveal"><span>Continuation</span><p>Whether the project moves into Labs, showcases, or partner pathways.</p></article>
+              </div>
+            </div>
+          </section>
+
+          <section className="site-section about-depth-section">
+            <div className="shell">
+              <div className="section-header">
+                <div className="section-number reveal">09</div>
+                <div>
+                  <p className="kicker reveal">Partnership opportunities</p>
+                  <h2 className="reveal">Ways To Engage.</h2>
+                </div>
+              </div>
+              <div className="about-entry-grid">
+                <article className="about-entry-card reveal"><span>Campus Partner</span><p>Support local builder communities inside institutions.</p></article>
+                <article className="about-entry-card reveal"><span>Technology Partner</span><p>Provide tools, infrastructure, or credits.</p></article>
+                <article className="about-entry-card reveal"><span>Industry Partner</span><p>Provide challenges, mentorship, and guidance.</p></article>
+                <article className="about-entry-card reveal"><span>Talent Partner</span><p>Create internships, practicals, WIL, and recruitment pathways.</p></article>
+                <article className="about-entry-card reveal"><span>Innovation Partner</span><p>Support project continuation and incubation.</p></article>
+                <article className="about-entry-card reveal"><span>Ecosystem Partner</span><p>Collaborate on long-term community growth.</p></article>
+              </div>
+            </div>
+          </section>
+
+          <section className="site-section dark">
+            <div className="shell">
+              <div className="section-header">
+                <div className="section-number reveal">SA</div>
+                <div>
+                  <p className="kicker reveal">National vision</p>
+                  <h2 className="reveal">Building A National Builder Ecosystem.</h2>
+                  <p className="section-intro reveal">The pilot begins at Eduvos Menlyn. The vision extends across universities, colleges, innovation hubs, and technology communities throughout South Africa.</p>
+                  <p className="section-intro reveal">The objective is not more events. The objective is more builders, more projects, and more visible opportunity.</p>
+                </div>
+              </div>
+              <div className="stat-strip">
+                <div className="stat reveal"><strong>~100</strong><span>Campus Pool</span></div>
+                <div className="stat reveal"><strong>40</strong><span>Sprint Floor</span></div>
+                <div className="stat reveal"><strong>1</strong><span>Pilot Campus</span></div>
+                <div className="stat reveal"><strong>3–5</strong><span>Builders Per Team</span></div>
+              </div>
+            </div>
+          </section>
+
+          <EditorialCta
+            kicker="Join the network"
+            title="Become Part Of The Ecosystem."
+            copy={[
+              'Support the next generation of builders through mentorship, tooling, innovation, talent pathways, campus activations, and project continuation opportunities.',
+              'Whether you\'re a technology company, startup, institution, or innovation partner, there is a place for you in the network.',
+            ]}
+            primaryLabel="Become A Partner"
+            secondaryLabel="Schedule A Conversation"
+            secondaryHref="mailto:guildsagroup@gmail.com"
+            dark={false}
+          />
+    </>
+  )
+}

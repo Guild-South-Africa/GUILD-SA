@@ -112,7 +112,7 @@
 .mini-list li:nth-child(4n + 4)::before { background: var(--brand-clay); }
 
 html {
-  scroll-behavior: smooth;
+  scroll-behavior: auto;
   background: var(--paper);
   overflow-x: clip;
   max-width: 100%;
@@ -129,6 +129,10 @@ body {
   font-weight: 400;
   line-height: 1.48;
   text-rendering: geometricPrecision;
+}
+
+body:has(#root) .scene-canvas {
+  display: none;
 }
 
 body.is-loading {
@@ -243,8 +247,7 @@ main {
   width: 100%;
   max-width: 100%;
   overflow-x: clip;
-  transform-origin: center top;
-  will-change: transform;
+  overflow-anchor: none;
 }
 
 .guild-loader {
@@ -461,8 +464,9 @@ main {
 
 .guild-activation-banner__track {
   display: flex;
-  width: 200%;
-  animation: activationBannerMarquee 24s linear infinite;
+  width: max-content;
+  animation: activationBannerMarquee 32s linear infinite;
+  will-change: transform;
 }
 
 .guild-activation-banner__link:hover .guild-activation-banner__track,
@@ -471,21 +475,26 @@ main {
 }
 
 .guild-activation-banner__group {
-  display: grid;
-  flex: 0 0 50%;
-  width: 50%;
-  min-width: 0;
-  min-height: 48px;
-  grid-template-columns: auto minmax(0, max-content) auto auto;
-  gap: clamp(18px, 3.4vw, 42px);
+  display: inline-flex;
+  flex: 0 0 auto;
+  flex-flow: row nowrap;
   align-items: center;
-  justify-content: center;
-  padding: 9px clamp(18px, 4vw, 58px);
+  gap: clamp(2rem, 5vw, 3.5rem);
+  min-height: 48px;
+  padding: 9px 0 9px clamp(1.5rem, 4vw, 3rem);
   font-size: 0.74rem;
   font-weight: 900;
   letter-spacing: 0.08em;
   line-height: 1.15;
   text-transform: uppercase;
+  white-space: nowrap;
+}
+
+.guild-activation-banner__group strong,
+.guild-activation-banner__group span,
+.guild-activation-banner__group em,
+.guild-activation-banner__group b {
+  flex: 0 0 auto;
   white-space: nowrap;
 }
 
@@ -1438,7 +1447,7 @@ h2.display-heading .display-icon,
 
 .page-hero h1.display-heading .display-line,
 .section-header h2.display-heading .display-line,
-.guild-partner-showcase__intro h2.display-heading .display-line,
+.guild-partner-gallery__details h2.display-heading .display-line,
 .editorial .copy h2.display-heading .display-line {
   justify-content: flex-start;
 }
@@ -1755,161 +1764,146 @@ h2.display-heading .display-icon,
   display: block;
 }
 
-/* ─── Partner showcase (home) ────────────────────────────────────────────── */
+/* ─── Partner gallery (home) ─────────────────────────────────────────────── */
 
-.guild-partner-showcase {
+.guild-partner-gallery {
   position: relative;
   z-index: 2;
+  overflow: hidden;
   border-bottom: 1px solid var(--line-strong);
-  background: var(--paper);
-  overflow-x: clip;
+  background:
+    radial-gradient(circle at 12% 18%, rgba(var(--brand-gold-rgb), 0.14), transparent 34%),
+    radial-gradient(circle at 88% 82%, rgba(var(--brand-amber-rgb), 0.1), transparent 30%),
+    var(--ink);
+  color: var(--paper);
+  padding: clamp(3rem, 8vw, 6rem) 0 clamp(2rem, 5vw, 3rem);
 }
 
-.guild-partner-showcase__intro {
-  padding: clamp(3rem, 7vw, 5rem) 0 1.5rem;
-}
-
-.guild-partner-showcase__intro h2 {
-  font-size: clamp(2rem, 5vw, 4rem);
-  max-width: 16ch;
-}
-
-.guild-partner-carousel {
-  position: relative;
-  isolation: isolate;
-}
-
-.guild-partner-carousel__track {
+.guild-partner-gallery__display-title {
   position: absolute;
-  inset: 0;
+  top: clamp(1rem, 3vw, 2rem);
+  right: clamp(1rem, 4vw, 3rem);
   z-index: 1;
-  width: 100%;
-  height: 100%;
+  margin: 0;
+  color: var(--brand-gold);
+  font-family: "Space Grotesk", "Inter", "Helvetica Neue", Arial, sans-serif;
+  font-size: clamp(3.5rem, 12vw, 9rem);
+  font-weight: 900;
+  letter-spacing: -0.04em;
+  line-height: 0.9;
+  text-transform: uppercase;
+  opacity: 0.14;
   pointer-events: none;
 }
 
-.guild-partner-carousel__sticky {
-  position: sticky;
-  top: 0;
-  display: flex;
-  width: 100%;
-  height: 100vh;
-  align-items: center;
-  justify-content: center;
-  overflow: hidden;
+.guild-partner-gallery__details {
+  position: relative;
+  z-index: 3;
+  max-width: 42ch;
+  padding: 0 clamp(1.25rem, 5vw, 4rem) clamp(1.5rem, 4vw, 2.5rem);
 }
 
-.guild-partner-carousel__stage {
+.guild-partner-gallery__details .kicker {
+  color: rgba(255, 255, 255, 0.58);
+}
+
+.guild-partner-gallery__details h2 {
+  margin: 0 0 0.85rem;
+  color: var(--paper);
+  font-family: "Space Grotesk", "Inter", "Helvetica Neue", Arial, sans-serif;
+  font-size: clamp(2rem, 5vw, 3.6rem);
+  font-weight: 900;
+  letter-spacing: -0.03em;
+  line-height: 0.95;
+  text-transform: uppercase;
+}
+
+.guild-partner-gallery__lead {
+  margin: 0;
+  color: rgba(255, 255, 255, 0.72);
+  font-size: 1rem;
+  line-height: 1.65;
+}
+
+.guild-partner-gallery__page {
   position: relative;
-  width: min(30vw, 420px);
-  aspect-ratio: 4 / 5;
-  border: 1px solid var(--line-strong);
-  background: var(--paper);
+  z-index: 2;
+  width: 100%;
+  overflow: hidden;
+  mask-image: linear-gradient(90deg, transparent 0%, #000 8%, #000 92%, transparent 100%);
+}
+
+.guild-partner-gallery__track {
+  display: flex;
+  align-items: center;
+  gap: clamp(2rem, 5vw, 4rem);
+  width: max-content;
+  padding: 0.5rem 0 1.5rem;
+  animation: guild-partner-marquee 42s linear infinite;
   will-change: transform;
 }
 
-.guild-partner-carousel__figure {
-  position: absolute;
-  inset: 0;
-  margin: 0;
-  opacity: 0;
-  transform-origin: center center;
+.guild-partner-gallery__item {
+  flex: 0 0 auto;
+  width: clamp(280px, 42vw, 520px);
+  height: clamp(180px, 28vw, 320px);
 }
 
-.guild-partner-carousel__figure.is-active {
-  opacity: 1;
-}
-
-.guild-partner-carousel__img {
+.guild-partner-gallery__item img {
   display: block;
   width: 100%;
   height: 100%;
-  object-fit: cover;
-}
-
-.guild-partner-carousel__content {
-  position: relative;
-  z-index: 2;
-}
-
-.guild-partner-carousel__panel {
-  display: flex;
-  min-height: 100vh;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  gap: 1.35rem;
-  padding: 1.8rem;
-  text-align: center;
+  object-fit: contain;
   pointer-events: none;
+  user-select: none;
 }
 
-.guild-partner-carousel__panel.is-active {
-  pointer-events: auto;
-}
-
-.guild-partner-carousel__copy {
-  position: relative;
-  z-index: 3;
-  will-change: transform, opacity, filter;
-}
-
-.guild-partner-carousel__panel h3 {
-  margin: 0.35rem 0 0.85rem;
-  color: var(--black);
-  font-size: clamp(2.4rem, 8vw, 5.5rem);
-  font-weight: 900;
-  letter-spacing: -0.03em;
-  line-height: 0.92;
-  text-transform: uppercase;
-  transition: color 0.35s ease;
-}
-
-.guild-partner-carousel__panel .guild-partner-carousel__copy p {
-  max-width: 42ch;
-  margin: 0 auto;
-  color: var(--muted);
-  font-size: 0.95rem;
-  line-height: 1.55;
-  transition: color 0.35s ease;
-}
-
-.guild-partner-carousel__index {
-  margin: 0;
-  color: var(--brand-gold);
-  font-size: 0.72rem;
-  font-weight: 800;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-  transition: color 0.35s ease;
-}
-
-.guild-partner-carousel__panel:nth-child(4n + 2) .guild-partner-carousel__index { color: var(--brand-sun); }
-.guild-partner-carousel__panel:nth-child(4n + 3) .guild-partner-carousel__index { color: var(--brand-amber); }
-.guild-partner-carousel__panel:nth-child(4n + 4) .guild-partner-carousel__index { color: var(--brand-clay); }
-
-.guild-partner-carousel__index.is-over-image,
-.guild-partner-carousel__panel h3.is-over-image,
-.guild-partner-carousel__panel .guild-partner-carousel__copy p.is-over-image {
-  mix-blend-mode: difference;
-  color: #ffffff;
-}
-
-.guild-partner-carousel__cta {
-  position: relative;
-  z-index: 4;
-  mix-blend-mode: normal;
-  pointer-events: auto;
-  will-change: transform, opacity;
-}
-
-@media screen and (max-width: 991px) {
-  .guild-partner-carousel__stage {
-    width: min(70vw, 360px);
+@keyframes guild-partner-marquee {
+  from {
+    transform: translate3d(-50%, 0, 0);
   }
 
-  .guild-partner-carousel__panel h3 {
-    font-size: clamp(2rem, 12vw, 4rem);
+  to {
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .guild-partner-gallery__page {
+    mask-image: none;
+  }
+
+  .guild-partner-gallery__track {
+    animation: none;
+    width: 100%;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 2rem;
+    padding: 0 1.25rem 1.5rem;
+  }
+
+  .guild-partner-gallery__item {
+    width: min(100%, 320px);
+    height: auto;
+    aspect-ratio: 4 / 3;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .guild-partner-gallery__details h2 {
+    font-size: clamp(1.8rem, 9vw, 2.6rem);
+  }
+
+  .guild-partner-gallery__item {
+    width: min(72vw, 320px);
+    height: clamp(150px, 36vw, 220px);
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .guild-partner-gallery__item {
+    width: min(78vw, 260px);
+    height: clamp(130px, 42vw, 180px);
   }
 }
 
@@ -5190,6 +5184,89 @@ h3 span {
   color: var(--black);
 }
 
+.join-success-panel {
+  min-height: 560px;
+  padding: clamp(24px, 5vw, 64px);
+  border: 1px solid rgba(17, 17, 17, 0.12);
+  border-radius: 0;
+  background: var(--paper);
+}
+
+.join-success-panel__title {
+  margin: 0 0 12px;
+  font-size: clamp(2rem, 5vw, 3rem);
+  line-height: 1.05;
+  letter-spacing: -0.03em;
+}
+
+.join-success-panel__lede {
+  max-width: 42rem;
+  margin: 0 0 28px;
+  color: rgba(17, 17, 17, 0.72);
+  line-height: 1.6;
+}
+
+.join-invite-block + .join-invite-block {
+  margin-top: 20px;
+}
+
+.join-invite-block__label {
+  margin: 0 0 8px;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: rgba(17, 17, 17, 0.55);
+}
+
+.join-invite-copy-row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 12px;
+}
+
+.join-invite-block__value {
+  display: inline-block;
+  padding: 10px 14px;
+  font-size: clamp(1.25rem, 3vw, 1.75rem);
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  background: rgba(17, 17, 17, 0.04);
+  border: 1px solid rgba(17, 17, 17, 0.1);
+}
+
+.join-invite-block__link {
+  flex: 1 1 240px;
+  min-width: 0;
+  word-break: break-all;
+  color: inherit;
+  font-weight: 600;
+}
+
+.join-invite-copy-btn {
+  flex: 0 0 auto;
+}
+
+.join-success-panel__note {
+  margin: 24px 0 0;
+  color: rgba(17, 17, 17, 0.65);
+  font-size: 0.92rem;
+  line-height: 1.5;
+}
+
+.join-success-panel__note.is-success {
+  color: var(--black);
+  font-weight: 600;
+}
+
+.join-success-panel__actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 28px;
+}
+
 .join-readiness-section {
   position: relative;
   overflow: hidden;
@@ -5507,11 +5584,20 @@ h3 span {
 }
 
 .footer-contact > a {
-  display: inline-flex;
+  display: block;
+  width: fit-content;
   border-bottom: 1px solid var(--black);
   padding-bottom: 6px;
   color: var(--black);
   transition: border-color 180ms ease, color 180ms ease, transform 180ms var(--ease-out);
+}
+
+.footer-contact > a + a {
+  margin-top: 14px;
+}
+
+.footer-community-link {
+  font-weight: 800;
 }
 
 .footer-contact > a:hover {
@@ -5704,9 +5790,19 @@ h3 span {
 }
 
 @media (max-width: 980px) {
+  .guild-activation-banner__track {
+    animation-duration: 24s;
+  }
+
   .guild-activation-banner__group {
-    gap: clamp(16px, 3vw, 28px);
-    padding-inline: 22px;
+    gap: clamp(1.75rem, 6vw, 2.5rem);
+    padding-left: clamp(1.25rem, 5vw, 2rem);
+    font-size: 0.66rem;
+    min-height: 42px;
+  }
+
+  .guild-activation-banner__group em {
+    display: none;
   }
 
   .nav-inner {
@@ -5856,14 +5952,13 @@ h3 span {
 
 @media (max-width: 640px) {
   .guild-activation-banner__track {
-    animation-duration: 18s;
+    animation-duration: 20s;
   }
 
   .guild-activation-banner__group {
-    min-height: 42px;
-    gap: 18px;
-    padding-inline: 18px;
-    font-size: 0.66rem;
+    gap: 1.75rem;
+    padding-left: 1.25rem;
+    font-size: 0.62rem;
   }
 
   .guild-loader__word {
@@ -6463,13 +6558,15 @@ h3 span {
   }
 
   .guild-activation-banner__track {
-    width: 100%;
+    width: max-content;
     min-width: 0;
     animation: none;
+    transform: none;
   }
 
   .guild-activation-banner__group {
-    width: 100%;
+    flex: 0 0 auto;
+    width: auto;
     min-width: 0;
   }
 

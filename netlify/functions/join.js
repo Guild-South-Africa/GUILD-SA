@@ -1,4 +1,6 @@
 import crypto from 'node:crypto';
+import { subscribeToMailingList } from './lib/mailingList.js';
+import { sendTeamInviteEmail } from './lib/resend.js';
 
 function readEnv(name) {
   const value = process.env[name];
@@ -248,6 +250,28 @@ function generateInviteCode() {
   return Math.random().toString(36).substring(2, 10).toUpperCase();
 }
 
+const TEAM_CAPACITY_MIN = 3;
+const TEAM_CAPACITY_MAX = 5;
+
+function parseTeamCapacity(value) {
+  const capacity = parseInt(value, 10);
+  return Number.isFinite(capacity) ? capacity : null;
+}
+
+function assertTeamCapacity(capacity) {
+  if (capacity === null || capacity < TEAM_CAPACITY_MIN || capacity > TEAM_CAPACITY_MAX) {
+    throw new HttpError(
+      400,
+      `Team capacity must be between ${TEAM_CAPACITY_MIN} and ${TEAM_CAPACITY_MAX}.`,
+    );
+  }
+  return capacity;
+}
+
+function teamMemberIds(teamFields = {}) {
+  return Array.isArray(teamFields.Members) ? teamFields.Members : [];
+}
+
 function inviteUrl(event, inviteCode) {
   const origin = event.headers.origin || event.headers.Origin || process.env.URL || '';
   return origin ? `${origin}/join/team/invite/${inviteCode}` : `/join/team/invite/${inviteCode}`;
@@ -265,17 +289,19 @@ export const handler = async (event) => {
   try {
     const body = JSON.parse(event.body || '{}');
     const { type, payload = {} } = body;
-    const allowedTypes = new Set(['student', 'team', 'invite', 'mentor', 'partner', 'sponsor', 'campus']);
+    const allowedTypes = new Set(['student', 'team', 'invite', 'mentor', 'partner', 'sponsor', 'campus', 'newsletter']);
 
     if (!allowedTypes.has(type)) {
       return jsonResponse(400, { error: 'Invalid join type' });
     }
 
-    if (!payload.consentAccepted || !payload.mediaConsent) {
+    if (type !== 'newsletter' && (!payload.consentAccepted || !payload.mediaConsent)) {
       return jsonResponse(400, { error: 'Consent and Media Consent are required.' });
     }
 
-    const uploadedFiles = await uploadPayloadFiles(payload, type);
+    const uploadedFiles = type === 'newsletter'
+      ? []
+      : await uploadPayloadFiles(payload, type);
     let result = {};
 
     switch (type) {
@@ -307,6 +333,7 @@ export const handler = async (event) => {
       }
 
       case 'team': {
+        const capacity = assertTeamCapacity(parseTeamCapacity(payload.capacity));
         const inviteCode = generateInviteCode();
         const linkedEvents = await eventLinks(payload.event);
         const leaderRecord = await airtableRequest('Participants', 'POST', [{
@@ -331,7 +358,7 @@ export const handler = async (event) => {
         const teamRecord = await airtableRequest('Teams', 'POST', [{
           fields: compactFields({
             'Team Name': payload.teamName,
-            'Team Capacity': parseInt(payload.capacity, 10),
+            'Team Capacity': capacity,
             Event: linkedEvents,
             Track: payload.track,
             'Project Name': payload.projectName,
@@ -352,11 +379,22 @@ export const handler = async (event) => {
           fields: { Team: [teamId] },
         }]);
 
+        const teamInviteUrl = inviteUrl(event, inviteCode);
+        const inviteEmail = await sendTeamInviteEmail({
+          readEnv,
+          email: payload.leaderEmail,
+          leaderName: payload.leaderName,
+          teamName: payload.teamName,
+          inviteCode,
+          inviteUrl: teamInviteUrl,
+        });
+
         result = {
           success: true,
           teamId,
           inviteCode,
-          inviteUrl: inviteUrl(event, inviteCode),
+          inviteUrl: teamInviteUrl,
+          inviteEmailSent: inviteEmail.sent === true,
           uploads: uploadedFiles,
         };
         break;
@@ -373,7 +411,16 @@ export const handler = async (event) => {
           return jsonResponse(404, { error: 'Invalid invite code.' });
         }
 
-        const teamId = teamLookup.records[0].id;
+        const teamRecord = teamLookup.records[0];
+        const teamId = teamRecord.id;
+        const teamFields = teamRecord.fields || {};
+        const teamCapacity = parseTeamCapacity(teamFields['Team Capacity']);
+        const memberIds = teamMemberIds(teamFields);
+
+        if (teamCapacity !== null && memberIds.length >= teamCapacity) {
+          return jsonResponse(400, { error: 'This team is already full.' });
+        }
+
         const participantRecord = await airtableRequest('Participants', 'POST', [{
           fields: compactFields({
             'Full Name': payload.name,
@@ -401,8 +448,12 @@ export const handler = async (event) => {
           fields: compactFields({
             'Full Name': payload.name,
             Email: payload.email,
+            Company: payload.company,
+            Role: payload.role,
             Expertise: multiSelect(payload.expertise),
             'LinkedIn URL': payload.linkedin,
+            'GitHub URL': payload.github,
+            Bio: payload.bio,
             Availability: payload.availability,
             Status: 'Available',
           }),
@@ -417,7 +468,10 @@ export const handler = async (event) => {
             'Organization Name': payload.organizationName,
             'Contact Name': payload.contactPerson,
             'Contact Email': payload.email,
+            Website: payload.website,
             'Partnership Type': payload.partnershipType,
+            'Support Type': payload.supportType,
+            Notes: payload.notes,
             Status: 'Pending',
           }),
         }]);
@@ -448,10 +502,26 @@ export const handler = async (event) => {
             City: payload.city,
             'Campus Lead Name': payload.applicantName,
             'Campus Lead Email': payload.applicantEmail,
+            'Community Size': payload.communitySize,
+            'Why Start a Guild': payload.whyStart,
             Active: false,
           }),
         }]);
         result = { success: true, campusId: campusRecord.records[0].id };
+        break;
+      }
+
+      case 'newsletter': {
+        result = await subscribeToMailingList({
+          readEnv,
+          airtableRequest,
+          airtableFindByFormula,
+          escapeAirtableString,
+          compactFields,
+          HttpError,
+          email: payload.email,
+          source: payload.source,
+        });
         break;
       }
 
