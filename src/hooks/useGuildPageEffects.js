@@ -47,6 +47,18 @@ export function useGuildPageEffects({ bodyClass = '' } = {}) {
   }, [location.pathname, bodyClass])
 
   useEffect(() => {
+    if (!location.hash) return
+
+    const id = location.hash.replace('#', '')
+    const target = document.getElementById(id)
+    if (!target) return
+
+    requestAnimationFrame(() => {
+      target.scrollIntoView({ behavior: 'auto', block: 'start' })
+    })
+  }, [location.pathname, location.hash])
+
+  useEffect(() => {
     const handleClick = (event) => {
       const anchor = event.target.closest('a[href]')
       if (!anchor || anchor.target === '_blank' || event.metaKey || event.ctrlKey || event.shiftKey) {

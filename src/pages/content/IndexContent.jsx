@@ -1,7 +1,8 @@
 import AppLink from '../../components/AppLink'
-import EditorialCta from '../../components/EditorialCta'
 import MailingListForm from '../../components/MailingListForm'
+import WhatsAppCommunityLink from '../../components/WhatsAppCommunityLink'
 import CinematicHero from '../../components/CinematicHero'
+import PartnerGallery from '../../components/PartnerGallery'
 import { EVENT_TIMELINE } from '../../lib/eventTimeline'
 
 export default function IndexContent() {
@@ -57,65 +58,9 @@ export default function IndexContent() {
             </div>
           </section>
 
-          <section className="guild-partner-showcase" aria-label="GUILD SA ecosystem partners">
-            <div className="shell guild-partner-showcase__intro">
-              <div className="section-header">
-                <div className="section-number reveal">03</div>
-                <div>
-                  <p className="kicker reveal">Ecosystem partners</p>
-                  <h2 className="reveal">Built With Partners Who Believe In Builders.</h2>
-                  <p className="section-intro reveal">Campus access, AI build tooling, and industry mentorship — backing a ~100-student registration pool and a 40-developer sprint floor.</p>
-                </div>
-              </div>
-            </div>
+          <PartnerGallery />
 
-            <div className="guild-partner-carousel" data-guild-partner-carousel>
-              <div className="guild-partner-carousel__track">
-                <div className="guild-partner-carousel__sticky">
-                  <div className="guild-partner-carousel__stage" data-carousel-stage aria-live="polite">
-                    <figure className="guild-partner-carousel__figure is-active" data-carousel-figure>
-                      <img src="https://res.cloudinary.com/dgwtaivvf/image/upload/v1777998003/Hackathon_team_zrlwkj.jpg" alt="Eduvos Menlyn campus host" className="guild-partner-carousel__img" loading="lazy" />
-                    </figure>
-                    <figure className="guild-partner-carousel__figure" data-carousel-figure>
-                      <img src="https://res.cloudinary.com/dgwtaivvf/image/upload/v1777998032/Guild_Hackathon_promotional_poster_on_window_su0yhg.png" alt="Lovable AI build platform partner" className="guild-partner-carousel__img" loading="lazy" />
-                    </figure>
-                    <figure className="guild-partner-carousel__figure" data-carousel-figure>
-                      <img src="https://res.cloudinary.com/dgwtaivvf/image/upload/v1777211575/Founders_Table_rkvq1q.png" alt="VelozTech industry innovation partner" className="guild-partner-carousel__img" loading="lazy" />
-                    </figure>
-                  </div>
-                </div>
-              </div>
-
-              <div className="guild-partner-carousel__content">
-                <div className="guild-partner-carousel__panel is-active" data-carousel-panel>
-                  <div className="guild-partner-carousel__copy" data-carousel-copy>
-                    <p className="guild-partner-carousel__index">01</p>
-                    <h3>Eduvos</h3>
-                    <p>Hosts the inaugural Buildathon — giving the campus pool workspace and a live stage where forty elite developers sprint, ship, and demo.</p>
-                  </div>
-                  <AppLink to="/join" className="button guild-partner-carousel__cta">Apply Now</AppLink>
-                </div>
-                <div className="guild-partner-carousel__panel" data-carousel-panel>
-                  <div className="guild-partner-carousel__copy" data-carousel-copy>
-                    <p className="guild-partner-carousel__index">02</p>
-                    <h3>Lovable</h3>
-                    <p>Powers rapid MVP development with AI build credits and tooling so teams ship faster on event day.</p>
-                  </div>
-                  <AppLink to="/join" className="button guild-partner-carousel__cta">Apply Now</AppLink>
-                </div>
-                <div className="guild-partner-carousel__panel" data-carousel-panel>
-                  <div className="guild-partner-carousel__copy" data-carousel-copy>
-                    <p className="guild-partner-carousel__index">03</p>
-                    <h3>VelozTech</h3>
-                    <p>Frames real industry challenges, mentors teams, and opens continuation pathways for standout projects.</p>
-                  </div>
-                  <AppLink to="/join" className="button guild-partner-carousel__cta">Apply Now</AppLink>
-                </div>
-              </div>
-            </div>
-          </section>
-
-          <section className="site-section home-system-section">
+          <section id="build-day-schedule" className="site-section home-system-section">
             <div className="shell">
               <div className="section-header">
                 <div className="section-number reveal">04</div>
@@ -136,47 +81,6 @@ export default function IndexContent() {
               </div>
             </div>
           </section>
-
-          <div className="event-carousel" aria-label="GUILD SA event moments">
-            <div className="event-carousel-track">
-              <figure className="event-shot">
-                <img src="https://res.cloudinary.com/dgwtaivvf/image/upload/v1777998003/Hackathon_team_zrlwkj.jpg" alt="Student builders collaborating around laptops" />
-              </figure>
-              <figure className="event-shot">
-                <img src="https://res.cloudinary.com/dgwtaivvf/image/upload/v1777211575/Founders_Table_rkvq1q.png" alt="Mentor guiding a team during a product session" />
-              </figure>
-              <figure className="event-shot">
-                <img src="https://res.cloudinary.com/dgwtaivvf/image/upload/v1777998011/Billboard2_evpkx2.png" alt="Audience watching a presentation in an event venue" />
-              </figure>
-              <figure className="event-shot">
-                <img src="https://res.cloudinary.com/dgwtaivvf/image/upload/v1777998022/Brand_Flags_izzch1.png" alt="Workshop participants listening during a talk" />
-              </figure>
-              <figure className="event-shot">
-                <img src="https://res.cloudinary.com/dgwtaivvf/image/upload/v1777998032/Guild_Hackathon_promotional_poster_on_window_su0yhg.png" alt="Team discussing ideas in a work session" />
-              </figure>
-              <figure className="event-shot">
-                <img src="https://res.cloudinary.com/dgwtaivvf/image/upload/v1777998032/Merch2_wolytc.png" alt="People reviewing work together at a table" />
-              </figure>
-              <figure className="event-shot">
-                <img src="https://res.cloudinary.com/dgwtaivvf/image/upload/v1777998035/Bottle_igeqzf.png" alt="Student builders collaborating around laptops" />
-              </figure>
-              <figure className="event-shot">
-                <img src="https://res.cloudinary.com/dgwtaivvf/image/upload/v1777998037/hoodie1_pmtgqa.png" alt="Mentor guiding a team during a product session" />
-              </figure>
-              <figure className="event-shot">
-                <img src="https://res.cloudinary.com/dgwtaivvf/image/upload/v1777998045/Merch1_gtfffy.png" alt="Audience watching a presentation in an event venue" />
-              </figure>
-              <figure className="event-shot">
-                <img src="https://res.cloudinary.com/dgwtaivvf/image/upload/v1777998038/hack_poster_e6kyfr.png" alt="Workshop participants listening during a talk" />
-              </figure>
-              <figure className="event-shot">
-                <img src="https://res.cloudinary.com/dgwtaivvf/image/upload/v1777998053/Poster_on_car_paozhi.png" alt="Team discussing ideas in a work session" />
-              </figure>
-              <figure className="event-shot">
-                <img src="https://res.cloudinary.com/dgwtaivvf/image/upload/v1777998475/Totebag1_xlnarm.png" alt="People reviewing work together at a table" />
-              </figure>
-            </div>
-          </div>
 
           <section className="site-section">
             <div className="shell">
@@ -517,7 +421,7 @@ export default function IndexContent() {
             </div>
           </section>
 
-          <section className="site-section mailing-list-section">
+          <section id="waitlist" className="site-section mailing-list-section">
             <div className="shell">
               <div className="section-header">
                 <div className="section-number reveal">09</div>
@@ -525,19 +429,15 @@ export default function IndexContent() {
                   <p className="kicker reveal">Mailing list</p>
                   <h2 className="reveal">Get The Latest Updates.</h2>
                   <p className="section-intro reveal">Sprint dates, project drops, partner calls, and campus updates — delivered to your inbox.</p>
+                  <p className="section-intro reveal">Want live builder chat? Join the Guild SA WhatsApp community for announcements, team formation, and sprint updates.</p>
                 </div>
               </div>
               <MailingListForm source="home" />
+              <div className="waitlist-actions reveal" style={{ marginTop: '1.5rem' }}>
+                <WhatsAppCommunityLink className="button">Join WhatsApp Community</WhatsAppCommunityLink>
+              </div>
             </div>
           </section>
-
-          <EditorialCta
-            anchor="40"
-            kicker="Campus registrations open"
-            title="Applications Are Now Open."
-            copy="~100-student campus pool. Forty elite second- and third-year developers on the sprint floor. One 10-hour live build at Eduvos Menlyn — join the inaugural GUILD SA AI Buildathon."
-            dark={false}
-          />
     </>
   )
 }

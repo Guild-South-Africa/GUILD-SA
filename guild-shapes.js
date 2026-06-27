@@ -1071,7 +1071,7 @@ function bindShapeThrow(trigger, reducedMotion) {
 }
 
 function initSectionShapeDrift(reducedMotion) {
-  const sections = document.querySelectorAll('.site-section, .guild-partner-showcase')
+  const sections = document.querySelectorAll('.site-section, .guild-partner-gallery')
 
   sections.forEach((section, sectionIndex) => {
     if (section.querySelector('.guild-shape-drift')) return

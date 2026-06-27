@@ -34,16 +34,235 @@ body.has-cinematic-hero {
 
 body.has-cinematic-hero .home-statement-section {
   position: relative;
-  z-index: 6;
+  z-index: 2;
 }
 
-.guild-cinematic-hero__globe {
-  position: absolute;
-  inset: 0;
+.guild-cinematic-hero {
+  position: relative;
+  z-index: 1;
+  isolation: isolate;
+  background: var(--paper);
+}
+
+.guild-cinematic-hero__inner {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(240px, 46%);
+  grid-template-rows: 1fr;
+  gap: clamp(1.5rem, 4vw, 4rem);
+  align-items: center;
+  min-height: calc(100svh - 74px - 48px);
+  padding-block: clamp(2rem, 5vh, 4rem);
+}
+
+.guild-cinematic-hero__content {
+  grid-column: 1;
+  grid-row: 1;
+  display: flex;
+  flex-direction: column;
+  gap: clamp(1rem, 2.2vh, 1.35rem);
+  max-width: 38rem;
+  align-self: center;
+}
+
+.guild-cinematic-hero__visual {
+  grid-column: 2;
+  grid-row: 1;
+  position: relative;
   display: flex;
   align-items: center;
   justify-content: center;
-  z-index: 10;
+  align-self: center;
+  justify-self: center;
+  width: 100%;
+  height: 100%;
+  min-height: min(52vh, 520px);
+}
+
+.guild-cinematic-hero__headline {
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: clamp(0.15rem, 0.5vh, 0.35rem);
+}
+
+.guild-cinematic-hero__headline-line {
+  display: block;
+  font-family: "Space Grotesk", "Inter", "Helvetica Neue", Arial, sans-serif;
+  font-size: clamp(1.65rem, 4.2vw, 3.1rem);
+  font-weight: 600;
+  letter-spacing: -0.03em;
+  line-height: 1.02;
+  color: var(--brand-amber);
+  text-transform: uppercase;
+}
+
+.guild-cinematic-hero__headline .display-text {
+  font-family: "Space Grotesk", "Inter", "Helvetica Neue", Arial, sans-serif;
+  font-size: clamp(3rem, 7.5vw, 5.5rem);
+  font-weight: 500;
+  letter-spacing: -0.04em;
+  line-height: 0.95;
+  color: var(--ink);
+}
+
+.guild-cinematic-hero__headline .display-line {
+  margin-bottom: clamp(4px, 0.8vw, 8px);
+}
+
+.guild-cinematic-hero__period-dot {
+  display: inline-block;
+  width: clamp(0.55rem, 1.4vw, 0.8rem);
+  height: clamp(0.55rem, 1.4vw, 0.8rem);
+  margin-left: 0.12em;
+  border-radius: 50%;
+  background: var(--brand-amber);
+  transform: translateY(-0.08em);
+}
+
+.guild-cinematic-hero__lede,
+.guild-cinematic-hero__note {
+  margin: 0;
+  font-size: clamp(0.88rem, 1.5vw, 1rem);
+  line-height: 1.55;
+  color: var(--ink);
+  font-weight: 500;
+}
+
+.guild-cinematic-hero__note {
+  color: rgba(17, 17, 17, 0.78);
+}
+
+.guild-cinematic-hero__actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  margin-top: 0.25rem;
+}
+
+.guild-cinematic-hero__countdown {
+  margin-top: clamp(0.5rem, 1.5vh, 1rem);
+  padding-top: clamp(1rem, 2vh, 1.35rem);
+  border-top: 1px solid rgba(17, 17, 17, 0.1);
+}
+
+.guild-cinematic-hero__countdown-heading {
+  margin: 0 0 0.75rem;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: rgba(17, 17, 17, 0.58);
+}
+
+.guild-cinematic-hero__countdown-open {
+  margin: 0 0 0.35rem;
+  font-family: "Space Grotesk", "Inter", sans-serif;
+  font-size: clamp(1.5rem, 3vw, 2rem);
+  font-weight: 500;
+  letter-spacing: -0.03em;
+  color: var(--ink);
+}
+
+.guild-cinematic-hero__countdown-grid {
+  display: flex;
+  align-items: flex-end;
+  gap: clamp(0.5rem, 1.5vw, 1rem);
+}
+
+.guild-cinematic-hero__countdown-unit {
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+  flex: 1;
+  min-width: 0;
+}
+
+.guild-cinematic-hero__countdown-value {
+  font-family: "Space Grotesk", "Inter", sans-serif;
+  font-size: clamp(1.75rem, 4vw, 2.5rem);
+  font-weight: 500;
+  letter-spacing: -0.03em;
+  line-height: 1;
+  color: var(--ink);
+  font-variant-numeric: tabular-nums;
+}
+
+.guild-cinematic-hero__countdown-label {
+  font-size: 0.62rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: rgba(17, 17, 17, 0.58);
+}
+
+#waitlist,
+#build-day-schedule {
+  scroll-margin-top: clamp(6.5rem, 14vh, 8.5rem);
+}
+
+.guild-cinematic-hero__stats {
+  display: flex;
+  align-items: center;
+  gap: clamp(1.25rem, 3vw, 2rem);
+  margin-top: clamp(0.5rem, 1.5vh, 1rem);
+  padding-top: clamp(1rem, 2vh, 1.35rem);
+}
+
+.guild-cinematic-hero__stats-divider {
+  flex: none;
+  width: 1px;
+  height: clamp(2.75rem, 6vw, 3.5rem);
+  background: rgba(17, 17, 17, 0.14);
+}
+
+.guild-cinematic-hero__stat {
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+}
+
+.guild-cinematic-hero__stat-value {
+  font-family: "Space Grotesk", "Inter", sans-serif;
+  font-size: clamp(2rem, 4vw, 2.75rem);
+  font-weight: 500;
+  letter-spacing: -0.03em;
+  line-height: 1;
+  color: var(--ink);
+}
+
+.guild-cinematic-hero__stat-value--sm {
+  font-size: clamp(1.5rem, 3vw, 2.15rem);
+}
+
+.guild-cinematic-hero__stat-label {
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: rgba(17, 17, 17, 0.58);
+}
+
+.guild-cinematic-hero__visual::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  bottom: 12%;
+  width: min(72%, 320px);
+  height: 28px;
+  border-radius: 50%;
+  background: radial-gradient(ellipse at center, rgba(17, 17, 17, 0.16) 0%, transparent 72%);
+  transform: translateX(-50%);
+  filter: blur(8px);
+  pointer-events: none;
+}
+
+.guild-cinematic-hero__globe {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  z-index: 1;
   pointer-events: none;
 }
 
@@ -54,7 +273,7 @@ body.has-cinematic-hero .home-statement-section {
 
 .guild-globe__scene {
   position: relative;
-  width: min(400px, 72vw);
+  width: min(440px, 100%);
   aspect-ratio: 1;
   perspective: 1500px;
   transform-style: preserve-3d;
@@ -116,217 +335,60 @@ body.has-cinematic-hero .home-statement-section {
   100% { --guild-globe-rY: -360deg; }
 }
 
-.guild-cinematic-hero {
-  position: relative;
-  width: 100%;
-  height: 200vh;
-  z-index: 5;
-  isolation: isolate;
-}
-
-.guild-cinematic-hero__sticky {
-  position: sticky;
-  top: 0;
-  height: 100vh;
-  width: 100%;
-  overflow: hidden;
-  isolation: isolate;
-}
-
-.guild-cinematic-hero__copy {
-  position: relative;
-  height: 100%;
-  width: 100%;
-  z-index: 1;
-  pointer-events: none;
-}
-
-.guild-cinematic-hero__title {
-  position: absolute;
-  margin: 0;
-  font-family: "Space Grotesk", "Inter", "Helvetica Neue", Arial, sans-serif;
-  font-size: clamp(3.5rem, 14vw, 9rem);
-  font-weight: 500;
-  letter-spacing: -0.04em;
-  line-height: 0.95;
-  color: var(--ink);
-}
-
-.guild-cinematic-hero__title--1 {
-  left: clamp(1rem, 4vw, 2.5rem);
-  top: 18%;
-}
-
-.guild-cinematic-hero__title--2 {
-  right: clamp(1rem, 4vw, 2.5rem);
-  top: 38%;
-  color: var(--brand-amber);
-}
-
-.guild-cinematic-hero__title--3 {
-  left: clamp(18%, 28vw, 28%);
-  top: 58%;
-}
-
-.guild-cinematic-hero__lede {
-  position: absolute;
-  left: clamp(1.25rem, 4vw, 2.5rem);
-  top: 46%;
-  max-width: 300px;
-  margin: 0;
-  font-size: 0.94rem;
-  line-height: 1.65;
-  color: rgba(17, 17, 17, 0.8);
-  font-weight: 500;
-}
-
-.guild-cinematic-hero__location {
-  color: var(--brand-clay);
-  font-weight: 700;
-  letter-spacing: 0.04em;
-}
-
-.guild-cinematic-hero__stat {
-  position: absolute;
-  display: flex;
-  flex-direction: column;
-}
-
-.guild-cinematic-hero__stat-row {
-  display: flex;
-  align-items: center;
-  gap: 0.75rem;
-}
-
-.guild-cinematic-hero__stat-line {
-  display: none;
-  width: 6rem;
-  height: 1px;
-  background: rgba(17, 17, 17, 0.2);
-}
-
-.guild-cinematic-hero__stat-value {
-  font-family: "Space Grotesk", "Inter", sans-serif;
-  font-size: clamp(2rem, 4vw, 3rem);
-  font-weight: 500;
-  letter-spacing: -0.03em;
-  color: var(--ink);
-}
-
-.guild-cinematic-hero__stat-value--sm {
-  font-size: clamp(1.35rem, 3vw, 2.25rem);
-}
-
-.guild-cinematic-hero__stat-label {
-  margin-top: 0.25rem;
-  font-size: 0.72rem;
-  font-weight: 700;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-  color: rgba(17, 17, 17, 0.6);
-}
-
-.guild-cinematic-hero__stat--builders {
-  right: clamp(1.25rem, 6vw, 6rem);
-  top: 14%;
-  align-items: flex-end;
-}
-
-.guild-cinematic-hero__stat--builders .guild-cinematic-hero__stat-row {
-  justify-content: flex-end;
-}
-
-.guild-cinematic-hero__stat--builders .guild-cinematic-hero__stat-line {
-  transform: rotate(20deg);
-}
-
-.guild-cinematic-hero__stat--day {
-  left: clamp(1.25rem, 5vw, 5rem);
-  bottom: clamp(5rem, 12vh, 6rem);
-  align-items: flex-start;
-}
-
-.guild-cinematic-hero__stat--day .guild-cinematic-hero__stat-line {
-  transform: rotate(-20deg);
-}
-
-.guild-cinematic-hero__stat--mvp {
-  right: clamp(1.25rem, 5vw, 5rem);
-  bottom: clamp(4rem, 10vh, 5rem);
-  align-items: flex-end;
-}
-
-.guild-cinematic-hero__stat--mvp .guild-cinematic-hero__stat-row {
-  justify-content: flex-end;
-}
-
-.guild-cinematic-hero__stat--mvp .guild-cinematic-hero__stat-line {
-  transform: rotate(-20deg);
-}
-
-.guild-cinematic-hero__actions {
-  position: absolute;
-  left: clamp(1.25rem, 4vw, 2.5rem);
-  bottom: clamp(1.5rem, 4vh, 2.5rem);
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.75rem;
-  z-index: 12;
-  pointer-events: auto;
-}
-
-.guild-cinematic-hero__fade {
-  pointer-events: none;
-  position: absolute;
-  inset: auto 0 0;
-  height: 12rem;
-  background: linear-gradient(to bottom, transparent, var(--paper));
-  z-index: 1;
-}
-
-.guild-cinematic-hero.is-static .guild-cinematic-hero__title,
+.guild-cinematic-hero.is-static .guild-cinematic-hero__headline,
 .guild-cinematic-hero.is-static .guild-cinematic-hero__lede,
-.guild-cinematic-hero.is-static .guild-cinematic-hero__stat,
+.guild-cinematic-hero.is-static .guild-cinematic-hero__note,
+.guild-cinematic-hero.is-static .guild-cinematic-hero__countdown,
 .guild-cinematic-hero.is-static .guild-cinematic-hero__actions {
   opacity: 1;
   transform: none;
 }
 
-@media (min-width: 768px) {
-  .guild-cinematic-hero__stat-line {
-    display: block;
-  }
-}
-
-@media (max-width: 767px) {
-  .guild-cinematic-hero {
-    height: 170vh;
+@media (max-width: 640px) {
+  .guild-cinematic-hero__inner {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto auto;
+    min-height: auto;
+    padding-block: clamp(1.5rem, 4vh, 2.5rem) clamp(2rem, 5vh, 3rem);
   }
 
-  .guild-cinematic-hero__title--3 {
-    left: 12%;
+  .guild-cinematic-hero__content {
+    grid-column: 1;
+    grid-row: 1;
+    max-width: none;
   }
 
-  .guild-cinematic-hero__lede {
-    top: 50%;
-    max-width: min(280px, 78vw);
-    font-size: 0.85rem;
-  }
-
-  .guild-cinematic-hero__stat--builders {
-    top: 10%;
-  }
-
-  .guild-cinematic-hero__stat--day {
-    bottom: 7.5rem;
+  .guild-cinematic-hero__visual {
+    grid-column: 1;
+    grid-row: 2;
+    display: none;
+    min-height: 0;
   }
 
   .guild-cinematic-hero__actions {
-    width: min(100%, 320px);
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .guild-cinematic-hero__actions .button {
+    width: 100%;
+    justify-content: center;
+    text-align: center;
+  }
+}
+
+@media (max-width: 900px) and (min-width: 641px) {
+  .guild-cinematic-hero__inner {
+    grid-template-columns: minmax(0, 1fr) minmax(200px, 42%);
+    gap: clamp(1rem, 2.5vw, 2rem);
+  }
+
+  .guild-globe__scene {
+    width: min(360px, 100%);
   }
 
   .guild-globe__scene i {
-    width: 44px;
+    width: 48px;
   }
 }
 
@@ -336,7 +398,7 @@ body.has-cinematic-hero .home-statement-section {
     animation: none;
   }
 
-  .guild-cinematic-hero__globe {
+  .guild-cinematic-hero__visual {
     display: none;
   }
 }

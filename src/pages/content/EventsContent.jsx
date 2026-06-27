@@ -1,5 +1,6 @@
 import AppLink from '../../components/AppLink'
 import EditorialCta from '../../components/EditorialCta'
+import EventChapterSection from '../../components/EventChapterSection'
 import { EVENT_TIMELINE } from '../../lib/eventTimeline'
 
 export default function EventsContent() {
@@ -10,7 +11,7 @@ export default function EventsContent() {
               <p className="eyebrow reveal">04 / GUILD SA AI Buildathon 01</p>
               <h1 className="reveal" data-motion="left">Build A Real Product.<br />Present It To Industry.</h1>
               <p className="hero-copy reveal">Campus registrations open to a ~100-student pool at Eduvos Menlyn. Forty elite second- and third-year developers will be selected for a 10-hour live sprint focused on execution, collaboration, and real-world problem solving.</p>
-              <p className="activation-meta reveal">Powered by Eduvos • Lovable • VelozTech</p>
+              <p className="activation-meta reveal">Powered by Eduvos • Lovable • VelozTech • HLTC</p>
               <div className="partner-hero-evidence reveal" aria-label="Buildathon facts">
                 <span>~100 Campus Pool</span>
                 <span>40 Sprint Floor</span>
@@ -19,15 +20,18 @@ export default function EventsContent() {
               </div>
               <div className="waitlist-actions reveal">
                 <AppLink className="button" to="/join">Apply Now</AppLink>
+                <a className="button secondary" href="#eduvos-pretoria-chapter">Explore Chapter</a>
                 <a className="button secondary" href="#event-schedule">View Schedule</a>
               </div>
             </div>
           </section>
 
+          <EventChapterSection />
+
           <section className="site-section">
             <div className="shell">
               <div className="section-header">
-                <div className="section-number reveal">02</div>
+                <div className="section-number reveal">03</div>
                 <div>
                   <p className="kicker reveal">Why this event exists</p>
                   <h2 className="reveal">South Africa Has Talent.<br />This Is Where It Becomes Visible.</h2>
@@ -42,7 +46,7 @@ export default function EventsContent() {
           <section className="site-section about-depth-section">
             <div className="shell">
               <div className="section-header">
-                <div className="section-number reveal">03</div>
+                <div className="section-number reveal">04</div>
                 <div>
                   <p className="kicker reveal">What you leave with</p>
                   <h2 className="reveal">More Than A Certificate.</h2>
@@ -62,20 +66,19 @@ export default function EventsContent() {
           <section className="site-section">
             <div className="shell">
               <div className="section-header">
-                <div className="section-number reveal">04</div>
+                <div className="section-number reveal">05</div>
                 <div>
                   <p className="kicker reveal">Event details</p>
-                  <h2 className="reveal">Buildathon 01</h2>
+                  <h2 className="reveal">Buildathon 01 At A Glance</h2>
+                  <p className="section-intro reveal">The full chapter breakdown — registration pool, sprint floor, venue, and eligibility — lives in the <a href="#eduvos-pretoria-chapter">Eduvos Pretoria Buildathon Chapter</a> section above.</p>
                 </div>
               </div>
-              <div className="about-entry-grid">
-                <article className="about-entry-card reveal"><span>Date</span><p>01 August 2026</p></article>
-                <article className="about-entry-card reveal"><span>Venue</span><p>Eduvos Menlyn Campus</p></article>
-                <article className="about-entry-card reveal"><span>Location</span><p>Pretoria</p></article>
-                <article className="about-entry-card reveal"><span>Format</span><p>One-Day AI Buildathon</p></article>
-                <article className="about-entry-card reveal"><span>Campus Pool</span><p>~100 Registrations</p></article>
-                <article className="about-entry-card reveal"><span>Sprint Floor</span><p>40 Elite Developers (2nd &amp; 3rd Year)</p></article>
-                <article className="about-entry-card reveal"><span>Team Size</span><p>3–5 Participants</p></article>
+              <div className="stat-strip">
+                <div className="stat reveal"><strong>01 Aug</strong><span>2026</span></div>
+                <div className="stat reveal"><strong>~100</strong><span>Campus Pool</span></div>
+                <div className="stat reveal"><strong>40</strong><span>Sprint Floor</span></div>
+                <div className="stat reveal"><strong>10h</strong><span>Live Build</span></div>
+                <div className="stat reveal"><strong>PTA</strong><span>Pretoria</span></div>
               </div>
             </div>
           </section>
@@ -83,7 +86,7 @@ export default function EventsContent() {
           <section className="site-section">
             <div className="shell">
               <div className="section-header">
-                <div className="section-number reveal">05</div>
+                <div className="section-number reveal">06</div>
                 <div>
                   <p className="kicker reveal">The challenge</p>
                   <h2 className="reveal">One Day.<br />One Team.<br />One Working Product.</h2>
@@ -104,7 +107,7 @@ export default function EventsContent() {
           <section className="site-section events-command-section" id="event-schedule">
             <div className="shell">
               <div className="section-header">
-                <div className="section-number reveal">06</div>
+                <div className="section-number reveal">07</div>
                 <div>
                   <p className="kicker reveal">Event journey</p>
                   <h2 className="reveal">How The Day Works.</h2>
@@ -133,7 +136,7 @@ export default function EventsContent() {
           <section className="site-section dark">
             <div className="shell">
               <div className="section-header">
-                <div className="section-number reveal">07</div>
+                <div className="section-number reveal">08</div>
                 <div>
                   <p className="kicker reveal">Judging criteria</p>
                   <h2 className="reveal">What Judges Look For.</h2>
@@ -155,17 +158,19 @@ export default function EventsContent() {
           <section className="site-section">
             <div className="shell">
               <div className="section-header">
-                <div className="section-number reveal">08</div>
+                <div className="section-number reveal">09</div>
                 <div>
                   <p className="kicker reveal">Partners & opportunities</p>
                   <h2 className="reveal">Built With Partners Who Believe In Builders.</h2>
                   <p className="section-intro reveal">VelozTech supports challenge framing, mentorship, incubation pathways, practical exposure opportunities, and future talent development initiatives.</p>
+                  <p className="section-intro reveal"><AppLink to="/partners">Read dedicated partner profiles →</AppLink></p>
                 </div>
               </div>
-              <div className="grid three partner-signal-grid">
-                <article className="card reveal"><span className="index">01</span><h3>Eduvos</h3><p>Eduvos Menlyn anchors the inaugural Buildathon — the physical home where the campus pool registers and forty elite developers sprint, collaborate, and ship.</p><div className="tags"><span>Campus</span><span>Host</span></div></article>
-                <article className="card reveal"><span className="index">02</span><h3>Lovable</h3><p>Lovable provides the AI development environment and participant credits to accelerate MVP creation throughout the day.</p><div className="tags"><span>AI tools</span><span>Credits</span></div></article>
-                <article className="card reveal"><span className="index">03</span><h3>VelozTech</h3><p>VelozTech brings industry context, mentorship, incubation pathways, and talent development opportunities to the cohort.</p><div className="tags"><span>Mentorship</span><span>Pathways</span></div></article>
+              <div className="grid four partner-signal-grid">
+                <article className="card reveal"><span className="index">01</span><h3>Eduvos</h3><p>Hosts the Pretoria chapter at Eduvos Menlyn — campus access, student pipeline, and the physical sprint environment.</p><div className="tags"><span>Campus</span><span>Host</span></div><p><a href="/partners#partner-eduvos">View profile</a></p></article>
+                <article className="card reveal"><span className="index">02</span><h3>Lovable</h3><p>Provides the AI development environment and participant credits to accelerate MVP creation throughout the day.</p><div className="tags"><span>AI tools</span><span>Credits</span></div><p><a href="/partners#partner-lovable">View profile</a></p></article>
+                <article className="card reveal"><span className="index">03</span><h3>VelozTech</h3><p>Brings industry context, mentorship, incubation pathways, and talent development opportunities to the cohort.</p><div className="tags"><span>Mentorship</span><span>Pathways</span></div><p><a href="/partners#partner-veloztech">View profile</a></p></article>
+                <article className="card reveal"><span className="index">04</span><h3>HLTC</h3><p>Supports talent visibility, industry connections, and continuation pathways for builders beyond the sprint floor.</p><div className="tags"><span>Talent</span><span>Industry</span></div><p><a href="/partners#partner-hltc">View profile</a></p></article>
               </div>
             </div>
           </section>
@@ -173,7 +178,7 @@ export default function EventsContent() {
           <section className="site-section home-proof-section">
             <div className="shell">
               <div className="section-header">
-                <div className="section-number reveal">09</div>
+                <div className="section-number reveal">10</div>
                 <div>
                   <p className="kicker reveal">Build stack</p>
                   <h2 className="reveal">Build With Modern AI Tools.</h2>
@@ -194,7 +199,7 @@ export default function EventsContent() {
           <section className="site-section dark">
             <div className="shell">
               <div className="section-header">
-                <div className="section-number reveal">10</div>
+                <div className="section-number reveal">11</div>
                 <div>
                   <p className="kicker reveal">Beyond the event</p>
                   <h2 className="reveal">The Event Ends.<br />The Momentum Doesn't.</h2>
@@ -215,7 +220,7 @@ export default function EventsContent() {
           <section className="site-section">
             <div className="shell">
               <div className="section-header">
-                <div className="section-number reveal">11</div>
+                <div className="section-number reveal">12</div>
                 <div>
                   <p className="kicker reveal">Why GUILD SA events are different</p>
                   <h2 className="reveal">Built For Execution.</h2>

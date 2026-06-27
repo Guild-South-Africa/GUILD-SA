@@ -14,7 +14,7 @@ export default function PageShell({ meta, bodyClass = '', children }) {
   }, [meta])
 
   useEffect(() => {
-    window.scrollTo(0, 0)
+    window.scrollTo({ top: 0, left: 0, behavior: 'instant' })
   }, [meta?.title])
 
   return <main>{children}</main>

@@ -1,9 +1,15 @@
+if ('scrollRestoration' in history) {
+  history.scrollRestoration = 'manual'
+}
+
 import { initCinematicHero, destroyCinematicHero } from './cinematic-hero.js'
-import { initGuildPartnerCarousel } from './partner-carousel.js'
+import { initGuildScrollFill, destroyGuildScrollFill } from './text-scroll-fill.js'
+import { initGuildPartnerGallery, destroyGuildPartnerGallery } from './partner-gallery.js'
 import { initGuildShapes } from './guild-shapes.js'
 import { initSpectrumHover } from './spectrum-hover.js'
 import { initGuildSystemSlider } from './system-slider.js'
 import { initDisplayHeadingIcons } from './display-icons.js'
+import { WHATSAPP_COMMUNITY_URL } from './src/lib/siteLinks.js'
 
 
 const isHomePage = window.location.pathname === '/'
@@ -12,11 +18,11 @@ const guildFooterHTML = `
   <div class="footer-shell">
     <section class="footer-categories" aria-label="GUILD SA pathways">
       <h2>Choose your entry point</h2>
-      <div class="footer-chips"><a href="/join">Students</a><a href="/join">Teams</a><a href="/partners">Mentors</a><a href="/partners">Partners</a><a href="/campus">Campus Guild</a><a href="/pipeline">Guild Labs</a></div>
+      <div class="footer-chips"><a href="/join">Students</a><a href="/join">Teams</a><a href="/partners">Mentors</a><a href="/partners">Partners</a><a href="/campus">Campus Guild</a><a href="/pipeline">Guild Labs</a><a href="${WHATSAPP_COMMUNITY_URL}" target="_blank" rel="noopener noreferrer">WhatsApp Community</a></div>
     </section>
     <section class="footer-main">
-      <div class="footer-contact"><h3>Stay in the loop.</h3><p>Get sprint dates, project drops, partner calls, and campus updates.</p><a href="mailto:guildsagroup@gmail.com">guildsagroup@gmail.com</a></div>
-      <div class="footer-links"><div><h3>About</h3><a href="/about">Vision</a><a href="/pipeline">Pipeline</a><a href="/events">Events</a></div><div><h3>Network</h3><a href="/campus">Campus Guild</a><a href="/partners">Partners</a><a href="/join">Join</a></div><div><h3>Signal</h3><a href="/partners">Projects</a><a href="/events">Demo Day</a><a href="/join">Contact</a></div></div>
+      <div class="footer-contact"><h3>Stay in the loop.</h3><p>Get sprint dates, project drops, partner calls, and campus updates — or join the community for live builder chat.</p><a href="mailto:guildsagroup@gmail.com">guildsagroup@gmail.com</a><a class="footer-community-link" href="${WHATSAPP_COMMUNITY_URL}" target="_blank" rel="noopener noreferrer">Join Guild SA on WhatsApp</a></div>
+      <div class="footer-links"><div><h3>About</h3><a href="/about">Vision</a><a href="/pipeline">Pipeline</a><a href="/events">Events</a></div><div><h3>Network</h3><a href="/campus">Campus Guild</a><a href="/partners">Partners</a><a href="/join">Join</a><a href="${WHATSAPP_COMMUNITY_URL}" target="_blank" rel="noopener noreferrer">WhatsApp Community</a></div><div><h3>Signal</h3><a href="/partners">Projects</a><a href="/events">Demo Day</a><a href="/join">Contact</a></div></div>
     </section>
     <div class="footer-wordmark">Guild SA</div>
     <div class="footer-bottom"><span>Build & ship real-world solutions</span><span>Website developed by Occxlnce. (c) GUILD SA. All rights reserved.</span></div>
@@ -128,7 +134,7 @@ function initActivationBanner() {
     <strong>GUILD SA AI BUILDATHON 01</strong>
     <span>August 1, 2026 / Eduvos Menlyn Campus / Pretoria</span>
     <em>~100 Campus Pool / 40 Sprint Floor / 10-Hour Live Build</em>
-    <b>Applications Now Open</b>
+    <b>Registrations Open 01 July 2026</b>
   `
   const banner = document.createElement('aside')
   banner.className = 'guild-activation-banner'
@@ -417,43 +423,17 @@ function initHeroPrismCanvas() {
 
 initHeroPrismCanvas()
 
-function lerp(start, end, factor) {
-  return start + (end - start) * factor
+function resetPageScroll() {
+  window.scrollTo({ top: 0, left: 0, behavior: 'instant' })
+  document.documentElement.scrollLeft = 0
+  document.body.scrollLeft = 0
 }
 
 function initScrollVelocitySkew() {
-  if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return
-
   const scrollContent = document.getElementById('scroll-content')
-  if (!scrollContent || scrollContent.dataset.skewInit === 'true') return
-  scrollContent.dataset.skewInit = 'true'
-
-  let skew = 0
-  let lastScrollTop = window.scrollY
-
-  function scrollLoop() {
-    if (!document.getElementById('scroll-content')) {
-      // If elements are fully destroyed / route changes and it unmounts
-      return
-    }
-    const scrollTop = window.scrollY
-    const velocity = scrollTop - lastScrollTop
-    lastScrollTop = scrollTop
-    const maxSkew = 5
-    const targetSkew = Math.min(Math.max(velocity * 0.1, -maxSkew), maxSkew)
-
-    skew = lerp(skew, targetSkew, 0.1)
-    if (Math.abs(skew) > 0.01) {
-      scrollContent.style.transform = `skewY(${skew.toFixed(3)}deg)`
-    } else {
-      skew = 0
-      scrollContent.style.transform = 'skewY(0deg)'
-    }
-
-    requestAnimationFrame(scrollLoop)
-  }
-
-  scrollLoop()
+  if (!scrollContent) return
+  scrollContent.style.transform = ''
+  scrollContent.style.willChange = 'auto'
 }
 
 function wait(duration) {
@@ -625,6 +605,7 @@ async function initGuildLoadingAnimation() {
 
   loader.classList.add('is-hidden')
   document.body.classList.remove('is-loading')
+  resetPageScroll()
 }
 
 function resetHorizontalScroll() {
@@ -637,9 +618,10 @@ window.addEventListener('load', resetHorizontalScroll, { once: true })
 window.addEventListener('resize', resetHorizontalScroll)
 
 initGuildLoadingAnimation().then(() => {
+  resetPageScroll()
   if (isHomePage) {
     initCinematicHero()
-    initGuildPartnerCarousel()
+    initGuildPartnerGallery()
   }
   initGuildSystemSlider()
   initGuildShapes()
@@ -1124,21 +1106,26 @@ window.guildInitRoute = (pathname) => {
 
   if (isHome) {
     initCinematicHero()
-    initGuildPartnerCarousel()
+    initGuildPartnerGallery()
   } else {
     destroyCinematicHero()
+    destroyGuildPartnerGallery()
   }
+
+  destroyGuildScrollFill()
 
   initGuildSystemSlider()
   initGuildShapes()
   initCampusHighlightCards()
   initSurfaceTilt()
+  resetPageScroll()
 }
 
 window.guildRefreshPageUI = (root = document.getElementById('root')) => {
   if (!root) return
   initDisplayHeadingIcons(root)
   initRevealAnimations(root)
+  initGuildScrollFill(root)
 }
 
 function initSurfaceTilt() {

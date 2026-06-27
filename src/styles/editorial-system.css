@@ -89,14 +89,6 @@ body.grid-on::after {
 .tags span,
 .field,
 .mini-label,
-.guild-partner-carousel__index {
-  font-family: "Space Grotesk", "Inter", "Helvetica Neue", Arial, sans-serif;
-  font-size: 0.68rem;
-  font-weight: 700;
-  letter-spacing: 0.14em;
-  text-transform: uppercase;
-}
-
 .eyebrow,
 .kicker {
   color: var(--editorial-muted);
@@ -282,23 +274,14 @@ p {
 
 /* ---- partner editorial ---- */
 
-.guild-partner-carousel__index {
-  font-size: clamp(2rem, 4vw, 3.5rem);
-  font-weight: 900;
-  letter-spacing: -0.03em;
-  line-height: 1;
-  text-transform: none;
-  margin-bottom: calc(var(--bl) * 2);
-}
-
-.guild-partner-carousel__copy h3 {
-  font-size: clamp(1.6rem, 3vw, 2.4rem);
+.guild-partner-gallery__details h2 {
+  font-size: clamp(1.8rem, 4vw, 3.2rem);
   line-height: calc(var(--lh) * 2);
   margin-bottom: calc(var(--bl) * 2);
 }
 
-.guild-partner-showcase__intro {
-  margin-bottom: calc(var(--bl) * 6);
+.guild-partner-gallery__lead {
+  max-width: 42ch;
 }
 
 /* ---- CTA blocks ---- */
@@ -578,7 +561,7 @@ body.grid-on .editorial-guides {
 .section-header h2,
 .section-number,
 .timeline-row .time,
-.guild-partner-carousel__index,
+.guild-partner-gallery__details h2,
 .join-final h2,
 .home-statement {
   text-align: left;

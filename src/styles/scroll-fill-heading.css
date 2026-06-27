@@ -1,0 +1,164 @@
+.guild-scroll-fill-heading {
+  text-align: left !important;
+  text-transform: uppercase;
+  letter-spacing: -0.03em;
+  max-width: 100%;
+}
+
+.guild-scroll-fill-heading .guild-scroll-fill-char,
+.guild-scroll-fill-heading .guild-scroll-fill-token,
+.guild-scroll-fill-heading .guild-scroll-fill-word-text {
+  color: inherit;
+}
+
+.section-header--centered .guild-scroll-fill-heading,
+.home-statement.guild-scroll-fill-heading {
+  text-align: left !important;
+}
+
+.home-statement-section .home-statement.guild-scroll-fill-heading {
+  max-width: 100%;
+}
+
+.guild-scroll-fill-line {
+  display: block;
+  text-align: left;
+}
+
+.guild-scroll-fill-char {
+  display: inline-block;
+  vertical-align: baseline;
+  line-height: inherit;
+  will-change: color;
+}
+
+.guild-scroll-fill-token {
+  display: inline-block;
+  white-space: nowrap;
+  vertical-align: baseline;
+  line-height: inherit;
+}
+
+.guild-scroll-fill-word {
+  position: relative;
+  display: inline;
+  white-space: nowrap;
+  vertical-align: baseline;
+  line-height: inherit;
+}
+
+.guild-scroll-fill-blur {
+  position: relative;
+  display: inline;
+  vertical-align: baseline;
+  line-height: inherit;
+}
+
+.guild-scroll-fill-blur::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: min(13vw, 180px);
+  height: min(13vw, 180px);
+  border-radius: 50%;
+  background: var(--brand-amber);
+  opacity: 0.45;
+  filter: blur(28px);
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+  z-index: 0;
+}
+
+.site-section.dark .guild-scroll-fill-blur::before,
+.founders-panel .guild-scroll-fill-blur::before {
+  background: var(--brand-sun);
+  opacity: 0.35;
+}
+
+.guild-scroll-fill-slot {
+  --guild-scroll-fill-slot-size: clamp(3.5rem, 14vw, 5.5rem);
+  position: relative;
+  display: inline-block;
+  flex-shrink: 0;
+  width: 0;
+  height: var(--guild-scroll-fill-slot-size);
+  overflow: hidden;
+  vertical-align: baseline;
+  margin-inline: 0.1em;
+  z-index: 1;
+}
+
+.guild-scroll-fill-slot-inner {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: var(--guild-scroll-fill-slot-size);
+  height: 100%;
+}
+
+.guild-scroll-fill-img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  object-position: center;
+  border: none;
+  outline: none;
+  box-shadow: none;
+  background: transparent;
+}
+
+.guild-scroll-fill-reveal {
+  position: absolute;
+  top: 0;
+  z-index: 2;
+  width: 50%;
+  height: 100%;
+  pointer-events: none;
+  background: var(--paper);
+}
+
+.site-section.dark .guild-scroll-fill-reveal,
+.founders-panel .guild-scroll-fill-reveal,
+.page-hero.dark .guild-scroll-fill-reveal {
+  background: var(--black);
+}
+
+.guild-scroll-fill-reveal--left {
+  left: 0;
+}
+
+.guild-scroll-fill-reveal--right {
+  right: 0;
+}
+
+.guild-scroll-fill-word-text {
+  position: relative;
+  z-index: 1;
+  display: inline;
+  vertical-align: baseline;
+  line-height: inherit;
+}
+
+@media (max-width: 640px) {
+  .guild-scroll-fill-slot {
+    --guild-scroll-fill-slot-size: clamp(2.75rem, 22vw, 4rem);
+  }
+
+  .guild-scroll-fill-blur::before {
+    width: min(22vw, 120px);
+    height: min(22vw, 120px);
+    filter: blur(18px);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .guild-scroll-fill-slot {
+    width: var(--guild-scroll-fill-slot-size) !important;
+  }
+
+  .guild-scroll-fill-reveal {
+    display: none;
+  }
+}

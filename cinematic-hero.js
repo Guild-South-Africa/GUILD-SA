@@ -1,13 +1,13 @@
 import gsap from 'gsap'
-import { ScrollTrigger } from 'gsap/ScrollTrigger'
-
-gsap.registerPlugin(ScrollTrigger)
 
 const BUBBLE_COLORS = ['#E1B43E', '#E37226', '#F4B12E', '#FE980F', '#000000', '#E1B43E']
 const NUM_POINTS = 120
 const SPHERE_RADIUS = 150
+const MOBILE_GLOBE_QUERY = '(max-width: 640px)'
 
-let scrollTriggers = []
+function isMobileGlobeViewport() {
+  return window.matchMedia(MOBILE_GLOBE_QUERY).matches
+}
 
 function sphere(samples, radius) {
   const points = []
@@ -72,19 +72,10 @@ function mountGlobe() {
   return scene
 }
 
-function trackScrollTrigger(config) {
-  const trigger = ScrollTrigger.create(config)
-  scrollTriggers.push(trigger)
-  return trigger
-}
-
 export function destroyCinematicHero() {
-  scrollTriggers.forEach((trigger) => trigger.kill())
-  scrollTriggers = []
-  document.getElementById('guild-globe-container')?.remove()
   gsap.killTweensOf('.guild-globe__wrapper')
   gsap.killTweensOf('[data-guild-globe-mount]')
-  gsap.killTweensOf('.guild-cinematic-hero__sticky')
+  gsap.killTweensOf('.guild-cinematic-hero__content > *')
   gsap.set('.guild-globe__wrapper', { clearProps: 'all' })
   gsap.set('[data-guild-globe-mount]', { clearProps: 'all' })
   document.querySelector('[data-guild-globe-mount]')?.replaceChildren()
@@ -99,67 +90,35 @@ export function initCinematicHero() {
   destroyCinematicHero()
   root.dataset.cinematicInit = 'true'
 
-  if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+  if (window.matchMedia('(prefers-reduced-motion: reduce)').matches || isMobileGlobeViewport()) {
     root.classList.add('is-static')
     return
   }
 
   mountGlobe()
 
-  const titles = root.querySelectorAll('.guild-cinematic-hero__title')
-  const sticky = root.querySelector('.guild-cinematic-hero__sticky')
-  const nextSection = root.nextElementSibling
-
-  gsap.fromTo(
-    titles,
-    { opacity: 0, y: 50 },
-    { opacity: 1, y: 0, stagger: 0.15, duration: 1.2, ease: 'power3.out', delay: 0.35 }
+  const lines = root.querySelectorAll('.guild-cinematic-hero__headline-line')
+  const copy = root.querySelectorAll(
+    '.guild-cinematic-hero__lede, .guild-cinematic-hero__note, .guild-cinematic-hero__actions, .guild-cinematic-hero__countdown'
   )
 
   gsap.fromTo(
-    root.querySelectorAll('.guild-cinematic-hero__lede, .guild-cinematic-hero__stat, .guild-cinematic-hero__actions'),
-    { opacity: 0, y: 24 },
-    { opacity: 1, y: 0, stagger: 0.08, duration: 0.9, ease: 'power2.out', delay: 0.7 }
+    lines,
+    { opacity: 0, y: 36 },
+    { opacity: 1, y: 0, stagger: 0.12, duration: 1, ease: 'power3.out', delay: 0.25 }
   )
 
-  trackScrollTrigger({
-    id: 'cinematic-hero-zoom',
-    trigger: root,
-    start: 'top top',
-    end: 'bottom top',
-    scrub: true,
-    animation: gsap.to('.guild-globe__wrapper', {
-      scale: 20,
-      ease: 'none',
-    }),
-  })
+  gsap.fromTo(
+    copy,
+    { opacity: 0, y: 20 },
+    { opacity: 1, y: 0, stagger: 0.08, duration: 0.85, ease: 'power2.out', delay: 0.55 }
+  )
 
-  trackScrollTrigger({
-    id: 'cinematic-hero-fade-copy',
-    trigger: root,
-    start: 'top top',
-    end: 'bottom top',
-    scrub: true,
-    animation: gsap.to(sticky, {
-      opacity: 0,
-      y: -50,
-      ease: 'none',
-    }),
-  })
-
-  if (nextSection) {
-    trackScrollTrigger({
-      id: 'cinematic-hero-fade-globe',
-      trigger: nextSection,
-      start: 'top bottom',
-      end: 'top 50%',
-      scrub: true,
-      animation: gsap.to('[data-guild-globe-mount]', {
-        opacity: 0,
-        ease: 'none',
-      }),
-    })
+  if (!isMobileGlobeViewport()) {
+    gsap.fromTo(
+      '[data-guild-globe-mount]',
+      { opacity: 0, scale: 0.92 },
+      { opacity: 1, scale: 1, duration: 1.1, ease: 'power2.out', delay: 0.4 }
+    )
   }
-
-  ScrollTrigger.refresh()
 }

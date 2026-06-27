@@ -3,7 +3,7 @@ const OPTICAL_SELECTORS = [
   '.section-header h2',
   '.section-number',
   '.timeline-row .time',
-  '.guild-partner-carousel__index',
+  '.guild-partner-gallery__details h2',
   '.join-final h2',
   '.home-statement',
   '.guild-cinematic-hero__title',

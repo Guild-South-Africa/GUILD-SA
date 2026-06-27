@@ -1,5 +1,7 @@
 import AppLink from '../../components/AppLink'
 import EditorialCta from '../../components/EditorialCta'
+import PartnerSpotlight, { PartnerDirectoryNav } from '../../components/PartnerSpotlight'
+import { ECOSYSTEM_PARTNERS } from '../../lib/partners'
 
 export default function PartnersContent() {
   return (
@@ -36,27 +38,28 @@ export default function PartnersContent() {
             </div>
           </section>
 
-          <section className="site-section about-depth-section">
+          <section className="site-section">
             <div className="shell">
               <div className="section-header">
                 <div className="section-number reveal">03</div>
                 <div>
                   <p className="kicker reveal">Founding ecosystem partners</p>
-                  <h2 className="reveal">The First Ecosystem Partners.</h2>
+                  <h2 className="reveal">Meet The Partners.</h2>
+                  <p className="section-intro reveal">Each organisation plays a distinct role in the inaugural Buildathon chapter. Jump to a dedicated profile to learn what they contribute and how they support student builders.</p>
+                  <PartnerDirectoryNav partners={ECOSYSTEM_PARTNERS} />
                 </div>
-              </div>
-              <div className="grid three partner-signal-grid">
-                <article className="card reveal"><span className="index">01</span><h3>Eduvos</h3><p>Supporting the first pilot campus and builder cohort at Eduvos Menlyn, Pretoria.</p><div className="tags"><span>Campus</span><span>Host</span></div></article>
-                <article className="card reveal"><span className="index">02</span><h3>Lovable</h3><p>Providing tooling and development credits for rapid MVP creation throughout the Buildathon.</p><div className="tags"><span>AI tools</span><span>Credits</span></div></article>
-                <article className="card reveal"><span className="index">03</span><h3>VelozTech</h3><p>Supporting challenge framing, mentorship, continuation pathways, and talent development opportunities.</p><div className="tags"><span>Mentorship</span><span>Pathways</span></div></article>
               </div>
             </div>
           </section>
 
+          {ECOSYSTEM_PARTNERS.map((partner, index) => (
+            <PartnerSpotlight key={partner.id} partner={partner} index={index} dark={index % 2 === 1} />
+          ))}
+
           <section className="site-section">
             <div className="shell">
               <div className="section-header">
-                <div className="section-number reveal">04</div>
+                <div className="section-number reveal">05</div>
                 <div>
                   <p className="kicker reveal">What partners contribute</p>
                   <h2 className="reveal">Multiple Ways To Participate.</h2>
@@ -76,7 +79,7 @@ export default function PartnersContent() {
           <section className="site-section dark">
             <div className="shell">
               <div className="section-header">
-                <div className="section-number reveal">05</div>
+                <div className="section-number reveal">06</div>
                 <div>
                   <p className="kicker reveal">What partners receive</p>
                   <h2 className="reveal">What Partnership Creates.</h2>
@@ -117,12 +120,18 @@ export default function PartnersContent() {
             <div className="partner-logo-carousel reveal" aria-label="Technology platforms in the GUILD SA ecosystem">
               <div className="partner-logo-track">
                 <span>Lovable</span>
+                <span>Eduvos</span>
+                <span>VelozTech</span>
+                <span>HLTC</span>
                 <span>Cursor</span>
                 <span>GitHub</span>
                 <span>Figma</span>
                 <span>Render</span>
                 <span>Netlify</span>
                 <span>Lovable</span>
+                <span>Eduvos</span>
+                <span>VelozTech</span>
+                <span>HLTC</span>
                 <span>Cursor</span>
                 <span>GitHub</span>
                 <span>Figma</span>
@@ -135,7 +144,7 @@ export default function PartnersContent() {
           <section className="site-section">
             <div className="shell">
               <div className="section-header">
-                <div className="section-number reveal">07</div>
+                <div className="section-number reveal">08</div>
                 <div>
                   <p className="kicker reveal">How projects create value</p>
                   <h2 className="reveal">Every Project Creates Proof.</h2>
@@ -157,7 +166,7 @@ export default function PartnersContent() {
           <section className="site-section about-depth-section">
             <div className="shell">
               <div className="section-header">
-                <div className="section-number reveal">08</div>
+                <div className="section-number reveal">09</div>
                 <div>
                   <p className="kicker reveal">Partnership opportunities</p>
                   <h2 className="reveal">Ways To Engage.</h2>
